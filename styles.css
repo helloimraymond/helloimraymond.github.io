@@ -1,3 +1,33 @@
+@font-face {
+  font-family: Outfit-Bold;
+  src: url(fonts/Outfit-Bold.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Medium;
+  src: url(fonts/Outfit-Medium.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Regular;
+  src: url(fonts/Outfit-Regular.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Black;
+  src: url(fonts/Outfit-Black.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Light;
+  src: url(fonts/Outfit-Light.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Black;
+  src: url(fonts/Outfit-Black.ttf);
+}
+
 *{
     margin: 0;
     padding:0;
@@ -14,12 +44,13 @@ body{
 }
 
 .container{
-    padding: 40px 4%;
+    padding: 35px 4%;
     background-color: #000;
     overflow: hidden;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    z-index: 1;
 }
 
 .container2{
@@ -39,13 +70,14 @@ nav{
 }
 
 .logo{
-    width: 325px;
+    width: 315px;
 }
 
 nav ul li{
     display: inline-block;
     list-style: none;
-    margin: 10px 30px;
+    margin: 10px 40px;
+    margin-right: 0;
 }
 
 nav ul li a{
@@ -54,6 +86,7 @@ nav ul li a{
     font-size: 16px;
     position: relative;
     letter-spacing: 5px;
+    font-family: Outfit-Regular;
 }
 
 nav ul li a::after{
@@ -64,11 +97,18 @@ nav ul li a::after{
     position: absolute;
     left: 0;
     bottom: -10px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 nav ul li a:hover::after{
     width: 100%;
+}
+
+#contact_link{
+    width: 300px;
+    border: solid white 1px;
+    padding: 10px;
+    padding-left: 15px;
 }
 
 .header-text{
@@ -76,32 +116,55 @@ nav ul li a:hover::after{
 }
 
 .header-text p{
-    font-size: 21px;
+    font-size: 20px;
+    font-family:Outfit-Medium;
     letter-spacing: 5px;
 }
 
+.header-text p span{
+    font-family: "Courier New";
+}
+
 .header-text h1{
-    font-size: 52px;
+    font-size: 48px;
     margin-top:20px;
-    font-family:"Tahoma";
+    font-family:Outfit-Bold;
     line-height: 120%;
 }
 
 .header-text h1 span{
     color: #60CF8A;
-    font-family:"Tahoma";
+    font-family: Outfit-Bold;
+}
+
+/*---------text react to screen size change----------*/
+@media(max-width:1020px){
+    .header-text h1{
+        font-size: 42px;
+    }
+}
+
+@media(max-width:900px){
+    .header-text h1{
+        font-size: 36px;
+    }
 }
 
 /*--------portfolio--------------*/
 
 .container3{
-    padding: 60px 4%;
-    font-size: 25px;
+    padding: 40px 4%;
     color: #000;
+}
+
+.container3 h1{
+    font-size: 48px;
+    font-family: Outfit-Bold;
 }
 
 .container3 h1 span{
     color: #60CF8A;
+    font-family: Outfit-Bold;
 }
 
 #portfolio{
@@ -112,7 +175,7 @@ nav ul li a:hover::after{
 .work-list{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 3px;
+    grid-gap: 8px;
     margin-top:40px;
 }
 
@@ -124,11 +187,108 @@ nav ul li a:hover::after{
 .work img{
     width: 100%;
     display: block;
+    transition: transform 0.3s;
 }
 
 #small_text{
     margin-left: 35px;
     color: #000;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 5px;
+    font-family: Outfit-Light;
 }
+
+#small_but_bold{
+    color: #000;
+    font-family: Outfit-Black;
+}
+
+.layer{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    opacity: 0%;
+    transition: opacity 0.3s;
+}
+
+.layer h3{
+    font-family: Outfit-Medium;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.layer p{
+    font-family: Outfit-Light;
+    font-size: 16px;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.work:hover img{
+    transform: scale(1.2);
+
+}
+
+.work:hover .layer{
+    opacity: 100%;
+}
+
+.footer{
+    font-size: 14px;
+    color: #000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ededed;
+    padding: 40px 4%;
+    letter-spacing: 3px;
+}
+
+.footer .copyright{
+    color: #aaa;
+    font-family: Outfit-Regular;
+}
+
+.case-study{
+    margin-left: 4%;
+    margin-top: 160px;
+    font-size: 18px;
+    font-family: Outfit-Bold;
+    color: #000;
+    line-height: 25px;
+}
+
+.case-study h3{
+    font-family: Outfit-Bold;
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 45px;
+    width: 96%;
+}
+
+.case-study h3 span{
+    font-family: Outfit-Light;
+    font-size: 42px;
+}
+
+.case-study p{
+    font-family: Outfit-Regular;
+    margin-bottom: 30px;
+    width: 96%;
+}
+
+.case-study-image{
+    width: 96%;
+    margin-bottom: 20px;
+}
+
