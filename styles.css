@@ -271,7 +271,7 @@ nav ul li a:hover::after{
 .case-study h3{
     font-family: Outfit-Bold;
     font-size: 42px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     line-height: 45px;
     width: 96%;
 }
@@ -281,14 +281,101 @@ nav ul li a:hover::after{
     font-size: 42px;
 }
 
-.case-study p{
-    font-family: Outfit-Regular;
-    margin-bottom: 30px;
+.case-study h4{
+    font-family: Outfit-Bold;
+    font-size: 30px;
+    margin-bottom: 12px;
+    line-height: 45px;
     width: 96%;
 }
 
-.case-study-image{
+.case-study h4 span{
+    font-family: Outfit-Bold;
+    color: #60CF8A;
+}
+
+.case-study p{
+    font-family: Outfit-Regular;
+    margin-bottom: 20px;
     width: 96%;
+}
+
+.pic-label{
+    font-family: Outfit-Regular;
+    font-size: 14px;
+}
+
+.case-study-image{
+    /*---height: 80vh;--*/
+    width: 96%;
+    margin-bottom: 20px;
+}
+
+.case-study .tri-column{
+    column-count: 3;
+    margin-right: 4%;
+    margin-bottom: 10px;
+}
+
+.case-study .tri-column p{
+    border: solid;
+    border-width: 2px;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: fit-content;
+}
+
+.case-study .tri-column p span{
+    column-count: 3;
+    font-family: Outfit-Bold;
+}
+
+.case-study .tri-column2{
+    column-count: 3;
+    margin-right: 4%;
+    margin-bottom: 10px;
+}
+
+.case-study .tri-column2 p{
+    border: solid;
+    border-width: 0px;
+    width: fit-content;
+}
+
+.case-study .tri-column2 p span{
+    font-family: Outfit-Bold;
+    font-size: 30px;
+}
+
+.case-study .tri-column2 p span span{
+    color: #60CF8A;
+}
+
+.column-photos-list{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 8px;
+    margin-top:10px;
+    margin-right: 4%;
+    margin-bottom: 5px;
+}
+
+.column-photos{
+    position: relative;
+    overflow: hidden;
+}
+
+.column-photos img{
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/*-------about me page--------*/
+
+#about-me-text{
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
