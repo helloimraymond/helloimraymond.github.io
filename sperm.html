@@ -7,6 +7,23 @@
   <title>Portfolio: Seeds of Life</title>
   <link rel="shortcut icon" type="image/png" href="/images/rz.png">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+        body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+  </style>
 </head>
 <body>
   <div id="header">
@@ -24,47 +41,68 @@
 
     <!-----case study----->
   <div class="case-study">
-    <h3>Seeds of Life <span>Mapping Sperm Count Across Countries</span></h3>
-    <div class="tri-column">
-      <p><span>Target Audience:</span> Educated lay audience</p>
-      <p><span>Tools:</span> Excel, Tableau, Illustrator, Blender</p>
-      <p><span>Client:</span> Shehryar Saharan (BMC Faculty)</p>
-    </div>
-    <p>This infographic gives readers a glimpse into the history of bimaristans, early Islamic hospitals that revolutionized medicine and healthcare. At the heart of the poster is a cutaway view of the oldest standing bimaristan in the world, Bimaristan Nur Al-Din.</p>
-    <img class="case-study-image" src="images/sperm.png">
+    <h3>Seeds of Life: <span>Mapping Sperm Count Across Countries</span></h3>
+    <!--<div class="tri-column">
+      <span>Target Audience: Educated lay audience</span>
+      <span>Tools: Excel, Illustrator, Photoshop, Blender</span>
+      <span>Client: Shehryar Saharan (BMC Faculty)</span>
+    </div>-->
+        <div class="tri-column">
+        <span class="boxed-text"><span>Target Audience:</span> Educated lay audience</span>
+        <span class="boxed-text"><span>Tools:</span> Excel, Illustrator, Photoshop, Blender</span>
+        <span class="boxed-text"><span>Client:</span> Shehryar Saharan (BMC Faculty)</span>
+      </div>
+    <p>This multivariate data visualization examines sperm counts, fertility rates, and other related metrics across select countries, incorporating various factors known to affect male reproductive health. The sperm, each representing a country, swim towards the egg in a captivating metaphor, illustrating the many environmental and societal influences that shape global reproductive health.</p>
+    <a href="images/sperm-final.png"><img class="case-study-image" src="images/sperm-final.png"></a>
 
-    <h4>Research & Ideation<span>.</span></h4>
-    <p>I browsed papers and online databases.</p>
+    <h4>Research & Data Analysis<span>.</span></h4>
+    <p>To begin, I browsed academic papers and online databases to gather data on sperm count, fertility, and other related healthcare factors. I organized the collected data in a spreadsheet and created initial graphs using Excel to better understand the graphical trends, which later served as a foundation for the infographic's final layout, which I began to plan in this stage with quick thumbnail sketches.</p>
     <div class="column-photos-list">
       <div class="column-photos">
-        <img src="images/bimaristan-sketchup1.png">
-        <p class="pic-label">Initial SketchUp file from floor plans</p>
+        <img src="images/sperm-research1.png">
+        <p class="pic-label">Snippet of research organized in Excel</p>
       </div>
       <div class="column-photos">
-        <img src="images/bimaristan-sketchup2.png">
-        <p class="pic-label">In progress version in SketchUp</p>
-      </div>
-      <div class="column-photos">
-        <img src="images/bimaristan-sketchup3.png">
-        <p class="pic-label">Final Sketchup version before bringing into Maya</p>
+        <img src="images/sperm-research2.png">
+        <p class="pic-label">Rudimentary thumbnail sketches</p>
       </div>
     </div>
 
-    <h4>Data Analysis<span>.</span></h4>
-
     <h4>Layout & Graphic Design<span>.</span></h4>
+    <p>I produced a series of thumbnails to explore visual metaphors and potential layouts. From these, I developed a basic layout for the infographic, placing particular emphasis on establishing a clear narrative flow.</p>
+    <div class="column-photos-list">
+      <div class="column-photos">
+        <img src="images/sperm-research1.png">
+        <p class="pic-label">Initial layout ideas for infographic</p>
+      </div>
+      <div class="column-photos">
+        <img src="images/sperm-layout2.png">
+        <p class="pic-label">Refined basic layout of infographic</p>
+      </div>
+    </div>
 
-    <h4>3D Modelling (Egg)<span>.</span></h4>
+    <p>Using Illustrator, I transferred the raw graphs and began refining the layout, incorporating colour, typography, and visual hierarchy to improve clarity. I also modelled a human egg in Blender to serve as the focal point of the metaphor.</p>
+    <div class="column-photos-list">
+      <div class="column-photos">
+        <img src="images/sperm-illustrator1.png">
+        <p class="pic-label">Visual inspiration for infographic</p>
+      </div>
+      <div class="column-photos">
+        <img src="images/sperm-illustrator2.png">
+        <p class="pic-label">Final comprehensive draft of infographic</p>
+      </div>
+      <div class="column-photos">
+        <img src="images/sperm-research2.png">
+        <p class="pic-label">Human egg modelled in Blender</p>
+      </div>
+    </div>
 
     <h4>References<span>.</span></h4>
     <i><p>1. Fisch, H., Ikeguchi, E. F., & Goluboff, E. T. (1996). Worldwide variations in sperm counts. Urology, 48(6), 909–911. https://doi.org/10.1016/s0090-4295(96)00301-9</p>
-    <p>2. idk.</p>
-    <p>3. idk.</p>
-    <p>4. idk.</p>
-    <p>5. idk.</p>
-    <p>6. idk.</p>
-    <p>7. idk.</p>
-    <p>8. idk.</p></i>
+    <p>2. IQAir. (2024). World’s most polluted countries. https://www.iqair.com/ca/world-most-polluted-countries.</p>
+    <p>3. Our World In Data. (2018). Alcohol consumption. https://ourworldindata.org/alcohol-consumption.</p>
+    <p>4. World Population Review. (2022). Obesity rates by country. https://worldpopulationreview.com/country-rankings/obesity-rates-by-country.</p>
+    <p>5. World Population Review. (2024): Total fertility rate. https://worldpopulationreview.com/country-rankings/total-fertility-rate.</p>
     <br/><br/>
 
   </div>
