@@ -7,6 +7,24 @@
   <title>Portfolio</title>
   <link rel="icon" type="image/png" href="/images/rz.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+
+  <style>
+        body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+  </style>
 </head>
 <body>
   <div id="header">
@@ -14,7 +32,7 @@
       <nav>
         <a href="index.html"><img src="images/logo.png" class="logo"></a>
         <ul>
-          <li><a href="#">WORK</a></li>
+          <li><a href="index.html">WORK</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="#"><span id="contact_link">CONTACT</span></a></li>
         </ul>
@@ -43,30 +61,32 @@
     <div class="work-list">
       <div class="work">
         <img src="images/bimaristan.png">
-        <a href="bimaristan.html"><div class="layer">
+        <a href="bimaristan.html"><div class="layer-case">
           <h3>Bimaristans: Hospitals of Yore</h3>
           <p>INFOGRAPHIC DESIGN, 3D MODELLING</p>
         </div></a>
       </div>
       <div class="work">
         <img src="images/dermalert.png">
-        <a href="dermalert.html"><div class="layer">
+        <a href="dermalert.html"><div class="layer-case">
           <h3>DermAlert: Skincare Product Repository</h3>
           <p>EXPERIENCE DESIGN, INTERACTIVE</p>
         </div></a>
       </div>
       <div class="work">
         <img src="images/sperm.png">
-        <a href="sperm.html"><div class="layer">
+        <a href="sperm.html"><div class="layer-case">
           <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
           <p>DATA VISUALIZATION</p>
         </div></a>
       </div>
       <div class="work">
         <img src="images/rat.png">
-        <div class="layer">
-          <h3>Ratticus Norvegicus Skull</h3>
-          <p>3D MODELLING</p>
+        <div class="layer-rat">
+          <div class="layer">
+            <h3>Ratticus Norvegicus Skull</h3>
+            <p>3D MODELLING</p>
+          </div>
         </div>
       </div>
       <div class="work">
@@ -106,8 +126,14 @@
       </div>
     </div>
     
+    <div class="popup-image">
+      <span>&times;</span>
+      <img src="images/rat.png">
+    </div>
+
   </div>
 </div>
+<br/><br/>
 <!---------contact------
 <div id="contact">
   <div class="container3">
@@ -126,5 +152,18 @@
   <section class="footer">
     <p class="copyright">© COPYRIGHT RAYMOND ZHANG 2025</p>
   </section>
+
+  <script>
+    document.querySelectorAll('.layer').forEach(image =>{
+      image.onclick = () =>{
+        document.querySelector('.popup-image').style.display = 'block';
+      }
+    });
+
+    document.querySelector('.popup-image span').onclick = () =>{
+      document.querySelector('.popup-image').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
