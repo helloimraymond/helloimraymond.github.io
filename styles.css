@@ -446,39 +446,41 @@ nav ul li a:hover::after{
 
 .popup-image{
     position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.85);
-    height: 100%;
-    width: 100%;
-    z-index: 1000;
-    display: none; /* Hidden by default */
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.85);
+    display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    pointer-events: none; /* Prevent blocking when hidden/fading out */
 }
-.popup-image.show {
-    display: flex;
+.popup-image.active {
+    display: flex !important;
     opacity: 1;
+    pointer-events: auto; /* Allow interaction when shown */
 }
 
-.popup-image span{
+.popup-image span {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 24px;
+    right: 40px;
     font-size: 40px;
-    font-weight: bold;
     color: #fff;
     cursor: pointer;
     z-index: 1001;
 }
 
-.popup-image img{
-    max-width: 90vw;
-    max-height: 90vh;
+#bimaristan-popup img {
+    max-height: 85vh !important;
+    max-width: 90vw !important;
+    width: auto !important;
+    height: auto !important;
     object-fit: contain;
-    border-radius: 0;
+    display: block;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px){
@@ -531,16 +533,6 @@ nav ul li a:hover::after{
     font-size: 30px;
 }
 
-.case-study .tri-column2 p span span{
-    color: #60CF8A;
-}
-
-.column-photos-list{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 8px;
-    margin-top:10px;
-    margin-right: 4%;
     margin-bottom: 5px;
 }
 
@@ -553,6 +545,35 @@ nav ul li a:hover::after{
     width: 100%;
     display: block;
     margin-bottom: 5px;
+}
+
+.column-photos-list {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  width: 96%;           /* Match paragraph/text width */
+  margin-left: 0;
+}
+
+.column-photos {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;      /* Remove max-width restriction */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column-photos img {
+  width: 100%;
+  max-width: none;      /* Remove max-width restriction */
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;     /* Remove rounded corners */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 /*-------about me page--------*/

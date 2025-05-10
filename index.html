@@ -86,11 +86,9 @@
       </div>
       <div class="work">
         <img src="images/rat.png" class="fade-in">
-        <div class="layer-rat">
-          <div class="layer" data-popup="images/anglerfish.png">
-            <h3>Ratticus Norvegicus Skull</h3>
-            <p>3D MODELLING</p>
-          </div>
+        <div class="layer" data-popup="images/rat.png">
+          <h3>Ratticus Norvegicus Skull</h3>
+          <p>3D MODELLING</p>
         </div>
       </div>
       <div class="work">
@@ -130,8 +128,8 @@
       </div>
     </div>
     
-    <div class="popup-image">
-      <span>&times;</span>
+    <div class="popup-image" id="portfolio-popup">
+      <span id="close-portfolio-popup">&times;</span>
       <img src="" alt="Popup Image">
     </div>
 
@@ -160,23 +158,34 @@
   <script>
     document.querySelectorAll('.layer').forEach(layer => {
         layer.onclick = () => {
-            // Get the popup image source from the data-popup attribute
             const popupImageSrc = layer.getAttribute('data-popup');
-            const popup = document.querySelector('.popup-image');
+            const popup = document.getElementById('portfolio-popup');
             const popupImage = popup.querySelector('img');
-
-            // Set the popup image source
             popupImage.src = popupImageSrc;
-
-            // Show the popup
-            popup.style.display = 'flex';
+            popup.classList.add('active');
         };
     });
 
-    // Close the popup when the close button is clicked
-    document.querySelector('.popup-image span').onclick = () => {
-        document.querySelector('.popup-image').style.display = 'none';
+    document.getElementById('close-portfolio-popup').onclick = () => {
+        const popup = document.getElementById('portfolio-popup');
+        popup.classList.remove('active');
+        // display: none will be handled by transitionend
     };
+
+    document.getElementById('portfolio-popup').onclick = (e) => {
+        if (e.target === e.currentTarget) {
+            e.currentTarget.classList.remove('active');
+            // display: none will be handled by transitionend
+        }
+    };
+
+    // Hide popup after fade-out transition
+    const popup = document.getElementById('portfolio-popup');
+    popup.addEventListener('transitionend', function() {
+        if (!popup.classList.contains('active')) {
+            popup.style.display = 'none';
+        }
+    });
   </script>
 
 </body>

@@ -84,18 +84,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (img && popup && closeBtn) {
         img.addEventListener('click', function() {
             popup.style.display = 'flex';
-            // Force reflow to enable transition
+            // Force reflow for transition
             void popup.offsetWidth;
-            popup.classList.add('show');
+            popup.classList.add('active');
         });
         closeBtn.addEventListener('click', function() {
-            popup.classList.remove('show');
-            setTimeout(() => { popup.style.display = 'none'; }, 400);
+            popup.classList.remove('active');
         });
         popup.addEventListener('click', function(e) {
             if (e.target === popup) {
-                popup.classList.remove('show');
-                setTimeout(() => { popup.style.display = 'none'; }, 400);
+                popup.classList.remove('active');
+            }
+        });
+        // Hide popup after fade-out transition
+        popup.addEventListener('transitionend', function() {
+            if (!popup.classList.contains('active')) {
+                popup.style.display = 'none';
             }
         });
     }
