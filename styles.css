@@ -55,7 +55,7 @@ html, body {
 .fade-in {
     opacity: 0; /* Start fully transparent */
     transform: translateY(20px); /* Start slightly below */
-    transition: opacity 0.2s cubic-bezier(0.42, 0, 0.58, 1), transform 0.2s cubic-bezier(0.42, 0, 0.58, 1); /* Faster transition */
+    transition: opacity 0.6s cubic-bezier(0.42, 0, 0.58, 1), transform 0.6s cubic-bezier(0.42, 0, 0.58, 1); /* Smooth transition for both */
 }
 
 /* When the element is visible */
@@ -91,14 +91,15 @@ body{
 
 .container2 {
     display: flex;
-    align-items: flex-end; /* Aligns items to the bottom vertically */
-    height: 63vh; /* Keeps the height as is */
+    align-items: flex-end;
+    height: 63vh;
     margin-top: 0%;
     width: 100%;
     background-image: url(images/work_background.png);
     background-size: cover;
     background-position: center;
-    padding-bottom: 100px; /* Adds spacing from the bottom */
+    padding-bottom: 100px;
+    padding-left: 4%; /* Aligns with .container3 and .container */
 }
 
 nav{
@@ -152,20 +153,20 @@ nav ul li a:hover::after{
 
 /* Initial state for the text animation */
 .header-text {
-    opacity: 0; /* Start fully transparent */
-    transform: translateX(-100%); /* Start off-screen to the left */
-    animation: slide-in-with-opacity 0.9s cubic-bezier(0.42, 0, 0.58, 1) forwards; /* Smooth transition with opacity */
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in-with-opacity 0.9s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
 /* Keyframes for the slide-in animation with opacity */
 @keyframes slide-in-with-opacity {
     0% {
-        opacity: 0; /* Fully transparent */
-        transform: translateX(-100%); /* Off-screen to the left */
+        opacity: 0;
+        transform: translateX(-100%);
     }
     100% {
-        opacity: 1; /* Fully visible */
-        transform: translateX(4%); /* Original position */
+        opacity: 1;
+        transform: translateX(0); /* No extra shift */
     }
 }
 
@@ -242,6 +243,7 @@ nav ul li a:hover::after{
     width: 100%;
     display: block;
     transition: transform 0.3s;
+    transition: transform 0.3s;
 }
 
 #small_text{
@@ -309,7 +311,7 @@ nav ul li a:hover::after{
 
 .layer-case h3{
     font-family: Outfit-Medium;
-    font-size: 32px;
+    font-size: 30px;
     color: #fff;
     margin-bottom: 20px;
 }
@@ -317,7 +319,7 @@ nav ul li a:hover::after{
 .layer-case p{
     font-family: Outfit-Light;
     font-size: 16px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: #fff;
 }
 
@@ -549,5 +551,89 @@ nav ul li a:hover::after{
 #about-me-text{
     font-size: 48px;
     margin-bottom: 20px;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 32px;
+  height: 28px;
+  justify-content: space-between;
+  margin-left: auto;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive nav for mobile */
+@media (max-width: 900px) {
+  nav {
+    position: relative;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: fixed;
+    top: 70px; /* Adjust to your nav height */
+    right: 0;
+    width: 28vw;
+    min-width: 180px;
+    max-width: 320px;
+    text-align: left;
+    z-index: 150;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid #222;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #222;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    background: #000;
+  }
+  .hamburger {
+    display: flex;
+  }
+  nav ul.active #contact_link {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+  }
+}
+
+#typewriter-text {
+    font-size: 32px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    position: relative;
+}
+
+#typewriter-text::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink-cursor 0.8s steps(1) infinite;
+    font-weight: bold;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
