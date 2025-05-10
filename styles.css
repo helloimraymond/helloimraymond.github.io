@@ -726,3 +726,8 @@ nav ul li a:hover::after{
   }
 }
 
+.typewriter-chinese {
+    font-size: 90%;
+    vertical-align: middle;
+}
+

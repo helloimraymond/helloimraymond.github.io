@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "HELLO WORLD!",
         "BONJOUR MONDE!",
         "¡HOLA MUNDO!",
-        "世界, 你好!",
+        '<span class="typewriter-chinese">世界, 你好!</span>',
+        "MARHABA BIL-3ĀLAM!",
         "OLÁ MUNDO!",
-        "RYTSAS VȲS!",
         "M'ACH RHAESHESER!"
     ];
     const typeElem = document.getElementById("typewriter-text");
@@ -52,24 +52,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function typeLoop() {
         const currentPhrase = phrases[phraseIndex];
-        if (typing) {
-            if (charIndex < currentPhrase.length) {
-                typeElem.textContent += currentPhrase[charIndex];
-                charIndex++;
-                setTimeout(typeLoop, 90);
+
+        // Special handling for the Chinese phrase with HTML
+        if (currentPhrase.includes('typewriter-chinese')) {
+            const match = currentPhrase.match(/<span[^>]*>(.*?)<\/span>/);
+            const chineseText = match ? match[1] : '';
+            if (typing) {
+                if (charIndex < chineseText.length) {
+                    typeElem.innerHTML = `<span class="typewriter-chinese">${chineseText.slice(0, charIndex + 1)}</span>`;
+                    charIndex++;
+                    setTimeout(typeLoop, 90);
+                } else {
+                    typing = false;
+                    setTimeout(typeLoop, 1200);
+                }
             } else {
-                typing = false;
-                setTimeout(typeLoop, 1200); // Pause before deleting
+                if (charIndex > 0) {
+                    typeElem.innerHTML = `<span class="typewriter-chinese">${chineseText.slice(0, charIndex - 1)}</span>`;
+                    charIndex--;
+                    setTimeout(typeLoop, 40);
+                } else {
+                    typing = true;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeLoop, 400);
+                }
             }
-        } else {
-            if (charIndex > 0) {
-                typeElem.textContent = currentPhrase.slice(0, charIndex - 1);
-                charIndex--;
-                setTimeout(typeLoop, 40);
+        }
+        // Special handling for the Arabic phrase with HTML
+        else if (currentPhrase.includes('typewriter-arabic')) {
+            const match = currentPhrase.match(/<span[^>]*>(.*?)<\/span>/);
+            const arabicText = match ? match[1] : '';
+            if (typing) {
+                if (charIndex < arabicText.length) {
+                    typeElem.innerHTML = `<span class="typewriter-arabic">${arabicText.slice(0, charIndex + 1)}</span>`;
+                    charIndex++;
+                    setTimeout(typeLoop, 90);
+                } else {
+                    typing = false;
+                    setTimeout(typeLoop, 1200);
+                }
             } else {
-                typing = true;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(typeLoop, 400); // Pause before typing next
+                if (charIndex > 0) {
+                    typeElem.innerHTML = `<span class="typewriter-arabic">${arabicText.slice(0, charIndex - 1)}</span>`;
+                    charIndex--;
+                    setTimeout(typeLoop, 40);
+                } else {
+                    typing = true;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeLoop, 400);
+                }
+            }
+        }
+        // Default behavior for non-HTML phrases
+        else {
+            if (typing) {
+                if (charIndex < currentPhrase.length) {
+                    typeElem.innerHTML = currentPhrase.slice(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeLoop, 90);
+                } else {
+                    typing = false;
+                    setTimeout(typeLoop, 1200);
+                }
+            } else {
+                if (charIndex > 0) {
+                    typeElem.innerHTML = currentPhrase.slice(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(typeLoop, 40);
+                } else {
+                    typing = true;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeLoop, 400);
+                }
             }
         }
     }
