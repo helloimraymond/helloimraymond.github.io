@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "HELLO WORLD",
         "BONJOUR MONDE",
         "HOLA MUNDO",
-        "你好，世界",
+        "世界, 你好",
         "OLÁ MUNDO"
     ];
     const typeElem = document.getElementById("typewriter-text");
