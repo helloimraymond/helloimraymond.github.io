@@ -126,7 +126,7 @@ nav ul li a{
     font-size: 14px;
     position: relative;
     letter-spacing: 5px;
-    font-family: Outfit-Regular;
+    font-family: Outfit-Bold;
 }
 
 nav ul li a::after{
@@ -149,6 +149,7 @@ nav ul li a:hover::after{
     border: solid white 1px;
     padding: 10px;
     padding-left: 15px;
+    font-family: Outfit-Bold;
 }
 
 /* Initial state for the text animation */
