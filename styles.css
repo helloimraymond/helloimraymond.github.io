@@ -53,15 +53,15 @@ html, body {
 
 /* Initial state for fade-in effect */
 .fade-in {
-    opacity: 0; /* Start fully transparent */
-    transform: translateY(20px); /* Start slightly below */
-    transition: opacity 0.6s cubic-bezier(0.42, 0, 0.58, 1), transform 0.6s cubic-bezier(0.42, 0, 0.58, 1); /* Smooth transition for both */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.42, 0, 0.58, 1), transform 0.6s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 /* When the element is visible */
 .fade-in.visible {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to original position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 *{
@@ -388,11 +388,14 @@ nav ul li a:hover::after{
 }
 
 .case-study h4{
-    font-family: Outfit-Bold;
-    font-size: 30px;
+    font-family: Outfit-Bold, Arial, sans-serif;
+    font-size: 40px;
     margin-bottom: 12px;
     line-height: 45px;
     width: 96%;
+    letter-spacing: 0;
+    color: #000;
+    font-weight: normal;
 }
 
 .case-study h4 span{
@@ -579,9 +582,159 @@ nav ul li a:hover::after{
 
 /*-------about me page--------*/
 
-#about-me-text{
-    font-size: 48px;
-    margin-bottom: 20px;
+.about-section {
+  margin-top: 0;
+  padding-top: 180px; /* Increase to match the start of "Contact." in contact.html */
+  margin-bottom: 40px;
+  padding-bottom: 120px; /* Add extra space below the about section before the footer */
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    padding-top: 140px; /* Adjust for mobile if needed */
+  }
+}
+
+.about-hero-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-profile-pic {
+  flex: 0 0 180px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-profile-pic img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #eee;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fafafa;
+}
+
+.about-hero-text {
+  flex: 1 1 320px;
+  min-width: 260px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Outfit-Regular', Arial, sans-serif; /* Use Outfit-Regular for all except heading */
+}
+
+.about-hero-text h4#about-me-text {
+  font-family: Outfit-Bold, Arial, sans-serif;
+  font-size: 45px;
+  margin-bottom: 12px;
+  line-height: 45px;
+  width: 96%;
+  letter-spacing: 0;
+  color: #000;
+  font-weight: normal;
+  opacity: 1;                /* Remove fade-in */
+  transform: none;           /* Remove translateY */
+  transition: none;          /* Remove transition */
+}
+
+#about-me-text.fade-in,
+#about-me-text.visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Remove fade-in animation from About Me. heading and intro paragraphs */
+.about-hero-text h4#about-me-text,
+.about-hero-text p.intro-no-fade {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.about-hero-text p,
+.about-hero-text ul,
+.about-hero-text li,
+.about-hero-text a,
+.about-hero-text h5,
+.about-skills,
+.skills-list span {
+  font-family: 'Outfit-Regular', Arial, sans-serif !important;
+}
+
+.about-hero-text p {
+  margin-bottom: 12px; /* Reduce space between paragraphs (default is usually 16px) */
+}
+
+.about-hero-text p.intro-no-fade:last-of-type {
+  margin-bottom: 0; /* Remove extra space after the last intro paragraph if needed */
+}
+
+.about-details {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  font-size: 1em;
+}
+
+.about-details li {
+  margin-bottom: 6px;
+}
+
+.about-details li strong {
+  font-family: Outfit-Bold, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.about-details a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.about-skills {
+  margin-top: 18px;
+}
+
+.about-skills h5 {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills-list span {
+  background: #f0f0f0;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 0.98em;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+  .about-hero-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .about-profile-pic {
+    margin-bottom: 12px;
+  }
+  .about-hero-text {
+    max-width: 100%;
+  }
 }
 
 /* Hamburger styles */
