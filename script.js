@@ -157,4 +157,33 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Popup for sperm-final.png
+    const spermImg = document.getElementById('sperm-img');
+    const spermPopup = document.getElementById('sperm-popup');
+    const closeSpermBtn = document.getElementById('close-sperm-popup');
+
+    if (spermImg && spermPopup && closeSpermBtn) {
+        spermImg.addEventListener('click', function() {
+            const popupImg = spermPopup.querySelector('img');
+            popupImg.src = spermImg.src; // Always use the hero image
+            spermPopup.style.display = 'flex';
+            void spermPopup.offsetWidth;
+            spermPopup.classList.add('active');
+        });
+        closeSpermBtn.addEventListener('click', function() {
+            spermPopup.classList.remove('active');
+        });
+        spermPopup.addEventListener('click', function(e) {
+            if (e.target === spermPopup) {
+                spermPopup.classList.remove('active');
+            }
+        });
+        // Hide popup after fade-out transition
+        spermPopup.addEventListener('transitionend', function() {
+            if (!spermPopup.classList.contains('active')) {
+                spermPopup.style.display = 'none';
+            }
+        });
+    }
 });

@@ -473,12 +473,13 @@ nav ul li a:hover::after{
     z-index: 1001;
 }
 
-#bimaristan-popup img {
+#bimaristan-popup img,
+#sperm-popup img {
     max-height: 85vh !important;
     max-width: 90vw !important;
     width: auto !important;
     height: auto !important;
-    object-fit: contain;
+    object-fit: contain !important;
     display: block;
     margin: 0 auto;
 }

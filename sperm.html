@@ -2,27 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equic="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio: Seeds of Life</title>
   <link rel="shortcut icon" type="image/png" href="/images/rz.png">
   <link rel="stylesheet" href="styles.css">
-
   <style>
-        body {
-            animation: fadeInAnimation ease 1s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        }
-        @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
+    body {
+      animation: fadeInAnimation ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -44,17 +38,27 @@
     </div> 
   </div>
 
-    <!-----case study----->
   <div class="case-study">
-    <h3 class="fade-in visible">Seeds of Life: <span>Mapping Sperm Count Across Countries</span></h3>
-    <div class="tri-column fade-in visible">
-      <span class="boxed-text"><span>Target Audience:</span> Educated lay audience</span>
-      <span class="boxed-text"><span>Tools:</span> Excel, Illustrator, Photoshop, Blender</span>
-      <span class="boxed-text"><span>Client:</span> Shehryar Saharan (BMC Faculty)</span>
+    <!-- HERO FLEX: image and intro text side by side -->
+    <div class="sperm-hero-flex bimaristan-hero-flex">
+      <!-- TEXT COLUMN FIRST -->
+      <div class="sperm-hero-text-col bimaristan-hero-text-col">
+        <h3 class="fade-in visible">Seeds of Life: <span>Mapping Sperm Count Across Countries</span></h3>
+        <div class="tri-column fade-in visible">
+          <span class="boxed-text"><span>Target Audience:</span> Educated lay audience</span>
+          <span class="boxed-text"><span>Tools:</span> Excel, Illustrator, Photoshop, Blender</span>
+          <span class="boxed-text"><span>Client:</span> Shehryar Saharan (BMC Faculty)</span>
+        </div>
+        <p class="fade-in visible">This multivariate data visualization examines sperm counts, fertility rates, and other related metrics across select countries, incorporating various factors known to affect male reproductive health. The sperm, each representing a country, swim towards the egg in a captivating metaphor, illustrating the many environmental and societal influences that shape global reproductive health.</p>
+        <p class="fade-in visible">[Additional details about the significance, approach, or background.]</p>
+      </div>
+      <!-- IMAGE COLUMN SECOND -->
+      <div class="sperm-hero-img-col bimaristan-hero-img-col">
+        <img class="case-study-image" src="images/sperm-final.png" alt="Sperm Project" id="sperm-img" style="cursor: pointer;" />
+      </div>
     </div>
-    <p class="fade-in visible">This multivariate data visualization examines sperm counts, fertility rates, and other related metrics across select countries, incorporating various factors known to affect male reproductive health. The sperm, each representing a country, swim towards the egg in a captivating metaphor, illustrating the many environmental and societal influences that shape global reproductive health.</p>
-    <a href="images/sperm-final.png" class="fade-in visible"><img class="case-study-image" src="images/sperm-final.png"></a>
 
+    <!-- EVERYTHING BELOW IS STACKED VERTICALLY AS BEFORE -->
     <h4 class="fade-in">Research & Data Analysis<span>.</span></h4>
     <p class="fade-in">To begin, I browsed academic papers and online databases to gather data on sperm count, fertility, and other related healthcare factors. I organized the collected data in a spreadsheet and created initial graphs using Excel to better understand the graphical trends, which later served as a foundation for the infographic's final layout, which I began to plan in this stage with quick thumbnail sketches.</p>
     <div class="column-photos-list fade-in">
@@ -92,7 +96,7 @@
         <p class="pic-label">Final comprehensive draft of infographic</p>
       </div>
       <div class="column-photos">
-        <img src="images/sperm-research2.png">
+        <img src="images/sperm-layout2.png">
         <p class="pic-label">Human egg modelled in Blender</p>
       </div>
     </div>
@@ -104,6 +108,7 @@
       <p>3. Our World In Data. (2018). Alcohol consumption. https://ourworldindata.org/alcohol-consumption.</p>
       <p>4. World Population Review. (2022). Obesity rates by country. https://worldpopulationreview.com/country-rankings/obesity-rates-by-country.</p>
       <p>5. World Population Review. (2024): Total fertility rate. https://worldpopulationreview.com/country-rankings/total-fertility-rate.</p>
+      <!-- Add more references as needed -->
     </i>
     <br/><br/>
   </div>
@@ -112,5 +117,11 @@
     <p class="copyright">© COPYRIGHT RAYMOND ZHANG 2025</p>
   </section>
   <script src="script.js"></script>
+
+  <div class="popup-image" id="sperm-popup">
+    <span id="close-sperm-popup">&times;</span>
+    <img src="images/sperm-final.png" alt="Sperm Fullscreen" />
+  </div>
 </body>
 </html>
+``` 
