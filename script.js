@@ -186,4 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Hide scroll-down arrow on scroll
+    const scrollArrow = document.querySelector('.scroll-down-arrow');
+    if (scrollArrow) {
+        function hideArrowOnScroll() {
+            scrollArrow.style.opacity = '0';
+            scrollArrow.style.pointerEvents = 'none';
+        }
+        window.addEventListener('scroll', hideArrowOnScroll, { once: true });
+    }
 });
