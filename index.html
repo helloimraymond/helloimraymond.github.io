@@ -5,7 +5,7 @@
   <meta http-equic="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="icon" type="image/png" href="/images/rz.png">
+  <link rel="icon" type="image/png" href="images/rz.png">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 
@@ -40,17 +40,18 @@
     </div> 
   </div>
     <div class="container2">
-      <br /><br /> 
-      <br /><br /> 
       <br /><br />
-      <br /><br /> 
-      <br /><br /> 
-      <br /><br /> 
-      <br /><br /> 
-      <br /><br /> 
-      <br /><br />  
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
+      <br /><br />
       <div class="header-text">
-        <p>― HELLO WORLD</p>
+        <p>― HELLO WORLD<span class="loading-dots"></span></p>
         <h1>I am <span>Raymond</span>; a biomedical communicator, <br>visual journalist, and science storyteller.</h1>
       </div>
     </div>
@@ -60,66 +61,72 @@
     <h1 class="sub-title">Portfolio<span>.</span><span id="small_text">     EXPLORE MY WORK. <span id="small_but_bold">CLICK</span> FOR MORE DETAILS</span></h1>
     <div class="work-list">
       <div class="work">
-        <img src="images/bimaristan.png">
-        <a href="bimaristan.html"><div class="layer-case">
-          <h3>Bimaristans: Hospitals of Yore</h3>
-          <p>INFOGRAPHIC DESIGN, 3D MODELLING</p>
-        </div></a>
+        <img src="images/bimaristan.png" class="fade-in">
+        <a href="bimaristan.html">
+          <div class="layer-case">
+            <h3>Bimaristans: Hospitals of Yore</h3>
+            <p>INFOGRAPHIC DESIGN, 3D MODELLING</p>
+          </div>
+        </a>
       </div>
       <div class="work">
-        <img src="images/dermalert.png">
-        <a href="dermalert.html"><div class="layer-case">
-          <h3>DermAlert: Skincare Product Repository</h3>
-          <p>EXPERIENCE DESIGN, INTERACTIVE</p>
-        </div></a>
+        <img src="images/dermalert.png" class="fade-in">
+        <a href="dermalert.html">
+          <div class="layer-case">
+            <h3>DermAlert: Skincare Product Repository</h3>
+            <p>EXPERIENCE DESIGN, INTERACTIVE</p>
+          </div>
+        </a>
       </div>
       <div class="work">
-        <img src="images/sperm.png">
-        <a href="sperm.html"><div class="layer-case">
-          <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
-          <p>DATA VISUALIZATION</p>
-        </div></a>
+        <img src="images/sperm.png" class="fade-in">
+        <a href="sperm.html">
+          <div class="layer-case">
+            <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
+            <p>DATA VISUALIZATION</p>
+          </div>
+        </a>
       </div>
       <div class="work">
-        <img src="images/rat.png">
+        <img src="images/rat.png" class="fade-in">
         <div class="layer-rat">
-          <div class="layer">
+          <div class="layer" data-popup="images/anglerfish.png">
             <h3>Ratticus Norvegicus Skull</h3>
             <p>3D MODELLING</p>
           </div>
         </div>
       </div>
       <div class="work">
-        <img src="images/anglerfish.png">
-        <div class="layer">
+        <img src="images/anglerfish.png" class="fade-in">
+        <div class="layer" data-popup="images/kidney.png">
           <h3>Anglerfish: Angels of the Deep</h3>
           <p>3D MODELLING</p>
         </div>
       </div>
       <div class="work">
-        <img src="images/kidney.png">
-        <div class="layer">
+        <img src="images/kidney.png" class="fade-in">
+        <div class="layer" data-popup="images/rat.png">
           <h3>Kidney Section: Show Me the Unseeable</h3>
           <p>MEDICAL ILLUSTATION, 3D MODELLING</p>
         </div>
       </div>
       <div class="work">
-        <img src="images/popfoss.png">
-        <div class="layer">
+        <img src="images/popfoss.png" class="fade-in">
+        <div class="layer" data-popup="images/rat.png">
           <h3>Popliteal Fossa: Vector Illustration</h3>
           <p>MEDICAL ILLUSTATION</p>
         </div>
       </div>
       <div class="work">
-        <img src="images/nanobot.png">
-        <div class="layer">
+        <img src="images/nanobot.png" class="fade-in">
+        <div class="layer" data-popup="images/rat.png">
           <h3>Cancer's Nano-Nemesis</h3>
           <p>3D MODELLING, EDITORIAL COVER</p>
         </div>
       </div>
       <div class="work">
-        <img src="images/yearbook.png">
-        <div class="layer">
+        <img src="images/yearbook.png" class="fade-in">
+        <div class="layer" data-popup="images/rat.png">
           <h3>2024 Yearbook Cover</h3>
           <p>EDITORIAL COVER</p>
         </div>
@@ -128,7 +135,7 @@
     
     <div class="popup-image">
       <span>&times;</span>
-      <img src="images/rat.png">
+      <img src="" alt="Popup Image">
     </div>
 
   </div>
@@ -154,16 +161,27 @@
   </section>
 
   <script>
-    document.querySelectorAll('.layer').forEach(image =>{
-      image.onclick = () =>{
-        document.querySelector('.popup-image').style.display = 'block';
-      }
+    document.querySelectorAll('.layer').forEach(layer => {
+        layer.onclick = () => {
+            // Get the popup image source from the data-popup attribute
+            const popupImageSrc = layer.getAttribute('data-popup');
+            const popup = document.querySelector('.popup-image');
+            const popupImage = popup.querySelector('img');
+
+            // Set the popup image source
+            popupImage.src = popupImageSrc;
+
+            // Show the popup
+            popup.style.display = 'flex';
+        };
     });
 
-    document.querySelector('.popup-image span').onclick = () =>{
-      document.querySelector('.popup-image').style.display = 'none';
-    }
+    // Close the popup when the close button is clicked
+    document.querySelector('.popup-image span').onclick = () => {
+        document.querySelector('.popup-image').style.display = 'none';
+    };
   </script>
 
 </body>
 </html>
+``` 

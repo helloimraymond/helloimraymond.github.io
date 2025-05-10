@@ -28,7 +28,14 @@
   src: url(fonts/Outfit-Black.ttf);
 }
 
-
+/* Ensure the page has a minimum height of 250px */
+html, body {
+    min-height: 250px; /* Set the minimum height */
+    height: 100%; /* Ensure the page takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
 
 .fade-in-section {
   opacity: 0;
@@ -42,6 +49,19 @@
   opacity: 1;
   transform: none;
   visibility: visible;
+}
+
+/* Initial state for fade-in effect */
+.fade-in {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.2s cubic-bezier(0.42, 0, 0.58, 1), transform 0.2s cubic-bezier(0.42, 0, 0.58, 1); /* Faster transition */
+}
+
+/* When the element is visible */
+.fade-in.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
 
 *{
@@ -127,8 +147,23 @@ nav ul li a:hover::after{
     padding-left: 15px;
 }
 
-.header-text{
-    margin-left: 4%;
+/* Initial state for the text animation */
+.header-text {
+    opacity: 0; /* Start fully transparent */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-with-opacity 0.9s cubic-bezier(0.42, 0, 0.58, 1) forwards; /* Smooth transition with opacity */
+}
+
+/* Keyframes for the slide-in animation with opacity */
+@keyframes slide-in-with-opacity {
+    0% {
+        opacity: 0; /* Fully transparent */
+        transform: translateX(-100%); /* Off-screen to the left */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(4%); /* Original position */
+    }
 }
 
 .header-text p{
@@ -410,28 +445,26 @@ nav ul li a:hover::after{
     background: rgba(0, 0, 0, 0.75);
     height: 100%;
     width: 100%;
-    z-index: 100%;
-    display: none;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
 }
 
 .popup-image span{
-    position: inherit;
-    top: 150px; 
-    right: 50px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
     font-size: 40px;
-    font-weight: bolder;
+    font-weight: bold;
     color: #fff;
     cursor: pointer;
-    z-index: 100;
 }
 
 .popup-image img{
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 680px;
-    object-fit: cover;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 
 @media (max-width: 768px){
