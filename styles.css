@@ -33,7 +33,7 @@ html, body {
     min-height: 250px; /* Set the minimum height */
     height: 100%; /* Ensure the page takes up the full height of the viewport */
     margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    padding: 0%; /* Remove default padding */
     box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
 
