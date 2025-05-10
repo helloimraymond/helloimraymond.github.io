@@ -45,15 +45,26 @@
   </div>
 
   <div class="case-study">
-    <h3 class="fade-in visible">Bimaristans: <span>Hospitals of Yore</span></h3>
-    <div class="tri-column fade-in visible">
-      <span class="boxed-text"><span>Target Audience:</span> Educated lay audience</span>
-      <span class="boxed-text"><span>Tools:</span> SketchUp, Maya, Photoshop, Illustrator</span>
-      <span class="boxed-text"><span>Client:</span> Shehryar Saharan (BMC Faculty)</span>
+    <!-- HERO FLEX: image and intro text side by side -->
+    <div class="bimaristan-hero-flex">
+      <!-- TEXT COLUMN FIRST -->
+      <div class="bimaristan-hero-text-col">
+        <h3 class="fade-in visible">Bimaristans: <span>Hospitals of Yore</span></h3>
+        <div class="tri-column fade-in visible">
+          <span class="boxed-text"><span>Target Audience:</span> Educated lay audience</span>
+          <span class="boxed-text"><span>Tools:</span> SketchUp, Maya, Photoshop, Illustrator</span>
+          <span class="boxed-text"><span>Client:</span> Shehryar Saharan (BMC Faculty)</span>
+        </div>
+        <p class="fade-in visible">This infographic gives readers a glimpse into the history of bimaristans, early Islamic hospitals that revolutionized medicine and healthcare. At the heart of the poster is a cutaway view of the oldest standing bimaristan in the world, Bimaristan Nur Al-Din.</p>
+        <p class="fade-in visible">Bimaristans were multi-functional institutions, commonly housing medical schools, libraries, pharmacies, and other related facilities that blazed the trail for modern hospitals in other regions of the world.</p>
+      </div>
+      <!-- IMAGE COLUMN SECOND -->
+      <div class="bimaristan-hero-img-col">
+        <img class="case-study-image" src="images/bimaristan.png" alt="Bimaristan" id="bimaristan-img" style="cursor: pointer;" />
+      </div>
     </div>
-    <p class="fade-in visible">This infographic gives readers a glimpse into the history of bimaristans, early Islamic hospitals that revolutionized medicine and healthcare. At the heart of the poster is a cutaway view of the oldest standing bimaristan in the world, Bimaristan Nur Al-Din.</p>
-    <a href="images/bimaristan.png" class="fade-in visible"><img class="case-study-image" src="images/bimaristan.png"></a>
-    
+
+    <!-- EVERYTHING BELOW IS STACKED VERTICALLY AS BEFORE -->
     <h4 class="fade-in">Research & Thumbnails<span>.</span></h4>
     <p class="fade-in">After collecting peer-reviewed articles, books, and other resources on the history of bimaristans, I developed a comprehensive plan for the content and quick thumbnail drafts of the infographic.</p>
     <div class="column-photos-list fade-in">
@@ -152,5 +163,10 @@
     <p class="copyright">© COPYRIGHT RAYMOND ZHANG 2025</p>
   </section>
   <script src="script.js"></script>
+
+  <div class="popup-image" id="bimaristan-popup">
+    <span id="close-popup">&times;</span>
+    <img src="images/bimaristan.png" alt="Bimaristan Fullscreen" />
+  </div>
 </body>
 </html>

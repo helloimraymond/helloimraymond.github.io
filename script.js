@@ -75,4 +75,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (typeElem) typeLoop();
+
+    // Popup for bimaristan.png
+    const img = document.getElementById('bimaristan-img');
+    const popup = document.getElementById('bimaristan-popup');
+    const closeBtn = document.getElementById('close-popup');
+
+    if (img && popup && closeBtn) {
+        img.addEventListener('click', function() {
+            popup.style.display = 'flex';
+            // Force reflow to enable transition
+            void popup.offsetWidth;
+            popup.classList.add('show');
+        });
+        closeBtn.addEventListener('click', function() {
+            popup.classList.remove('show');
+            setTimeout(() => { popup.style.display = 'none'; }, 400);
+        });
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('show');
+                setTimeout(() => { popup.style.display = 'none'; }, 400);
+            }
+        });
+    }
 });
