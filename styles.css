@@ -165,7 +165,7 @@ nav ul li a:hover::after{
     }
     100% {
         opacity: 1; /* Fully visible */
-        transform: translateX(4%); /* Original position */
+        transform: translateX(10%); /* Original position */
     }
 }
 
