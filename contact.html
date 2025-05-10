@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me | Raymond Zhang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Logo"></a>
+        <ul>
+          <li><a href="index.html">WORK</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html"><span id="contact_link">CONTACT</span></a></li>
+        </ul>
+        <div class="hamburger" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="container3" style="margin-top:120px; max-width: 700px;">
+    <h1 class="sub-title fade-in visible" style="margin-bottom: 23px;">Contact<span>.</span></h1>
+    <p class="fade-in visible" style="color:#222; font-size:18px; margin-bottom:32px; font-family: Outfit-Regular;">
+      Have a question, collaboration, or just want to say hello? Fill out the form below and I'll get back to you as soon as possible.
+    </p>
+    <form class="fade-in" id="contact-form" autocomplete="off" style="display: flex; flex-direction: column; gap: 18px;">
+      <label for="name" style="font-family: Outfit-Bold; color: #222;">Name</label>
+      <input type="text" id="name" name="name" required style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px;">
+
+      <label for="email" style="font-family: Outfit-Bold; color: #222;">Email</label>
+      <input type="email" id="email" name="email" required style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px;">
+
+      <label for="message" style="font-family: Outfit-Bold; color: #222;">Message</label>
+      <textarea id="message" name="message" rows="6" required style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:4px; resize:vertical;"></textarea>
+
+      <button type="submit" style="background:#60CF8A; color:#fff; font-family:Outfit-Bold; font-size:18px; border:none; border-radius:4px; padding:14px 0; cursor:pointer; transition:background 0.2s;">Send Message</button>
+      <p id="form-status" style="font-size:16px; color:#60CF8A; display:none; margin-top:10px;"></p>
+    </form>
+    <div style="margin-top:40px; color:#222;">
+      <p style="font-family:Outfit-Regular; font-size:16px;">Or email me directly: <a href="mailto:helloimraymond@gmail.com" style="color:#60CF8A; text-decoration:none;">helloimraymond@gmail.com</a></p>
+    </div>
+  </div>
+
+  <section class="footer fade-in">
+    <p class="copyright">© COPYRIGHT RAYMOND ZHANG 2025</p>
+  </section>
+  <script src="script.js"></script>
+  <script>
+    // Simple client-side form feedback (no backend)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('form-status').style.display = 'block';
+      document.getElementById('form-status').textContent = "Thank you for your message! (Demo only: form not actually sent)";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
