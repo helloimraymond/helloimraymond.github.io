@@ -163,6 +163,9 @@
             const popup = document.getElementById('portfolio-popup');
             const popupImage = popup.querySelector('img');
             popupImage.src = popupImageSrc;
+            popup.style.display = 'flex'; // Show first
+            // Force reflow to enable transition
+            void popup.offsetWidth;
             popup.classList.add('active');
         };
     });
@@ -191,4 +194,3 @@
 
 </body>
 </html>
-``` 
