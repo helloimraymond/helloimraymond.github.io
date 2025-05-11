@@ -423,26 +423,34 @@ nav ul li a:hover::after{
 .case-study .tri-column{
     margin-right: 4%;
     margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .case-study .tri-column .boxed-text{
-    border: solid;
-    border-width: 2px;
-    padding: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    width: fit-content;
+    border: solid 2px #222;
+    border-radius: 0;
+    padding: 8px 16px 0px 16px; /* 8px top, 16px left/right, 6px bottom */
     font-family: Outfit-Regular;
-    line-height: 45px;
-    margin-right: 5px;
-    overflow: hidden;
-    line-height: 52px;
+    font-size: 20px;
+    background: #fafafa;
+    color: #222;
+    margin: 0;
+    min-height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+    width: auto;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
-.case-study .tri-column .boxed-text span{
+/* Bold the label before the colon */
+.case-study .tri-column .boxed-text span:first-child {
     font-family: Outfit-Bold;
+    font-size: 20px;
 }
 
 /*---  popups  ---*/
@@ -824,9 +832,9 @@ nav ul li a:hover::after{
 .bimaristan-hero-flex {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 48px;
-  margin-top: 40px; /* Keep as is */
-  padding-top: 20px; /* Add this line to push ONLY the hero section down */
+  margin-bottom: 40px; /* Slightly reduced space below hero section */
+  margin-top: 32px;    /* Slightly reduced space above hero section */
+  padding-top: 16px;   /* Slightly reduced padding */
 }
 
 .bimaristan-hero-text-col {
@@ -835,7 +843,7 @@ nav ul li a:hover::after{
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px; /* Slightly lower the vertical gap between hero text elements */
 }
 
 .bimaristan-hero-img-col {
@@ -890,7 +898,7 @@ nav ul li a:hover::after{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 12px;
+  margin-top: 32px;   /* Increased from 12px to 32px for more space below hero text */
   margin-bottom: 12px;
   height: 40px;
   pointer-events: none;
