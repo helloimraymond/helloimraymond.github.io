@@ -495,6 +495,45 @@ nav ul li a:hover::after{
     margin: 0 auto;
 }
 
+.popup-image {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-image.active {
+  display: flex;
+}
+
+.popup-image img {
+  height: 90vh; /* Always set the height to 90% of the viewport */
+  width: auto;  /* Adjust the width automatically to maintain aspect ratio */
+  max-width: 100%; /* Prevent the image from exceeding the viewport width */
+  object-fit: contain; /* Ensure the image fits within the container without distortion */
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: block;
+  margin: 0 auto;
+}
+
+#close-portfolio-popup {
+  position: absolute;
+  top: 24px; /* Adjust the distance from the top */
+  right: 48px; /* Bring it closer to the center */
+  font-size: 40px; /* Make the "x" larger */
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add a subtle shadow */
+}
+
 @media (max-width: 768px){
     .popup-image img{
         width: 95%;
