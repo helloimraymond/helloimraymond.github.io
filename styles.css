@@ -988,3 +988,26 @@ nav ul li a:hover::after{
   }
 }
 
+/* Improved fix for short desktop screens: ensure typewriter text is fully visible */
+@media (max-height: 800px) and (min-width: 701px) {
+  .container2 {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 140px !important;      /* Increase top padding to push content below nav */
+    padding-bottom: 24px !important;
+    align-items: flex-start !important;
+    background-position: top center;
+    box-sizing: border-box;
+  }
+  .header-text {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+  }
+  #typewriter-text {
+    margin-top: 0 !important;
+    position: relative !important;
+    z-index: 10;
+    display: block !important;
+  }
+}
+
