@@ -972,3 +972,19 @@ nav ul li a:hover::after{
   }
 }
 
+/* Add this at the end of your CSS file */
+@media (max-height: 800px) {
+  #typewriter-text {
+    margin-top: 80px !important; /* Increase this value if needed to clear the nav bar */
+  }
+  .header-text {
+    margin-top: 20px !important; /* Move header text further down if needed */
+  }
+  .container2 {
+    align-items: flex-start !important; /* Allow header text to move down */
+    padding-bottom: 0 !important;      /* Remove forced spacing at the bottom */
+    height: auto !important;           /* Allow container to grow as needed */
+    min-height: 0 !important;
+  }
+}
+
