@@ -958,6 +958,17 @@ nav ul li a:hover::after{
   display: inline-block; /* Ensure it behaves like inline text */
 }
 
+/* Style the em dash to align properly with the typewriter text */
+#typewriter-dash {
+  font-size: 32px; /* Match the font size of the typewriter text */
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  position: relative; /* Allow precise positioning */
+  top: -8px; /* Raise the dash higher */
+  margin-right: 10px; /* Add spacing between the dash and the typewriter text */
+  display: inline-block; /* Ensure it behaves like inline text */
+}
+
 /* Adjust the typewriter text for smaller screens */
 @media (max-width: 768px) {
   #typewriter-text {
