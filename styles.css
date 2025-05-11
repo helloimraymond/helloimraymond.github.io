@@ -1120,3 +1120,108 @@ nav ul li a:hover::after{
   }
 }
 
+/* Adjust styles for mobile screens */
+@media (max-width: 768px) {
+  /* Center the work-list grid and ensure it fits within the screen */
+  .work-list {
+    grid-template-columns: 1fr; /* Make each work item take up the full width */
+    padding: 0 16px; /* Add padding to prevent content from touching the edges */
+  }
+
+  /* Center the work items */
+  .work {
+    margin: 0 auto; /* Center the work items horizontally */
+    width: 100%; /* Ensure the work items fit within the screen */
+  }
+
+  /* Ensure images inside work items are responsive */
+  .work img {
+    width: 100%; /* Make images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust the popup thumbnails for mobile */
+  .popup-thumbnails {
+    justify-content: center; /* Center the thumbnails */
+    gap: 4px; /* Reduce the gap between thumbnails */
+  }
+
+  .popup-thumbnails img {
+    height: 70px; /* Reduce the size of thumbnails for mobile */
+  }
+
+  /* Adjust the popup main image for mobile */
+  .popup-main-image img {
+    max-height: 70vh; /* Reduce the height of the main image */
+    width: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust the header text for mobile */
+  .header-text {
+    text-align: center; /* Center the header text */
+    padding: 16px; /* Add padding for better spacing */
+  }
+
+  /* Adjust the footer for mobile */
+  .footer {
+    text-align: center; /* Center the footer text */
+    padding: 20px; /* Add padding for better spacing */
+  }
+
+  /* Ensure the container2 background image is responsive */
+  .container2 {
+    height: auto; /* Allow the container to grow as needed */
+    padding: 16px; /* Add padding for better spacing */
+    background-size: cover; /* Ensure the background image scales properly */
+  }
+
+  /* Adjust the navigation menu for mobile */
+  nav ul {
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the navigation links */
+  }
+
+  nav ul li {
+    margin: 8px 0; /* Add spacing between navigation links */
+  }
+
+  /* Adjust the popup gallery for mobile */
+  .popup-gallery {
+    padding: 16px; /* Add padding to prevent content from touching the edges */
+  }
+
+  /* Center the typewriter text in the header */
+  #typewriter-text {
+    text-align: center; /* Center the text */
+    margin: 16px auto; /* Add margin to center it vertically */
+    width: 100%; /* Ensure it spans the full width */
+  }
+
+  /* Adjust margins for images/layers */
+  .work-list {
+    padding: 0 2%; /* Reduce the left/right padding to 2% */
+  }
+
+  .work {
+    margin: 0 auto; /* Center the work items horizontally */
+    width: 96%; /* Ensure the work items fit within the screen with 2% margins */
+  }
+}
+
+/* Ensure the typewriter text is always below the navbar on mobile screens */
+@media (max-width: 768px) {
+  #typewriter-text {
+    position: relative; /* Ensure it is positioned relative to the flow of the document */
+    margin-top: 40px; /* Add enough margin to push it below the navbar */
+    text-align: center; /* Center the text */
+    z-index: 1; /* Ensure it is above other elements */
+    width: 100%; /* Ensure it spans the full width */
+  }
+
+  /* Adjust the navbar to ensure proper spacing */
+  .container {
+    padding: 20px 4%; /* Reduce padding to make space for the typewriter text */
+  }
+}
+
