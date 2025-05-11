@@ -604,6 +604,35 @@ nav ul li a:hover::after{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow on hover */
 }
 
+/* Ensure the popup background always fills the entire screen */
+.popup-gallery,
+.popup-image {
+  position: fixed; /* Ensure it stays fixed to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure it appears above other elements */
+  display: none; /* Initially hidden */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  overflow: hidden; /* Prevent scrolling inside the popup */
+}
+
+.popup-gallery.active,
+.popup-image.active {
+  display: flex; /* Show the popup when active */
+  opacity: 1; /* Ensure visibility */
+}
+
+.popup-gallery.hidden,
+.popup-image.hidden {
+  opacity: 0; /* Fade out effect */
+  pointer-events: none; /* Prevent interaction during fade-out */
+}
+
 @media (max-width: 768px){
     .popup-image img{
         width: 95%;
@@ -1189,6 +1218,43 @@ nav ul li a:hover::after{
   /* Adjust the popup gallery for mobile */
   .popup-gallery {
     padding: 16px; /* Add padding to prevent content from touching the edges */
+    width: 100%; /* Ensure the popup gallery spans the full width */
+    height: auto; /* Allow the height to adjust dynamically */
+    max-height: 90vh; /* Prevent the popup from exceeding the viewport height */
+    overflow-y: auto; /* Add vertical scrolling if content overflows */
+  }
+
+  .popup-main-image img {
+    max-height: 60vh; /* Reduce the height of the main image for mobile */
+    width: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block;
+  }
+
+  .popup-thumbnails {
+    justify-content: center; /* Center the thumbnails */
+    gap: 8px; /* Add spacing between thumbnails */
+    padding: 8px; /* Add padding around thumbnails */
+    overflow-x: auto; /* Allow horizontal scrolling for thumbnails */
+  }
+
+  .popup-thumbnails img {
+    height: 60px; /* Reduce the size of thumbnails for mobile */
+    width: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    border-radius: 0; /* Keep thumbnails square or rectangular */
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .popup-thumbnails img:hover {
+    transform: scale(1.1); /* Slightly enlarge the thumbnail on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow on hover */
+  }
+
+  #close-portfolio-popup {
+    top: 16px; /* Adjust the distance from the top */
+    right: 16px; /* Adjust the distance from the right */
+    font-size: 36px; /* Reduce the size of the "x" button for mobile */
   }
 
   /* Center the typewriter text in the header */
