@@ -108,7 +108,7 @@
       </div>
       <div class="work">
         <img src="images/popfoss.png" class="fade-in">
-        <div class="layer" data-gallery="images/popfoss.png, images/popfoss-final.jpg">
+        <div class="layer" data-gallery="images/popfoss-final.jpg, images/popfoss-final.jpg">
           <h3>Popliteal Fossa: Vector Illustration</h3>
           <p>MEDICAL ILLUSTATION</p>
         </div>
@@ -162,7 +162,6 @@
   </section>
 
   <script>
-  // Function to handle opening the popup
   function openPopup(layer) {
     const popup = document.getElementById('portfolio-popup');
     const mainImage = document.getElementById('main-popup-image');
@@ -199,9 +198,9 @@
       thumbnailsContainer.innerHTML = '';
     }
 
-    // Show the popup
+    // Show the popup with fade-in effect
     popup.style.display = 'flex';
-    popup.classList.add('active');
+    setTimeout(() => popup.classList.add('active'), 10); // Add a slight delay to trigger the transition
   }
 
   // Attach click event listeners to all layers
@@ -214,7 +213,11 @@
     e.stopPropagation(); // Prevent any unintended behavior
     const popup = document.getElementById('portfolio-popup');
     popup.classList.remove('active');
-    popup.style.display = 'none'; // Ensure the popup is hidden
+    popup.classList.add('hidden'); // Add fade-out effect
+    setTimeout(() => {
+      popup.style.display = 'none'; // Hide the popup after the fade-out
+      popup.classList.remove('hidden'); // Reset the hidden class
+    }, 300); // Match the duration of the CSS transition
   });
 
   // Close the popup when clicking outside the content
@@ -222,7 +225,11 @@
     if (e.target === e.currentTarget) {
       const popup = document.getElementById('portfolio-popup');
       popup.classList.remove('active');
-      popup.style.display = 'none'; // Ensure the popup is hidden
+      popup.classList.add('hidden'); // Add fade-out effect
+      setTimeout(() => {
+        popup.style.display = 'none'; // Hide the popup after the fade-out
+        popup.classList.remove('hidden'); // Reset the hidden class
+      }, 300); // Match the duration of the CSS transition
     }
   });
 
@@ -234,4 +241,3 @@
 
 </body>
 </html>
-``` 

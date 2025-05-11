@@ -557,10 +557,18 @@ nav ul li a:hover::after{
   align-items: center;
   flex-direction: column;
   z-index: 1000;
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
 }
 
 .popup-gallery.active {
   display: flex;
+  opacity: 1; /* Fade in when active */
+}
+
+.popup-gallery.hidden {
+  opacity: 0; /* Fade out when hidden */
+  pointer-events: none; /* Prevent interaction during fade-out */
 }
 
 .popup-main-image {
