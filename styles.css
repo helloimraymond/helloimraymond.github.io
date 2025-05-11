@@ -592,7 +592,7 @@ nav ul li a:hover::after{
 }
 
 .popup-thumbnails img {
-  height: 100px; /* Increase the thumbnail height */
+  height: 90px; /* Increase the thumbnail height */
   width: auto; /* Maintain aspect ratio */
   cursor: pointer;
   border-radius: 0; /* Keep thumbnails square or rectangular */
