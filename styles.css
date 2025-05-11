@@ -534,6 +534,17 @@ nav ul li a:hover::after{
   margin: 0 auto;
 }
 
+/* Add zoom effect for popup images */
+.popup-main-image img {
+  cursor: zoom-in; /* Change cursor to indicate zoom functionality */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.popup-main-image img.zoomed {
+  cursor: zoom-out; /* Change cursor to indicate zoom-out functionality */
+  transform: scale(2); /* Zoom in by scaling the image */
+}
+
 #close-portfolio-popup {
   position: absolute;
   top: 24px; /* Adjust the distance from the top */

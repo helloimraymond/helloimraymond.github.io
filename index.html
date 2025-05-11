@@ -240,6 +240,18 @@
   });
 </script>
 
+<script>
+  // Add zoom functionality to the popup main image
+  const mainImage = document.getElementById('main-popup-image');
+
+  mainImage.addEventListener('click', () => {
+    if (mainImage.classList.contains('zoomed')) {
+      mainImage.classList.remove('zoomed'); // Zoom out
+    } else {
+      mainImage.classList.add('zoomed'); // Zoom in
+    }
+  });
+</script>
+
 </body>
 </html>
-``` 
