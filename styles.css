@@ -431,13 +431,13 @@ nav ul li a:hover::after{
 .case-study .tri-column .boxed-text{
     border: solid 2px #222;
     border-radius: 0;
-    padding: 8px 16px 0px 16px; /* 8px top, 16px left/right, 6px bottom */
+    padding: 8px 16px 10px 16px;/* 8px top/bottom, 16px left/right — equal on all sides visually */
     font-family: Outfit-Regular;
-    font-size: 20px;
+    font-size: 18px;
     background: #fafafa;
     color: #222;
     margin: 0;
-    min-height: 48px;
+    min-height: 40px;
     display: inline-block;
     box-sizing: border-box;
     -webkit-box-decoration-break: clone;
@@ -450,7 +450,7 @@ nav ul li a:hover::after{
 /* Bold the label before the colon */
 .case-study .tri-column .boxed-text span:first-child {
     font-family: Outfit-Bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /*---  popups  ---*/
