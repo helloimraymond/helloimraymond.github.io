@@ -927,3 +927,48 @@ nav ul li a:hover::after{
   }
 }
 
+/* --- Add this at the end of your CSS file --- */
+@media (max-width: 700px) {
+  /* Show typewriter text below navbar */
+  #typewriter-text {
+    display: block !important;
+    position: static;
+    margin: 24px 0 0 0;
+    text-align: left;      /* Keep left justified */
+    width: 100%;
+    z-index: 10;
+  }
+
+  /* Make sure the header text is above the background image and left justified */
+  .header-text {
+    position: relative;
+    z-index: 3;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: left;      /* Keep left justified */
+    background: none !important;
+    padding: 8px 0;
+  }
+
+  /* Adjust logo for mobile */
+  .logo {
+    width: 180px;
+  }
+
+  /* Keep nav bar the same height as before */
+  .container {
+    padding: 35px 4%;     /* Match original desktop padding */
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
