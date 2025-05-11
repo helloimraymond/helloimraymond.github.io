@@ -947,11 +947,28 @@ nav ul li a:hover::after{
   }
 }
 
+/* Ensure the typewriter text stays on the same line */
 #typewriter-text {
-    font-size: 32px;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-    position: relative;
+  font-size: 32px; /* Default font size for larger screens */
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent wrapping onto the next line */
+  overflow: hidden; /* Prevent overflow if the text is too long */
+  text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+  display: inline-block; /* Ensure it behaves like inline text */
+}
+
+/* Adjust the typewriter text for smaller screens */
+@media (max-width: 768px) {
+  #typewriter-text {
+    font-size: 24px; /* Reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #typewriter-text {
+    font-size: 20px; /* Further reduce font size for very small screens */
+  }
 }
 
 #typewriter-text::after {
@@ -1272,6 +1289,36 @@ nav ul li a:hover::after{
   .work {
     margin: 0 auto; /* Center the work items horizontally */
     width: 96%; /* Ensure the work items fit within the screen with 2% margins */
+  }
+
+  /* Adjust overlay text for mobile screens */
+  .layer h3 {
+    font-size: 16px; /* Reduce the font size of the title */
+    line-height: 1.2; /* Adjust line height for better spacing */
+  }
+
+  .layer p {
+    font-size: 12px; /* Reduce the font size of the description */
+    line-height: 1.4; /* Adjust line height for better readability */
+  }
+
+  .layer {
+    padding: 8px; /* Add padding to ensure text doesn't touch the edges */
+  }
+
+  /* Adjust overlay text for the top three images on mobile screens */
+  .layer-case h3 {
+    font-size: 16px; /* Reduce the font size of the title */
+    line-height: 1.2; /* Adjust line height for better spacing */
+  }
+
+  .layer-case p {
+    font-size: 12px; /* Reduce the font size of the description */
+    line-height: 1.4; /* Adjust line height for better readability */
+  }
+
+  .layer-case {
+    padding: 8px; /* Add padding to ensure text doesn't touch the edges */
   }
 }
 
