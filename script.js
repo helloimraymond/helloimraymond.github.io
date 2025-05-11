@@ -196,4 +196,52 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         window.addEventListener('scroll', hideArrowOnScroll, { once: true });
     }
+
+    // Portfolio popup
+    document.querySelectorAll('.layer').forEach(layer => {
+        layer.onclick = () => {
+            const popup = document.getElementById('portfolio-popup');
+            const mainImage = document.getElementById('main-popup-image');
+            const thumbnailsContainer = document.getElementById('popup-thumbnails');
+
+            // Get the images for the gallery
+            const galleryImages = layer.getAttribute('data-gallery').split(',');
+
+            // Set the main image to the first image in the gallery
+            mainImage.src = galleryImages[0];
+
+            // Clear existing thumbnails
+            thumbnailsContainer.innerHTML = '';
+
+            // Add thumbnails to the popup
+            galleryImages.forEach(imageSrc => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = imageSrc.trim();
+                thumbnail.alt = 'Thumbnail';
+                thumbnail.onclick = () => {
+                    mainImage.src = imageSrc.trim(); // Update the main image when a thumbnail is clicked
+                };
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+
+            // Show the popup
+            popup.style.display = 'flex';
+            void popup.offsetWidth; // Force reflow
+            popup.classList.add('active');
+        };
+    });
+
+    // Close the popup
+    document.getElementById('close-portfolio-popup').onclick = () => {
+        const popup = document.getElementById('portfolio-popup');
+        popup.classList.remove('active');
+    };
+
+    // Hide popup after fade-out transition
+    const portfolioPopup = document.getElementById('portfolio-popup');
+    portfolioPopup.addEventListener('transitionend', function () {
+        if (!portfolioPopup.classList.contains('active')) {
+            portfolioPopup.style.display = 'none';
+        }
+    });
 });

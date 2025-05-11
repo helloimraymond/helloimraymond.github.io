@@ -288,7 +288,7 @@ nav ul li a:hover::after{
 .layer p{
     font-family: Outfit-Light;
     font-size: 16px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     color: #fff;
 }
 
@@ -523,15 +523,77 @@ nav ul li a:hover::after{
   margin: 0 auto;
 }
 
+.popup-main-image img {
+  max-height: 80vh; /* Reduce the height to 80% of the viewport */
+  width: auto;      /* Adjust the width automatically to maintain aspect ratio */
+  max-width: 100%;  /* Prevent the image from exceeding the viewport width */
+  object-fit: contain; /* Ensure the image fits within the container without distortion */
+  border-radius: 8px;  /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
+  display: block;
+  margin: 0 auto;
+}
+
 #close-portfolio-popup {
   position: absolute;
   top: 24px; /* Adjust the distance from the top */
-  right: 48px; /* Bring it closer to the center */
-  font-size: 40px; /* Make the "x" larger */
+  right: 45px; /* Move the "x" closer to the center */
+  font-size: 50px; /* Keep the "x" large */
   color: #fff;
   cursor: pointer;
   z-index: 1001;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add a subtle shadow */
+}
+
+.popup-gallery {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.popup-gallery.active {
+  display: flex;
+}
+
+.popup-main-image {
+  max-height: 80vh;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.popup-main-image img {
+  max-height: 80vh;
+  width: auto;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.popup-thumbnails {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px;
+}
+
+.popup-thumbnails img {
+  height: 100px; /* Increase the thumbnail height */
+  width: auto; /* Maintain aspect ratio */
+  cursor: pointer;
+  border-radius: 0; /* Keep thumbnails square or rectangular */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.popup-thumbnails img:hover {
+  transform: scale(1.1); /* Slightly enlarge the thumbnail on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow on hover */
 }
 
 @media (max-width: 768px){

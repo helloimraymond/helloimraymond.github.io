@@ -87,14 +87,14 @@
       </div>
       <div class="work">
         <img src="images/rat.png" class="fade-in">
-        <div class="layer" data-popup="images/rat-final.jpg">
+        <div class="layer" data-gallery="images/rat-final.jpg, images/rat-final2.png, images/rat-final3.png">
           <h3>Ratticus Norvegicus Skull</h3>
           <p>3D MODELLING</p>
         </div>
       </div>
       <div class="work">
         <img src="images/anglerfish.png" class="fade-in">
-        <div class="layer" data-popup="images/anglerfish-final.jpeg">
+        <div class="layer" data-gallery="images/anglerfish-final.jpeg, images/anglerfish-final2.png, images/anglerfish-final3.png, images/anglerfish-final4.png, images/anglerfish-final5.png">
           <h3>Anglerfish: Angels of the Deep</h3>
           <p>3D MODELLING</p>
         </div>
@@ -108,7 +108,7 @@
       </div>
       <div class="work">
         <img src="images/popfoss.png" class="fade-in">
-        <div class="layer" data-popup="images/popfoss-final.jpg">
+        <div class="layer" data-gallery="images/popfoss.png, images/popfoss-final.jpg">
           <h3>Popliteal Fossa: Vector Illustration</h3>
           <p>MEDICAL ILLUSTATION</p>
         </div>
@@ -129,9 +129,14 @@
       </div>
     </div>
     
-    <div class="popup-image" id="portfolio-popup">
+    <div class="popup-gallery" id="portfolio-popup">
       <span id="close-portfolio-popup">&times;</span>
-      <img src="" alt="Popup Image">
+      <div class="popup-main-image">
+        <img src="" alt="Popup Image" id="main-popup-image">
+      </div>
+      <div class="popup-thumbnails" id="popup-thumbnails">
+        <!-- Thumbnails will be dynamically added here -->
+      </div>
     </div>
 
   </div>
@@ -157,40 +162,76 @@
   </section>
 
   <script>
-    document.querySelectorAll('.layer').forEach(layer => {
-        layer.onclick = () => {
-            const popupImageSrc = layer.getAttribute('data-popup');
-            const popup = document.getElementById('portfolio-popup');
-            const popupImage = popup.querySelector('img');
-            popupImage.src = popupImageSrc;
-            popup.style.display = 'flex'; // Show first
-            // Force reflow to enable transition
-            void popup.offsetWidth;
-            popup.classList.add('active');
-        };
-    });
-
-    document.getElementById('close-portfolio-popup').onclick = () => {
-        const popup = document.getElementById('portfolio-popup');
-        popup.classList.remove('active');
-        // display: none will be handled by transitionend
-    };
-
-    document.getElementById('portfolio-popup').onclick = (e) => {
-        if (e.target === e.currentTarget) {
-            e.currentTarget.classList.remove('active');
-            // display: none will be handled by transitionend
-        }
-    };
-
-    // Hide popup after fade-out transition
+  // Function to handle opening the popup
+  function openPopup(layer) {
     const popup = document.getElementById('portfolio-popup');
-    popup.addEventListener('transitionend', function() {
-        if (!popup.classList.contains('active')) {
-            popup.style.display = 'none';
-        }
-    });
-  </script>
+    const mainImage = document.getElementById('main-popup-image');
+    const thumbnailsContainer = document.getElementById('popup-thumbnails');
+
+    // Get attributes for gallery or single popup
+    const galleryImages = layer.getAttribute('data-gallery');
+    const popupImageSrc = layer.getAttribute('data-popup');
+
+    // Clear existing thumbnails
+    thumbnailsContainer.innerHTML = '';
+
+    if (galleryImages) {
+      // Handle gallery popup
+      const images = galleryImages.split(',').map(img => img.trim());
+      mainImage.src = images[0]; // Set the first image as the main image
+
+      // Add thumbnails
+      images.forEach(imageSrc => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = imageSrc;
+        thumbnail.alt = 'Thumbnail';
+        thumbnail.onclick = (e) => {
+          e.stopPropagation(); // Prevent the popup from closing when clicking a thumbnail
+          mainImage.src = imageSrc; // Update the main image when a thumbnail is clicked
+        };
+        thumbnailsContainer.appendChild(thumbnail);
+      });
+    } else if (popupImageSrc) {
+      // Handle single-image popup
+      mainImage.src = popupImageSrc;
+
+      // Hide the thumbnails container for single-image popups
+      thumbnailsContainer.innerHTML = '';
+    }
+
+    // Show the popup
+    popup.style.display = 'flex';
+    popup.classList.add('active');
+  }
+
+  // Attach click event listeners to all layers
+  document.querySelectorAll('.layer').forEach(layer => {
+    layer.addEventListener('click', () => openPopup(layer));
+  });
+
+  // Close the popup when clicking the "x"
+  document.getElementById('close-portfolio-popup').addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent any unintended behavior
+    const popup = document.getElementById('portfolio-popup');
+    popup.classList.remove('active');
+    popup.style.display = 'none'; // Ensure the popup is hidden
+  });
+
+  // Close the popup when clicking outside the content
+  document.getElementById('portfolio-popup').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      const popup = document.getElementById('portfolio-popup');
+      popup.classList.remove('active');
+      popup.style.display = 'none'; // Ensure the popup is hidden
+    }
+  });
+
+  // Prevent clicks inside the popup content from closing the popup
+  document.querySelector('.popup-main-image').addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+</script>
 
 </body>
 </html>
+``` 
