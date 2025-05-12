@@ -694,9 +694,6 @@ nav ul li a:hover::after{
     font-size: 30px;
 }
 
-    margin-bottom: 5px;
-}
-
 .column-photos{
     position: relative;
     overflow: hidden;
