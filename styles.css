@@ -211,6 +211,7 @@ nav ul li a:hover::after{
 .container3{
     padding: 40px 4%;
     color: #000;
+    margin-top:-20px;
 }
 
 .container3 h1{
@@ -223,6 +224,11 @@ nav ul li a:hover::after{
     font-family: Outfit-Bold;
 }
 
+/* Reduce the space below "Portfolio." */
+.container3 h1.sub-title {
+  margin-bottom: 30px; /* Reduce the bottom margin of the "Portfolio." heading */
+}
+
 #portfolio{
     padding: 10px 0;
 
@@ -232,7 +238,7 @@ nav ul li a:hover::after{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-gap: 8px;
-    margin-top:40px;
+    margin-top:20px; /* Reduce the top margin of the work list */
 }
 
 .work{
@@ -1338,6 +1344,12 @@ nav ul li a:hover::after{
 
   .layer-case {
     padding: 8px; /* Add padding to ensure text doesn't touch the edges */
+  }
+
+  /* Adjust "Portfolio." alignment for mobile screens */
+  .container3 h1.sub-title {
+    margin-left: 4%; /* Add margin to move it away from the left edge */
+    text-align: left; /* Ensure the text remains left-aligned */
   }
 }
 
