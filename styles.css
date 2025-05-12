@@ -1369,3 +1369,29 @@ nav ul li a:hover::after{
   }
 }
 
+/* Raise the header text for mobile screens */
+@media (max-width: 768px) and (max-height: 800px) {
+  .container2 {
+    align-items: flex-start; /* Move the header text closer to the top */
+    padding-top: 0px; /* Add padding to position the text higher */
+    height: auto; /* Allow the container to adjust its height dynamically */
+  }
+
+  .header-text {
+    margin-top: 0; /* Remove any extra margin above the header text */
+    padding: 0 16px; /* Add some horizontal padding for better spacing */
+    text-align: center; /* Center the text for mobile screens */
+  }
+
+  #typewriter-text {
+    margin-top: 16px; /* Add some space below the navbar */
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .header-text h1 {
+    font-size: 35px; /* Reduce the font size of the main header text */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    margin-bottom: 40px;
+  }
+}
+
