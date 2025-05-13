@@ -7,7 +7,10 @@
   <title>Portfolio</title>
   <link rel="icon" type="image/png" href="images/rz.png">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <script>
+  // Inline JavaScript logic here
+  </script>
+  <script src="script.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
 
   <style>
@@ -61,30 +64,36 @@
     <div class="work-list">
       <div class="work">
         <img src="images/bimaristan.png" class="fade-in">
-        <a href="bimaristan.html">
-          <div class="layer-case">
-            <h3>Bimaristans: Hospitals of Yore</h3>
-            <p>INFOGRAPHIC DESIGN, 3D MODELLING</p>
+        <div class="layer-case">
+          <h3>Bimaristans: Hospitals of Yore</h3>
+          <p>INFOGRAPHIC DESIGN, 3D MODELLING</p>
+          <div class="buttons">
+            <button class="gallery-btn" data-gallery="images/bimaristan.png">GALLERY</button>
+            <a href="bimaristan.html" class="case-study-btn">CASE STUDY</a>
           </div>
-        </a>
+        </div>
       </div>
       <div class="work">
         <img src="images/dermalert.png" class="fade-in">
-        <a href="dermalert.html">
-          <div class="layer-case">
-            <h3>DermAlert: Skincare Product Repository</h3>
-            <p>EXPERIENCE DESIGN, INTERACTIVE</p>
+        <div class="layer-case">
+          <h3>DermAlert: Skincare Product Repository</h3>
+          <p>EXPERIENCE DESIGN, INTERACTIVE</p>
+          <div class="buttons">
+            <button class="gallery-btn" data-gallery="images/dermalert.png">GALLERY</button>
+            <a href="dermalert.html" class="case-study-btn">CASE STUDY</a>
           </div>
-        </a>
+        </div>
       </div>
       <div class="work">
         <img src="images/sperm.png" class="fade-in">
-        <a href="sperm.html">
-          <div class="layer-case">
-            <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
-            <p>DATA VISUALIZATION</p>
+        <div class="layer-case">
+          <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
+          <p>DATA VISUALIZATION</p>
+          <div class="buttons">
+            <button class="gallery-btn" data-gallery="images/sperm-final.png">GALLERY</button>
+            <a href="sperm.html" class="case-study-btn">CASE STUDY</a>
           </div>
-        </a>
+        </div>
       </div>
       <div class="work">
         <img src="images/rat.png" class="fade-in">
@@ -250,6 +259,62 @@
     } else {
       mainImage.classList.add('zoomed'); // Zoom in
     }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select necessary elements
+    const galleryButtons = document.querySelectorAll('.gallery-btn');
+    const popupGallery = document.getElementById('portfolio-popup');
+    const mainImage = document.getElementById('main-popup-image');
+    const thumbnailsContainer = document.getElementById('popup-thumbnails');
+    const closePopupButton = document.getElementById('close-portfolio-popup');
+
+    // Function to open the gallery popup
+    galleryButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Get the images from the data-gallery attribute
+        const images = button.getAttribute('data-gallery').split(',').map(img => img.trim());
+
+        // Set the first image as the main image
+        mainImage.src = images[0];
+
+        // Clear existing thumbnails
+        thumbnailsContainer.innerHTML = '';
+
+        // Add thumbnails
+        images.forEach(imageSrc => {
+          const thumbnail = document.createElement('img');
+          thumbnail.src = imageSrc;
+          thumbnail.alt = 'Thumbnail';
+          thumbnail.addEventListener('click', () => {
+            mainImage.src = imageSrc; // Update the main image when a thumbnail is clicked
+          });
+          thumbnailsContainer.appendChild(thumbnail);
+        });
+
+        // Show the popup
+        popupGallery.style.display = 'flex';
+        popupGallery.classList.add('active');
+      });
+    });
+
+    // Function to close the gallery popup
+    closePopupButton.addEventListener('click', () => {
+      popupGallery.style.display = 'none';
+      popupGallery.classList.remove('active');
+    });
+
+    // Close the popup when clicking outside the content
+    popupGallery.addEventListener('click', (e) => {
+      if (e.target === popupGallery) {
+        popupGallery.style.display = 'none';
+        popupGallery.classList.remove('active');
+      }
+    });
   });
 </script>
 

@@ -330,6 +330,34 @@ nav ul li a:hover::after{
     color: #fff;
 }
 
+/* Style for the buttons in the overlay */
+.layer-case .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.layer-case .buttons button,
+.layer-case .buttons a {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-family: "Outfit-Bold", sans-serif;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 0;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.layer-case .buttons button:hover,
+.layer-case .buttons a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 .work:hover img{
     transform: scale(1.2);
 
@@ -530,14 +558,10 @@ nav ul li a:hover::after{
 }
 
 .popup-main-image img {
-  max-height: 80vh; /* Reduce the height to 80% of the viewport */
-  width: auto;      /* Adjust the width automatically to maintain aspect ratio */
-  max-width: 100%;  /* Prevent the image from exceeding the viewport width */
-  object-fit: contain; /* Ensure the image fits within the container without distortion */
-  border-radius: 8px;  /* Optional: Add rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a shadow for better visibility */
-  display: block;
-  margin: 0 auto;
+  max-height: 70vh; /* Set the maximum height to 70% of the viewport height */
+  width: auto; /* Maintain aspect ratio */
+  border-radius: 0; /* Ensure no rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
 }
 
 /* Add zoom effect for popup images */
@@ -594,13 +618,6 @@ nav ul li a:hover::after{
   margin-bottom: 16px;
 }
 
-.popup-main-image img {
-  max-height: 80vh;
-  width: auto;
-  border-radius: 0px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
 .popup-thumbnails {
   display: flex;
   gap: 8px;
@@ -609,16 +626,15 @@ nav ul li a:hover::after{
 }
 
 .popup-thumbnails img {
-  height: 90px; /* Increase the thumbnail height */
+  height: 80px; /* Set consistent thumbnail height */
   width: auto; /* Maintain aspect ratio */
   cursor: pointer;
-  border-radius: 0; /* Keep thumbnails square or rectangular */
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 0; /* Ensure no rounded corners */
+  transition: transform 0.2s ease;
 }
 
 .popup-thumbnails img:hover {
   transform: scale(1.1); /* Slightly enlarge the thumbnail on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow on hover */
 }
 
 /* Ensure the popup background always fills the entire screen */
