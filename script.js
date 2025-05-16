@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const phrases = [
         "HELLO WORLD!",
         "BONJOUR MONDE!",
-        "¡HOLA MUNDO!",
+        /*"¡HOLA MUNDO!",
         '<span class="typewriter-chinese">世界, 你好!</span>',
         "MARHABA BIL-3ĀLAM!",
         "OLÁ MUNDO!",
-        "M'ACH RHAESHESER!"
+        "M'ACH RHAESHESER!"*/
     ];
     const typeElem = document.getElementById("typewriter-text");
     let phraseIndex = 0;
