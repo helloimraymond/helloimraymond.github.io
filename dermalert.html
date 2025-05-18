@@ -9,20 +9,15 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-        body {
-            animation: fadeInAnimation ease 1s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        }
-        @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
+    body {
+      animation: fadeInAnimation ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeInAnimation {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -41,32 +36,67 @@
           <span></span>
         </div>
       </nav>
-    </div> 
+    </div>
   </div>
 
-  <!-----case study----->
   <div class="case-study">
-    <h3 class="fade-in visible">DermAlert: <span>Skincare Product Repository</span></h3>
-    <div class="tri-column fade-in visible">
-        <span class="boxed-text"><span>Audience:</span> Sufferers of eczema, etc.</span>
-        <span class="boxed-text"><span>Tools:</span> Figma, Miro, Excel</span>
-        <span class="boxed-text"><span>Role:</span> Solo researcher & designer</span>
+    <!-- HERO FLEX: image and intro text side by side -->
+    <div class="bimaristan-hero-flex">
+      <!-- TEXT COLUMN FIRST -->
+      <div class="bimaristan-hero-text-col">
+        <h3 class="fade-in visible">DermAlert: <span>Skincare Product Repository</span></h3>
+        <div class="tri-column fade-in visible">
+          <span class="boxed-text"><span>Audience:</span> Sufferers of eczema, etc.</span>
+          <span class="boxed-text"><span>Tools:</span> Figma, Miro, Excel</span>
+          <span class="boxed-text"><span>Role:</span> Solo researcher & designer</span>
+        </div>
+        <p class="fade-in visible">DermAlert is a personalized web-based repository that helps sufferers of skin sensitivities easily identify, filter out, and avoid their allergens. Key features of the tool include:
+          <ul>
+            <li>Search result filters will factor in ingredients that appear in different names on product lists.</li>
+            <li>Users can automatically sort out what ingredients to filter out by uploading their patch test results.</li>
+            <li>DermAlert will utilize a community-based model, allowing users to submit their own pages.</li>
+          </ul>
+        </p>
+        <!-- Place the arrow here if you want -->
+        <div class="scroll-down-arrow">
+          <span></span>
+        </div>
       </div>
-    <p class="fade-in visible">DermAlert is a personalized web-based repository that helps sufferers of skin sensitivities easily identify, filter out, and avoid their allergens.</p>
-    <a href="images/dermalert.png" class="fade-in visible"><img class="case-study-image" src="images/dermalert.png"></a>
-    <br/><br/>
-    <div class="tri-column2 fade-in">
-      <p><span>Problem<span>.</span><br/></span> Individuals with skin sensitivities (eczema, rosacea, etc.) often face challenges in managing their condition after undergoing patch tests, as they receive minimal support to help them effectively avoid allergens/irritants in everyday skincare products.</p>
-      <p><span>Solution<span>.</span><br/></span> DermAlert is a personalized web-based repository that helps sufferers of skin sensitivities easily identify and avoid allergens in skincare product ingredients by offering tailored search results based on their unique sensitivities and patch test findings.</p>
-      <p><span>Impact<span>.</span><br/></span> With this personalized tool, I hope to empower individuals to make informed skincare choices, reducing reactions and improving skin health. I also wish to receive input from experts to make DermAlert a resource dermatologists feel comfortable recommending to patients.</p>
+      <!-- IMAGE COLUMN SECOND -->
+      <div class="bimaristan-hero-img-col">
+        <img class="case-study-image" src="images/dermalert.png" alt="DermAlert Screenshot" style="cursor: pointer;" />
+      </div>
     </div>
 
-    <h4 class="fade-in">User Story<span>.</span></h4>
-    <img class="case-study-image fade-in" src="images/dermalert.png">
+    <!-- EVERYTHING BELOW IS STACKED VERTICALLY AS BEFORE -->
 
-    <h4 class="fade-in">Process<span>.</span></h4>
+    <!--<div class="tri-column2 fade-in">
+      <p>
+        <span>Problem<span class="green-dot">.</span></span><br/>
+        Individuals with skin sensitivities (eczema, rosacea, etc.) often face challenges in managing their condition after undergoing patch tests, as they receive minimal support to help them effectively avoid allergens/irritants in everyday skincare products.
+      </p>
+      <p>
+        <span>Solution<span class="green-dot">.</span></span><br/>
+        DermAlert is a personalized web-based repository that helps sufferers of skin sensitivities easily identify and avoid allergens in skincare product ingredients by offering tailored search results based on their unique sensitivities and patch test findings.
+      </p>
+      <p>
+        <span>Impact<span class="green-dot">.</span></span><br/>
+        With this personalized tool, I hope to empower individuals to make informed skincare choices, reducing reactions and improving skin health. I also wish to receive input from experts to make DermAlert a resource dermatologists feel comfortable recommending to patients.
+      </p>
+    </div>>-->
 
     <h4 class="fade-in">Problem<span>.</span></h4>
+    <!-- Add your process images and text here as needed -->
+    <p>Individuals with skin sensitivities often have problems effectively avoiding allergens and irritants in everyday skincare products, with many receiving insufficient support from their dermatologists following their patch tests. Current platforms do not adequately address the challenges patients face. After the research/empathize phase, I was able to break down the problem into three common issues users had to deal with:</p>
+    <ul>
+      <li>The names of allergens on patch tests rarely match their names on ingredient lists.</li>
+      <li>Current platforms require users to manually input ingredients to filter.</li>
+      <li>Other platforms don’t have a comprehensive inventory of products,  focusing only on cosmetics.</li>
+    </ul>
+
+
+    <h4 class="fade-in">Problem<span>.</span></h4>
+    <!-- Add more content as needed -->
   </div>
 
   <section class="footer fade-in">

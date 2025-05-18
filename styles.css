@@ -519,7 +519,7 @@ nav ul li a:hover::after{
 }
 
 #bimaristan-popup img,
-#sperm-popup img {
+#sperm-popup img, {
     max-height: 85vh !important;
     max-width: 90vw !important;
     width: auto !important;
@@ -703,6 +703,7 @@ nav ul li a:hover::after{
     column-count: 3;
     margin-right: 4%;
     margin-bottom: 10px;
+    column-gap: 50px;
 }
 
 .case-study .tri-column2 p{
@@ -714,6 +715,7 @@ nav ul li a:hover::after{
 .case-study .tri-column2 p span{
     font-family: Outfit-Bold;
     font-size: 30px;
+    margin-bottom: 2em; /* Adjust as needed for more/less space */
 }
 
 .column-photos{
@@ -1094,7 +1096,7 @@ nav ul li a:hover::after{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;   /* Increased from 12px to 32px for more space below hero text */
+  margin-top: 32px;
   margin-bottom: 12px;
   height: 40px;
   pointer-events: none;
@@ -1103,11 +1105,11 @@ nav ul li a:hover::after{
 
 .scroll-down-arrow span {
   display: block;
-  width: 28px;         /* 10% smaller than 32px */
-  height: 28px;        /* 10% smaller than 32px */
+  width: 28px;
+  height: 28px;
   border-bottom: 4px solid #222;
   border-right: 4px solid #222;
-  transform: rotate(45deg) translateY(-20px); /* Move up by 20px */
+  transform: rotate(45deg) translateY(-20px);
   animation: bounce-arrow 1.2s infinite;
   opacity: 0.7;
 }
@@ -1118,7 +1120,7 @@ nav ul li a:hover::after{
     opacity: 0.7;
   }
   50% {
-    transform: translateY(-4px) rotate(45deg); /* 16px lower than -20px */
+    transform: translateY(-4px) rotate(45deg);
     opacity: 1;
   }
 }
@@ -1426,5 +1428,30 @@ nav ul li a:hover::after{
     line-height: 1.2; /* Adjust line height for better spacing */
     margin-bottom: 40px;
   }
+}
+
+.case-study ul li {
+    font-family: 'Outfit', 'Outfit-Regular', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.green-dot {
+    color: #00C47C; /* Use the same green as "Raymond" */
+}
+
+/* Increase space after each item in tri-column2 */
+.case-study .tri-column2 p > span {
+    display: inline-block;
+    margin-bottom: 0.4em; /* Increase this value for more space */
+}
+
+.case-study ul {
+    margin-left: 2em; /* Adjust the value as needed for more or less indentation */
+}
+
+.case-study p + ul {
+    margin-top: 0.2em; /* Reduce this value for less space */
 }
 
