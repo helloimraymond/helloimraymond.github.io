@@ -738,14 +738,6 @@
   transition: color 0.2s, background 0.2s, padding-left 0.2s;
 }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a:focus {
-  color: #00C47C !important;
-  background: #e6f9f2;
-  padding-left: 20px !important;
-  border-radius: 6px;
-}
-
 /* Hamburger styles */
 .hamburger {
   display: none;
@@ -821,6 +813,20 @@
 .image-row + blockquote,
 .image-row + .section-title {
   margin-top: 2em !important;
+}
+
+@media (max-width: 700px) {
+  /* Add left padding to boxed quotes */
+  blockquote.research-quote {
+    padding-left: 1.2em !important;
+    box-sizing: border-box;
+  }
+
+  /* Fix ordered list numbers in REFERENCES section */
+  .section#references ol {
+    padding-left: 2.2em !important;   /* Move numbers to the right */
+    margin-left: 0 !important;
+  }
 }
   </style>
 </head>
