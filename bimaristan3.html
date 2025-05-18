@@ -476,6 +476,17 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
       }
+      /* Add left padding to boxed quotes */
+  blockquote.research-quote {
+    padding-left: 1.2em !important;
+    box-sizing: border-box;
+  }
+
+  /* Fix ordered list numbers in REFERENCES section */
+  .section#references ol {
+    padding-left: 2.2em !important;   /* Move numbers to the right */
+    margin-left: 0 !important;
+  }
     }
     @media (max-width: 1100px) {
       .case-layout {
