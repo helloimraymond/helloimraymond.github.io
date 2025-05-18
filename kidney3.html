@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DermAlert Case Study</title>
+  <title>Kidney Case Study</title>
   <link rel="shortcut icon" type="image/png" href="/images/rz.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
@@ -28,12 +28,12 @@
 }
 
 @font-face {
-  font-family: Outfit-Regular;
+  font-family: Outfit;
   src: url(fonts/Outfit-Regular.ttf);
 }
 
 @font-face {
-  font-family: Outfit;
+  font-family: Outfit-Regular;
   src: url(fonts/Outfit-Regular.ttf);
 }
 
@@ -449,35 +449,44 @@
       margin-bottom: 0.7em;
     }
     @media (max-width: 700px) {
-      .section {
-        padding-left: 4vw !important;
-        padding-right: 4vw !important;
+      .main-content {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
       }
-      .image-row {
-        flex-direction: column;
-        gap: 6px;
-        align-items: stretch;
-        max-width: 100%;
-        width: 100%;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+      .section {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+        box-sizing: border-box;
+      }
+      .section > *,
+      .section .image-row,
+      .section .image-row figure,
+      .section .image-row img {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
-      .image-row figure {
-        max-width: 100%;
-        width: 100%;
-      }
-      .image-row img {
-        max-width: 100%;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      blockquote.research-quote {
-        margin-left: 0.5em !important;  /* Move blockquote right */
-        margin-right: 0.5em !important;
-      }
+      /* Add left padding to boxed quotes */
+  blockquote.research-quote {
+    padding-left: 1.2em !important;
+    box-sizing: border-box;
+  }
+
+  /* Fix ordered list numbers in REFERENCES section */
+  .section#references ol {
+    padding-left: 2.2em !important;   /* Move numbers to the right */
+    margin-left: 0 !important;
+  }
     }
     @media (max-width: 1100px) {
       .case-layout {
@@ -745,14 +754,6 @@
   transition: color 0.2s, background 0.2s, padding-left 0.2s;
 }
 
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a:focus {
-  color: #00C47C !important;
-  background: #e6f9f2;
-  padding-left: 20px !important;
-  border-radius: 6px;
-}
-
 /* Hamburger styles */
 .hamburger {
   display: none;
@@ -816,19 +817,6 @@
     box-shadow: none !important;
   }
 }
-
-/* Make space below image rows much larger and always present */
-.image-row {
-  margin-bottom: 1.5em !important;
-}
-
-/* Add extra space above text, lists, or blockquotes that follow an image row */
-.image-row + p,
-.image-row + ul,
-.image-row + blockquote,
-.image-row + .section-title {
-  margin-top: 2em !important;
-}
   </style>
 </head>
 <body>
@@ -850,10 +838,10 @@
     </div>
   </div>
   <section class="hero-section">
-    <img src="images/bimaristan.png" alt="Bimaristans Hero" class="hero-bg" />
+    <img src="images/kidney-final3.png" alt="Kidney Hero" class="hero-bg" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Bimaristans: Hospitals of Yore</h1>
+      <h1 class="hero-title">Kidney Section: Show Me the Unseeable</h1>
       <div class="hero-subtitle">A didactive infographic about the history of ancient Islamic hospitals</div>
     </div>
   </section>
@@ -886,7 +874,7 @@
 
         <p>This infographic gives readers a glimpse into the history of bimaristans, early Islamic hospitals that revolutionized medicine and healthcare. At the heart of the poster is a cutaway view of the oldest standing bimaristan in the world, Bimaristan Nur Al-Din.</p>
         <figure>
-            <img src="images/bimaristan.png" alt="Description 3">
+            <img src="images/kidney-final.jpg" alt="Description 3">
         </figure>
 
         <div class="section-title" id="problem">Problem</div>
