@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DermAlert Case Study</title>
+  <link rel="shortcut icon" type="image/png" href="/images/rz.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+    @font-face {
+  font-family: Outfit-Bold;
+  src: url(fonts/Outfit-Bold.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Regular;
+  src: url(fonts/Outfit-Regular.ttf);
+}
+
+@font-face {
+  font-family: Outfit;
+  src: url(fonts/Outfit-Regular.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Medium;
+  src: url(fonts/Outfit-Medium.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Regular;
+  src: url(fonts/Outfit-Regular.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Black;
+  src: url(fonts/Outfit-Black.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Light;
+  src: url(fonts/Outfit-Light.ttf);
+}
+
+@font-face {
+  font-family: Outfit-Black;
+  src: url(fonts/Outfit-Black.ttf);
+}
+
+    html {
+      scroll-padding-top: 140px; /* or the exact height of your navbar */
+    }
+    body {
+      margin: 0;
+      padding: 0; /* Remove the top padding */
+      font-family: 'Outfit', 'Outfit-Regular', sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      overflow-x: hidden;
+    }
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #fff; /* Ensure background is not transparent */
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 65vh;         /* Only 65% of the viewport height */
+      min-height: 350px;    /* Optional: reasonable minimum for small screens */
+      display: flex;
+      align-items: flex-end; /* Keep content at the bottom */
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+      margin-top: 0 !important;      /* Ensure no margin above */
+      padding-top: 0 !important;     /* Ensure no padding above */
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0 !important;             /* Force image to top */
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 1;
+      pointer-events: none;
+      margin-top: 0 !important;      /* Remove any margin on image */
+      padding-top: 0 !important;     /* Remove any padding on image */
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      /* Darker gradient: more opacity at the bottom and top */
+      background: linear-gradient(0deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.38) 70%, rgba(0,0,0,0.18) 100%);
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 0 2vw 4vh 2vw; /* Much less bottom padding to bring text closer to the bottom */
+      width: 100%;
+      max-width: 900px;
+    }
+    .hero-title {
+      font-family: 'Outfit-Bold', 'Outfit', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: clamp(2rem, 7vw, 3.2rem); /* Responsive, but never tiny */
+      margin-bottom: 0.2em;
+      color: #fff;
+      letter-spacing: -1px;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+      word-break: break-word;
+    }
+    /* Responsive font size for long titles */
+    @media (max-width: 1200px) {
+      .hero-title { font-size: 2.4rem; }
+    }
+    @media (max-width: 900px) {
+      .hero-title {
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
+      }
+    }
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: clamp(1.4rem, 8vw, 2rem);
+        line-height: 1.15;
+      }
+    }
+    .hero-subtitle {
+      font-family: 'Outfit-Regular', sans-serif;
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      color: #fff;
+      margin-bottom: 1.5em;
+      line-height: 1.4;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      word-break: break-word;
+    }
+    .case-layout {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 48px 0 0 0;
+      background: none;
+      gap: 16px; /* Add this line to reduce the gap between sidebar and main content */
+    }
+    .sidebar {
+      width: 260px;
+      background: #fafbfc;
+      border-right: 1px solid #ececec;
+      padding: 32px 32px 24px 32px; /* More space on all sides */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      color: #222;
+      height: fit-content;
+      margin-top: 0;
+      transition: width 0.2s, padding 0.2s;
+      gap: 1.5em;
+    }
+    /* Make "Project Info" green in the sidebar */
+    .sidebar h2:first-of-type {
+  color: #000000;
+  font-family: 'Outfit-Regular';
+  margin-bottom: 0.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Reduce space below sidebar-meta and between sidebar sections */
+.sidebar-meta {
+  margin-bottom: 0.3em; /* Decreased from 0.7em or 2em */
+}
+
+.sidebar h2 {
+  margin-bottom: 0.5em;
+}
+
+/* Reduce space between dropdowns */
+.sidebar .dropdown-btn {
+  padding: 0.7em 0;
+  margin-bottom: 0.1em;
+}
+
+/* Reduce space between dropdown content blocks */
+.sidebar .dropdown-content {
+  margin-bottom: 0.1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+/* Reduce space between TOC links */
+.sidebar nav ul li {
+  margin-bottom: 0.05em;   /* Much less space between TOC links */
+}
+
+.sidebar nav ul li a {
+  padding: 0.4em 0;        /* Less vertical padding for TOC links */
+  color: #00C47C !important;
+  font-size: 1.05rem;
+  font-family: 'Outfit-Bold', sans-serif;
+}
+    .sidebar h2 {
+      font-family: 'Outfit-Bold', sans-serif;
+      font-size: 1.15rem;
+      margin: 0 0 1.2em 0;
+      color: #222;
+      letter-spacing: 0;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .sidebar-meta {
+      width: 100%;
+      margin-bottom: 2em;
+      text-align: left;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .sidebar nav ul li {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.4em;
+    }
+    .dropdown-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      font-family: 'Outfit-Bold', sans-serif;
+      font-size: 1.05rem;
+      color: #222;
+      text-align: left;
+      padding: 1.1em 0;
+      cursor: pointer;
+      transition: color 0.2s;
+      position: relative;
+      display: flex;              /* NEW: use flexbox */
+      align-items: center;        /* NEW: vertically center */
+      justify-content: space-between; /* NEW: space between text and arrow */
+      gap: 0;                     /* NEW: no gap */
+    }
+    .dropdown-btn::after {
+      content: "▼";
+      font-size: 0.8em;
+      margin-right: 0;
+      transition: transform 0.2s;
+      float: none;                /* NEW: remove float */
+      display: inline-block;      /* NEW: ensure inline-block for flex */
+    }
+    .dropdown-btn[aria-expanded="true"]::after {
+      transform: rotate(-180deg);
+    }
+    .dropdown-content {
+      display: none;
+      font-family: 'Outfit-Regular', sans-serif;
+      font-size: 0.98rem;
+      color: #444;
+      padding: 0.4em 0 0.8em 0.8em;
+      border-left: 2px solid #00C47C;
+      margin-bottom: 0.2em;
+      background: none;
+    }
+    .dropdown-btn[aria-expanded="true"] + .dropdown-content {
+      display: block;
+    }
+    .sidebar nav {
+      margin-top: 0.1em; /* Reduce space above the table of contents */
+      width: 100%;
+    }
+    .sidebar nav ul {
+      display: block;      /* Ensure vertical stacking */
+      width: 100%;         /* Take full width of sidebar */
+      padding-left: 0;
+      margin-left: 0;
+    }
+    .sidebar nav ul li {
+      display: block;      /* Each item on its own line */
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    .sidebar nav ul li a {
+      color: #222;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-family: 'Outfit-Bold', sans-serif;
+      background: none;
+      border: none;
+      outline: none;
+      text-align: left;
+      padding: 1.1em 0;
+      display: flex;              /* MATCH dropdown-btn */
+      align-items: center;        /* MATCH dropdown-btn */
+      justify-content: flex-start;/* Align text to left */
+      transition: color 0.2s;
+      cursor: pointer;
+      letter-spacing: normal;
+      margin-left: 0;
+      box-sizing: border-box;
+      padding-left: 0 !important;
+    }
+    .sidebar nav ul li a::after {
+      content: "▼";
+      opacity: 0;           /* Hide the arrow, but reserve space */
+      min-width: 1.5em;     /* Same as .dropdown-btn::after */
+      margin-left: 8px;     /* Same as .dropdown-btn::after */
+      display: inline-block;
+    }
+
+    /* Remove any extra padding/margin from nav and dropdown */
+    .sidebar .dropdown-btn,
+    .sidebar nav ul li a {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar nav,
+    .sidebar nav ul,
+    .sidebar nav ul li {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    /* Give the arrow a fixed width so it doesn't push the text */
+    .sidebar .dropdown-btn::after {
+      min-width: 1.5em;
+      text-align: right;
+      margin-left: 8px;
+      margin-right: 0;
+      display: inline-block;
+      float: none;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 0 0 0 0;
+      max-width: 900px;
+      margin: 0 auto;
+      background: none;
+      color: #222;
+    }
+    .section {
+      margin-bottom: 2em; /* Halved from 4em to 2em */
+      padding: 0 48px;
+    }
+    .section-title {
+      font-family: 'Outfit-Bold', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 0.6em; /* Reduced from 1.2em to 0.6em */
+      color: #111;
+      letter-spacing: -0.5px;
+    }
+    .section-title::after {
+      content: ".";
+      color: #00C47C;
+      font-size: inherit;
+      font-family: inherit;
+      margin-left: 0;      /* No space between title and period */
+      vertical-align: baseline;
+    }
+    .section p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #222;
+      margin-bottom: 0.5em; /* Or even less, e.g. 0.3em, for tighter spacing */
+      max-width: 700px;
+      font-family: 'Outfit', sans-serif;
+    }
+    /* Reduce space below paragraphs that are immediately followed by a list */
+    .section p + ul:not(.allergen-list) {
+      margin-top: 0 !important;
+    }
+    .section img {
+      width: 100%;
+      max-width: 700px;
+      margin: 2em 0;
+      display: block;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .image-row {
+      display: flex;
+      gap: 4px;
+      margin-top: 0em;    /* Decreased space above image rows */
+      margin-bottom: 2em;   /* Good space below */
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      max-width: 700px;
+      width: 100%;
+    }
+    .image-row figure {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1 1 0;
+      max-width: 50%; /* Two images per row */
+    }
+    .image-row img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 0px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0.5em;
+      padding-bottom: 0;
+    }
+    .image-row figcaption {
+      font-size: 0.95rem;
+      color: #555;
+      font-family: 'Outfit-Regular', sans-serif;
+      margin-top: 0;
+      padding-top: 0;
+      text-align: left;
+      width: 100%;
+      line-height: 1.05;
+      margin-bottom: 0.7em;
+    }
+    @media (max-width: 700px) {
+      .section {
+        padding-left: 4vw !important;
+        padding-right: 4vw !important;
+      }
+      .image-row {
+        max-width: 100%;
+        width: 100%;
+      }
+      .image-row figure {
+        max-width: 100%;
+        width: 100%;
+      }
+      .image-row img {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    @media (max-width: 1100px) {
+      .case-layout {
+        max-width: 98vw;
+        gap: 10px;
+        padding: 24px 0 0 0;
+      }
+      .sidebar {
+        width: 210px;
+        padding: 24px 10px 18px 10px;
+      }
+    }
+    @media (max-width: 900px) {
+      .case-layout {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 0 0 0;
+        max-width: 100vw;
+      }
+      .sidebar {
+        width: auto;
+        border-right: none;
+        border-bottom: 1px solid #ececec;
+        flex-direction: column;
+        align-items: stretch;
+        /* Add margin to ALL sides to keep sidebar away from screen edges */
+        margin: 24px 5vw 18px 5vw;
+        padding: 18px 4vw 12px 4vw;
+        background: #fafbfc;
+        box-sizing: border-box;
+        border-radius: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        gap: 1.2em;
+      }
+      .sidebar nav {
+        display: none !important;
+      }
+
+      /* Remove border, background, and radius from dropdowns on mobile */
+      .dropdown-btn,
+      .dropdown-content {
+        border: none !important;
+        border-radius: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Give the sidebar a white background and larger side margins */
+      .sidebar {
+        background: #fff !important;
+        margin: 24px 6vw 18px 6vw !important; /* Increase side margins */
+        padding: 18px 4vw 12px 4vw !important;
+        border-radius: 0px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      }
+    }
+    @media (max-width: 600px) {
+      .sidebar {
+        margin: 12px 3vw 12px 3vw;
+        padding: 12px 4vw 8px 4vw;
+        border-radius: 0;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        background: #fafbfc;
+      }
+      .sidebar-meta {
+        margin-bottom: 1em;
+        width: 100%;
+        border-bottom: 1px solid #ececec;
+        padding-bottom: 0.7em;
+      }
+      .dropdown-btn {
+        font-size: 1.15rem;
+        padding: 1.1em 0;
+        border-radius: 8px;
+        background: #f3f3f3;
+        margin-bottom: 0.3em;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      }
+      .dropdown-content {
+        font-size: 1.05rem;
+        padding-left: 1.2em;
+        background: #fff;
+        border-radius: 0 0 8px 8px;
+        margin-bottom: 0.8em;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      }
+      .sidebar nav ul li {
+        margin-bottom: 0.7em;
+      }
+      .sidebar nav ul {
+        padding-left: 0;
+      }
+      .sidebar h2 {
+        margin-bottom: 0.7em;
+        font-size: 1.05rem;
+      }
+    }
+
+    /* Optional: subtle hover for dropdowns and nav links */
+    .dropdown-btn:hover,
+    .sidebar nav ul li a:hover {
+      background: #e6f9f2;
+      color: #00C47C;
+      padding-left: 20px !important; /* Add more left padding on hover */
+      border-radius: 6px;            /* Optional: soften the box */
+      box-sizing: border-box;
+    }
+    .section .image-row {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: flex-start;
+    }
+
+    @media (min-width: 701px) {
+      .section {
+        padding-left: 48px;
+        padding-right: 48px;
+      }
+      .section .image-row {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      
+    }
+
+    #img-modal {
+      transition: opacity 0.2s;
+    }
+    #img-modal[style*="display: none"] {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #img-modal-img {
+      border-radius: 0 !important;
+    }
+    .allergen-list {
+      columns: 3 200px;
+      -webkit-columns: 3 200px;
+      -moz-columns: 3 200px;
+      column-gap: 32px;
+      max-width: 700px;
+      font-family: 'Outfit', sans-serif;  /* Use 'Outfit' only */
+      font-weight: 400;                   /* Regular weight */
+      font-size: 1.15rem;
+      color: #222;
+      margin-bottom: 1em;
+      padding-left: 20px;
+      list-style-position: inside;
+    }
+    .allergen-list li {
+      break-inside: avoid;
+      margin-bottom: 0.4em;
+    }
+    ul.allergen-list, ul.allergen-list li {
+      font-family: 'Outfit', sans-serif !important;
+      font-weight: 400 !important;
+    }
+    blockquote.research-quote {
+      font-family: 'Outfit-Medium', sans-serif;
+      font-size: 1.08rem;
+      color: #333;
+      background: #eef1f0;
+      border-left: 4px solid #00C47C;
+      padding: 1em 1em;
+      margin: 1.2em 100px 1.5em 0; /* Right margin matches .section padding */
+      border-radius: 0px;
+      font-style: italic;
+      line-height: 30px;
+      
+    }
+    blockquote.research-quote .quote-source {
+      display: block;
+      margin-top: 0.7em;
+      font-size: 0.98em;
+      color: #00C47C;
+      font-style: normal;
+      font-family: 'Outfit-Bold', 'Outfit', sans-serif;
+    }
+    .section ul:not(.allergen-list) {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: #222;
+      margin-bottom: 0.7em;    /* Less space below the list */
+      margin-top: 0.05em;       /* Less space above the list */
+      padding-left: 24px;
+      list-style-position: outside;
+      max-width: 700px;
+    }
+
+    .section ul:not(.allergen-list) li {
+      margin-bottom: 0.2em;    /* Less space between bullets */
+      break-inside: avoid;
+      text-indent: 0px;
+      padding-left: 18px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      line-height: 1.7; /* Match the paragraph line height */
+    }
+    .section > figure:first-child {
+      margin-top: 0;
+    }
+
+    /* Reduce space above image rows that directly follow a paragraph */
+    .section p + .image-row {
+      margin-top: -0.7em !important;
+    }
+
+    /* Optional: If you want even less space, increase the negative value */
+  
+    .section ol {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 0.7em;
+  margin-top: 0.05em;
+  padding-left: 24px;
+  list-style-position: outside;
+  max-width: 700px;
+
+  }
+
+.section ol li {
+  margin-bottom: 0.2em;
+  break-inside: avoid;
+  text-indent: 0px;
+  padding-left: 18px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.section#impact ol {
+  font-style: italic;
+}
+
+.section#references ol,
+.section#references ol li {
+  font-style: italic;
+}
+
+/* Force tight spacing ONLY for the table of contents links */
+.sidebar nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 2 !important; /* Increased from 1.5 to 2 for more space */
+}
+
+.sidebar nav ul li a {
+  padding: 0.5em 0 !important; /* Slightly more vertical padding */
+  color: #222 !important;
+  font-size: 1.05rem;
+  font-family: 'Outfit-Bold', sans-serif;
+  line-height: 2 !important;
+  transition: color 0.2s, background 0.2s, padding-left 0.2s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a:focus {
+  color: #00C47C !important;
+  background: #e6f9f2;
+  padding-left: 20px !important;
+  border-radius: 6px;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 32px;
+  height: 28px;
+  justify-content: space-between;
+  margin-left: auto;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive nav for mobile */
+@media (max-width: 900px) {
+  nav {
+    position: relative;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: fixed;
+    top: 70px; /* Adjust to your nav height */
+    right: 0;
+    width: 28vw;
+    min-width: 180px;
+    max-width: 320px;
+    text-align: left;
+    z-index: 150;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid #222;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #222;
+    padding: 18px 24px;
+    box-sizing: border-box;
+    background: #000;
+  }
+  .hamburger {
+    display: flex;
+  }
+  nav ul.active #contact_link {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Make space below image rows much larger and always present */
+.image-row {
+  margin-bottom: 1.5em !important;
+}
+
+/* Add extra space above text, lists, or blockquotes that follow an image row */
+.image-row + p,
+.image-row + ul,
+.image-row + blockquote,
+.image-row + .section-title {
+  margin-top: 2em !important;
+}
+  </style>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <a href="index.html"><img src="images/logo.png" class="logo"></a>
+        <ul>
+          <li><a href="index.html">WORK</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html"><span id="contact_link">CONTACT</span></a></li>
+        </ul>
+        <div class="hamburger" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <section class="hero-section">
+    <img src="images/bimaristan.png" alt="Bimaristans Hero" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Bimaristans: Hospitals of Yore</h1>
+      <div class="hero-subtitle">A didactive infographic about the history of ancient Islamic hospitals</div>
+    </div>
+  </section>
+  <div class="case-layout">
+    <aside class="sidebar">
+      <h2>Project Info</h2>
+      <div class="sidebar-meta">
+        <button class="dropdown-btn" aria-expanded="false">Audience</button>
+        <div class="dropdown-content">Educated lay audience</div>
+        <button class="dropdown-btn" aria-expanded="false">Tools</button>
+        <div class="dropdown-content">SketchUp, Maya, Photoshop, Illustrator</div>
+        <button class="dropdown-btn" aria-expanded="false">Client</button>
+        <div class="dropdown-content">Shehryar Saharan (BMC Faculty)</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#project" class="active">Project</a></li>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#research">Research & Thumbnails</a></li>
+          <li><a href="#modelling">3D Modelling</a></li>
+          <li><a href="#rendering">Rendering</a></li>
+          <li><a href="#layout">Layout & Graphic Design</a></li>
+          <li><a href="#references">References</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      
+      <section class="section" id="project">
+
+        <p>This infographic gives readers a glimpse into the history of bimaristans, early Islamic hospitals that revolutionized medicine and healthcare. At the heart of the poster is a cutaway view of the oldest standing bimaristan in the world, Bimaristan Nur Al-Din.</p>
+        <figure>
+            <img src="images/bimaristan.png" alt="Description 3">
+        </figure>
+
+        <div class="section-title" id="problem">Problem</div>
+        
+        <p>
+          Bimaristans were multi-functional institutions, commonly housing medical schools, libraries, pharmacies, and other related facilities that blazed the trail for modern hospitals in other regions of the world.
+        </p>
+
+        <p>
+          However, despite their profound influence on the development of modern medicine, bimaristans remain largely overlooked in modern-day narratives on the history of healthcare. 
+        </p>
+
+        <blockquote class="research-quote">
+          This infographic aims to raise awareness of the medical innovations introduced by bimaristans, prompting a more inclusive understanding of global medical history.
+        </blockquote>
+        
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-title" id="research">Research & Thumbnails</div>
+        
+        <p>
+          After collecting peer-reviewed articles, books, and other resources on the history of bimaristans, I developed a comprehensive plan for the content and quick thumbnail drafts of the infographic.
+        </p>
+
+        <div class="image-row">
+        <figure>
+            <img src="images/bimaristan-research1.png" alt="Description 3">
+            <figcaption>Research findings & Ideation</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-research2.png" alt="Description 3">
+            <figcaption>Ideating a narrative</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-research3.png" alt="Description 3">
+            <figcaption>Thumbnail sketches</figcaption>
+        </figure>
+        </div>
+
+      </section>
+      <section class="section" id="modelling">
+        <div class="section-title">3D Modelling</div>
+        <p>
+          I started off by creating a digital 3D model of the hospital in SketchUp, using floor plans available from online databases as reference. This provided a more accurate and standardized maquette to work off of.
+        </p>
+
+        <div class="image-row">
+        <figure>
+            <img src="images/bimaristan-sketchup1.png" alt="Description 3">
+            <figcaption>Initial SketchUp file</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-sketchup2.png" alt="Description 3">
+            <figcaption>In progress version in SketchUp</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-sketchup3.png" alt="Description 3">
+            <figcaption>Final Sketchup version in Maya</figcaption>
+        </figure>
+        </div>
+
+        <p>
+          I then brought the model from SketchUp into Maya, where I staged the scene and added additional details such as the surrounding buildings and water. More structurally complex elements, like the muqarnas dome, were modelled first in 2D (in Illustrator) and subsequently converted into 3D geometry in Maya.
+        </p>
+
+        <div class="image-row">
+        <figure>
+            <img src="images/bimaristan-maya1.png" alt="Description 3">
+            <figcaption>Added surrounding structures</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-maya2.png" alt="Description 3">
+            <figcaption>Muqarnas & Illustrator vector</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-maya3.png" alt="Description 3">
+            <figcaption>Staged scene in Maya</figcaption>
+        </figure>
+        </div>
+
+
+      </section>
+      <section class="section" id="rendering">
+        <div class="section-title">Rendering</div>
+        <p>
+          Later, I added textures and details in Photoshop using a variety of techniques, including photobashing and digital painting.
+        </p>
+
+        <div class="image-row">
+        <figure>
+            <img src="images/bimaristan-photoshop1.png" alt="Description 3">
+            <figcaption>Final rendered illustration</figcaption>
+        </figure>
+        <figure>
+            <img src="images/bimaristan-photoshop2.png" alt="Description 3">
+            <figcaption>Added textures & Colour adjustment</figcaption>
+        </figure>
+        </div>
+      </section>
+
+      </section>
+      <section class="section" id="layout">
+        <div class="section-title">Layout & Graphic Design</div>
+
+        <p>
+          Final geometric details (i.e. the semi-transparent boxes indicating the original form) and graphic design elements (i.e. text, callouts, icons) were added in Illustrator. I created a number of comprehensive thumbnails in Figma before landing on a layout I was happy with, which I then cleaned up in Illustrator.
+        </p>
+
+        <div class="image-row">
+        <figure>
+          <img src="images/bimaristan-layout1.png" alt="Description 3">
+          <figcaption>Layout ideation in Figma</figcaption>
+        </figure>
+        <figure>
+          <img src="images/bimaristan-layout2.png" alt="Description 3">
+          <figcaption>Experimenting with colours schemes and overlay textures</figcaption>
+        </figure>
+        <figure>
+          <img src="images/bimaristan-layout3.png" alt="Description 3">
+          <figcaption>Final thumbnail to be cleaned up in Illustrator</figcaption>
+        </figure>
+        </div>
+      </section>
+
+      <section class="section" id="references">
+          <div class="section-title">References</div>
+
+          <ol>
+            <li>Alston, R. (2002). The City in Roman and Byzantine Egypt. Routledge.</li>
+            <li>Baqué, V. (1995). Du Bimarîstan à l'asile moderne: mise en place de l'institution et de la médecine psychiatriques en Egypte (1882-1930) (Doctoral dissertation, Aix-Marseille 1).</li>
+            <li>Kump W. L. (1972). Historic hospitals. The Bimaristan at Jundi Shapur. Minnesota medicine, 55(1), 14.</li>
+            <li>Miller A. C. (2006). Jundi-Shapur, bimaristans, and the rise of academic medical centres. Journal of the Royal Society of Medicine, 99(12), 615–617.</li>
+            <li>Open Heritage 3D. (2019). Bimaristan Nur al-Din. https://openheritage3d.org/project.php?id=nkv2-bn91.</li>
+            <li>Orabi, R. (2023). Adapted in place: A digital geometric analysis of the muqarnas dome of al-Bimaristan al-Nuri in Damascus. Digital Applications in Archaeology and Cultural Heritage, 29.</li>
+            <li>Podgorny G. (1966). Islamic-Persian medical education. A survey from Jundi-Shapur to Cairo. North Carolina medical journal, 27(3).</li>
+            <li>Ragab, A. (2015). The Medieval Islamic Hospital: Medicine, Religion, and Charity. Cambridge: Cambridge University Press.</li>
+            <li>Tabbaa, Y. (1985). The Muqarnas Dome: Its Origin and Meaning. Muqarnas, 3, 61–74.</li>
+          </ol>
+      </section>
+</main>
+</div>
+<!-- Image Modal Structure -->
+<div id="img-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); align-items:center; justify-content:center;">
+  <span id="img-modal-close" style="position:absolute;top:24px;right:40px;font-size:2.5rem;color:#fff;cursor:pointer;z-index:10001;">&times;</span>
+  <img id="img-modal-img" src="" alt="Enlarged image" style="max-width:90vw;max-height:85vh;box-shadow:0 4px 32px rgba(0,0,0,0.25);border-radius:8px;display:block;margin:auto;">
+</div>
+
+<script>
+document.querySelectorAll('.dropdown-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    // Toggle aria-expanded
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    // Toggle the next sibling (dropdown-content)
+    var content = btn.nextElementSibling;
+    if (content) {
+      content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+    }
+  });
+});
+
+  // Open modal on image click
+  document.querySelectorAll('.section img, .image-row img').forEach(function(img) {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function(e) {
+      var modal = document.getElementById('img-modal');
+      var modalImg = document.getElementById('img-modal-img');
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || '';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal on close button or background click
+  document.getElementById('img-modal-close').onclick = function() {
+    document.getElementById('img-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  document.getElementById('img-modal').onclick = function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  };
+
+  const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.querySelector('nav ul');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+</script>
+</body>
+</html>
