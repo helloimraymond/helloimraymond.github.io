@@ -23,6 +23,71 @@
                 opacity: 1;
             }
         }
+        footer ul, footer ul li {
+  font-family: 'Outfit-Light', 'Outfit', sans-serif !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+}
+
+/* Center all footer content and text */
+footer > div {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+footer h4
+{
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 1em !important;
+}
+
+footer ul,
+footer ul li,
+footer ul li a {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0.75em !important;
+}
+
+footer ul {
+  display: inline-block !important;
+  padding-left: 0 !important;
+}
+
+footer > div > div {
+  align-items: center !important;
+}
+
+/* Optional: On mobile, stack columns vertically */
+@media (max-width: 700px) {
+  footer > div {
+    flex-direction: column !important;
+    gap: 1.5em !important;
+  }
+}
+
+footer > div {
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 5em !important; /* Increase gap between columns */
+}
+
+footer > div > div {
+  align-items: flex-start !important; /* Align columns to the top for evenness */
+  min-width: 180px;
+}
+
+@media (max-width: 900px) {
+  footer > div {
+    gap: 2em !important;
+  }
+  footer > div > div {
+    min-width: 0;
+  }
+}
   </style>
 </head>
 <body>
@@ -83,9 +148,53 @@
     </div>
   </div>
 
-  <section class="footer">
-    <p class="copyright">© COPYRIGHT RAYMOND ZHANG 2025</p>
-  </section>
+  <footer style="background:#111; border-top:1px solid #222; padding: 3em 0 2em 0; margin-top:4em;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.5em; padding:0 7vw;">
+    <!-- Navigation -->
+    <div>
+      <h4 style="font-family:'Outfit-Bold',sans-serif; font-size:1.1em; margin-bottom:0.7em; color:#fff;">Navigation</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li><a href="index.html" style="color:#00C47C; text-decoration:none; font-family:'Outfit-Regular',sans-serif;">Home</a></li>
+        <li><a href="about.html" style="color:#00C47C; text-decoration:none; font-family:'Outfit-Regular',sans-serif;">About</a></li>
+        <li><a href="contact.html" style="color:#00C47C; text-decoration:none; font-family:'Outfit-Regular',sans-serif;">Contact</a></li>
+      </ul>
+    </div>
+    <!-- Services -->
+    <div>
+      <h4 style="font-family:'Outfit-Bold',sans-serif; font-size:1.1em; margin-bottom:0.7em; color:#fff;">Services</h4>
+      <ul style="list-style:none; padding:0; margin:0; color:#fff; font-family:'Outfit-Regular',sans-serif;">
+        <li>Medical Illustration</li>
+        <li>Infographic Design</li>
+        <li>3D Modelling</li>
+        <li>Data Visualization</li>
+      </ul>
+    </div>
+    <!-- Contact Info -->
+    <div>
+      <h4 style="font-family:'Outfit-Bold',sans-serif; font-size:1.1em; margin-bottom:0.7em; color:#fff;">Contact</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li>
+          <a href="mailto:rayxz2020@gmail.com" style="color:#00C47C; text-decoration:none; font-family:'Outfit-Regular',sans-serif;">
+            rayxz2020@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/helloimraymond" target="_blank" rel="noopener" style="color:#00C47C; text-decoration:none; font-family:'Outfit-Regular',sans-serif;">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/helloimraymond" target="_blank" rel="noopener" style="color:#00C47C; text-decoration:none; font-family:'Outfit-Regular',sans-serif;">
+            Instagram
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center; color:#aaa; font-size:0.98em; margin-top:2.5em; font-family:'Outfit-Regular',sans-serif;">
+    &copy; 2025 Raymond Zhang. All rights reserved.
+  </div>
+</footer>
   <script src="script.js"></script>
 </body>
 </html>
