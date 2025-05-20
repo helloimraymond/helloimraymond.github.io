@@ -37,13 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Typewriter effect
     const phrases = [
-        "HELLO WORLD!",
-        "BONJOUR, MONDE!",
+        "HELLO WORLD",
+        "BONJOUR, MONDE",
         /*"¡HOLA MUNDO!",*/
-        '<span class="typewriter-chinese">世界, 你好!</span>',
+        '<span class="typewriter-chinese">世界, 你好</span>',
         /*"MARHABA BIL-3ĀLAM!",
         "OLÁ MUNDO!",
         "M'ACH RHAESHESER!"*/
+        "KALTXÌ, MA EYWA"
     ];
     const typeElem = document.getElementById("typewriter-text");
     let phraseIndex = 0;
