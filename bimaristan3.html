@@ -891,6 +891,77 @@ footer > div > div {
     min-width: 0;
   }
 }
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5em;
+  margin: 3em 0 2em 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  position: relative;
+  left: 90px; /* Or adjust as needed for alignment */
+}
+
+.project-nav-btn {
+  background: none;
+  color: #111;
+  font-family: 'Outfit-Bold', 'Outfit', sans-serif;
+  font-size: 1.08rem;
+  padding: 0.7em 1.2em;
+  border-radius: 0;
+  text-decoration: none;
+  border: 2px solid #111;
+  letter-spacing: 0.04em;
+  box-shadow: none;
+  display: inline-block;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.project-nav-btn.prev {
+  margin-right: auto;
+}
+
+.project-nav-btn.next {
+  margin-left: auto;
+}
+
+.project-nav-btn:hover,
+.project-nav-btn:focus {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  .project-nav {
+    max-width: 100vw;
+    left: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .project-nav-btn {
+    padding: 0.8em 0.8em;
+    font-size: 1rem;
+    min-width: 0;
+    width: auto;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+}
+@media (max-width: 600px) {
+  .project-nav-btn {
+    padding: 0.5em 0.5em;
+  }
+}
   </style>
 </head>
 <body>
@@ -1090,6 +1161,15 @@ footer > div > div {
           </ol>
       </section>
 </main>
+</div>
+
+<div class="project-nav">
+  <a href="dermalert3.html" class="project-nav-btn prev">
+    &#8592; Previous Project
+  </a>
+  <a href="kidney3.html" class="project-nav-btn next">
+    Next Project &#8594;
+  </a>
 </div>
 
 <footer style="background:#111; border-top:1px solid #222; padding: 3em 0 2em 0; margin-top:4em;">
