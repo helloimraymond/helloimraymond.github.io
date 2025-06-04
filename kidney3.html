@@ -730,7 +730,32 @@
 
 .section#references ol,
 .section#references ol li {
-  font-style: italic;
+  font-style: italic !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.15rem !important;
+  color: #222 !important;
+  margin-bottom: 0.7em !important;
+  margin-top: 0.05em !important;
+  padding-left: 24px !important;
+  list-style-position: outside !important;
+  max-width: 700px !important;
+}
+
+.section#references ol li {
+  margin-bottom: 0.2em !important;
+  break-inside: avoid !important;
+  text-indent: 0px !important;
+  padding-left: 18px !important;
+  line-height: 1.7 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .section#references ol {
+    padding-left: 2.2em !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
 }
 
 /* Force tight spacing ONLY for the table of contents links */
@@ -1052,7 +1077,9 @@ footer > div > div {
         <figure>
             <img src="images/kidney-process3.png" alt="Description 3">
         </figure>
+        </section>
 
+        <section class="section" id="references">
         <div class="section-title" id="references">References</div>
         <ol>
             <li>Agur, A. M. R., & Dalley, A. F., II. (2009). Grant's atlas of anatomy. 12th ed. Philadelphia, Wolters Kluwer Health/Lippincott Williams & Wilkins, p. 360.</li>
@@ -1064,7 +1091,8 @@ footer > div > div {
             <li>Rocco, F., Cozzi, L. A., & Cozzi, G. (2015). Study of the renal segmental arterial anatomy with contrast-enhanced multi-detector computed tomography. Surgical and Radiologic Anatomy, 37(5), 517–526. https://doi.org/10.1007/s00276-014-1382-7</li>
             <li>Rohen, J. & Yokochi, C. (1983). Color Atlas of Anatomy. Igaku-Shoin, p. 306.</li>
           </ol>
-      </section>
+          </section>
+      
 </main>
 </div>
 
