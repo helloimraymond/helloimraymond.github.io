@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "HELLO WORLD",
         "BONJOUR, MONDE",
         /*"¡HOLA MUNDO!",*/
-        '<span class="typewriter-chinese">世界, 你好</span>',
+        /*'<span class="typewriter-chinese">世界, 你好</span>', */
+        "世界, 你好",
         /*"MARHABA BIL-3ĀLAM!",
         "OLÁ MUNDO!",
         "M'ACH RHAESHESER!"

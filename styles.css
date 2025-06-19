@@ -981,9 +981,10 @@ nav ul li a:hover::after{
 
 /* Ensure the typewriter text stays on the same line */
 #typewriter-text {
-  font-size: 32px; /* Default font size for larger screens */
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
+  font-size: 25px; /* Default font size for larger screens */
+  /*font-family: "Courier New", Courier, monospace; */
+  font-family: "Outfit-Light";
+  /*font-weight: bold; */
   white-space: nowrap; /* Prevent wrapping onto the next line */
   overflow: hidden; /* Prevent overflow if the text is too long */
   text-overflow: ellipsis; /* Add ellipsis if the text overflows */
@@ -992,9 +993,10 @@ nav ul li a:hover::after{
 
 /* Style the em dash to align properly with the typewriter text */
 #typewriter-dash {
-  font-size: 32px; /* Match the font size of the typewriter text */
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
+  font-size: 20px; /* Match the font size of the typewriter text */
+  /*font-family: "Courier New", Courier, monospace; */
+  font-family: "Outfit-Light";
+  /*font-weight: bold;*/
   position: relative; /* Allow precise positioning */
   top: -8px; /* Raise the dash higher */
   margin-right: 10px; /* Add spacing between the dash and the typewriter text */
@@ -1004,13 +1006,13 @@ nav ul li a:hover::after{
 /* Adjust the typewriter text for smaller screens */
 @media (max-width: 768px) {
   #typewriter-text {
-    font-size: 24px; /* Reduce font size for smaller screens */
+    font-size: 16px; /* Reduce font size for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   #typewriter-text {
-    font-size: 20px; /* Further reduce font size for very small screens */
+    font-size: 14px; /* Further reduce font size for very small screens */
   }
 }
 
