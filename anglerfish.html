@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DermAlert Case Study</title>
+  <title>Anglerfish Case Study</title>
   <link rel="shortcut icon" type="image/png" href="/images/rz.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
@@ -449,35 +449,44 @@
       margin-bottom: 0.7em;
     }
     @media (max-width: 700px) {
-      .section {
-        padding-left: 4vw !important;
-        padding-right: 4vw !important;
+      .main-content {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
       }
-      .image-row {
-        flex-direction: column;
-        gap: 6px;
-        align-items: stretch;
-        max-width: 100%;
-        width: 100%;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+      .section {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+        box-sizing: border-box;
+      }
+      .section > *,
+      .section .image-row,
+      .section .image-row figure,
+      .section .image-row img {
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
-      .image-row figure {
-        max-width: 100%;
-        width: 100%;
-      }
-      .image-row img {
-        max-width: 100%;
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      blockquote.research-quote {
-        margin-left: 0.5em !important;  /* Move blockquote right */
-        margin-right: 0.5em !important;
-      }
+      /* Add left padding to boxed quotes */
+  blockquote.research-quote {
+    padding-left: 1.2em !important;
+    box-sizing: border-box;
+  }
+
+  /* Fix ordered list numbers in REFERENCES section */
+  .section#references ol {
+    padding-left: 2.2em !important;   /* Move numbers to the right */
+    margin-left: 0 !important;
+  }
     }
     @media (max-width: 1100px) {
       .case-layout {
@@ -721,7 +730,32 @@
 
 .section#references ol,
 .section#references ol li {
-  font-style: italic;
+  font-style: italic !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.15rem !important;
+  color: #222 !important;
+  margin-bottom: 0.7em !important;
+  margin-top: 0.05em !important;
+  padding-left: 24px !important;
+  list-style-position: outside !important;
+  max-width: 700px !important;
+}
+
+.section#references ol li {
+  margin-bottom: 0.2em !important;
+  break-inside: avoid !important;
+  text-indent: 0px !important;
+  padding-left: 18px !important;
+  line-height: 1.7 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .section#references ol {
+    padding-left: 2.2em !important;
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
 }
 
 /* Force tight spacing ONLY for the table of contents links */
@@ -882,7 +916,6 @@ footer > div > div {
     min-width: 0;
   }
 
-
 }
 
 .project-nav {
@@ -976,34 +1009,29 @@ footer > div > div {
     </div>
   </div>
   <section class="hero-section">
-    <img src="images/dermalert_mockup3.png" alt="DermAlert Hero" class="hero-bg" />
+    <img src="images/anglerfish-final3.png" alt="Kidney Hero" class="hero-bg" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">DermAlert: Skincare Product Repository</h1>
-      <div class="hero-subtitle">A personalized skincare product repository for people with skin sensitivities</div>
+      <h1 class="hero-title">Anglerfish: Angels of the Deep</h1>
+      <div class="hero-subtitle">3D Sculpt of a Fanfin Sea Devil</div>
     </div>
   </section>
   <div class="case-layout">
     <aside class="sidebar">
       <h2>Project Info</h2>
       <div class="sidebar-meta">
-        <button class="dropdown-btn" aria-expanded="false">Role</button>
-        <div class="dropdown-content">Solo Researcher & Designer</div>
+        <button class="dropdown-btn" aria-expanded="false">Audience</button>
+        <div class="dropdown-content">Educated lay audience</div>
         <button class="dropdown-btn" aria-expanded="false">Tools</button>
-        <div class="dropdown-content">Figma, Miro, Excel</div>
-        <button class="dropdown-btn" aria-expanded="false">Timeline</button>
-        <div class="dropdown-content">Sep 2024 - Present</div>
+        <div class="dropdown-content">ZBrush, Maya, Photoshop</div>
+        <button class="dropdown-btn" aria-expanded="false">Client</button>
+        <div class="dropdown-content">Nicholas Woolridge (BMC Faculty)</div>
       </div>
       <nav>
         <ul>
-          <li><a href="#project" class="active">Project</a></li>
-          <li><a href="#problem">Problem</a></li>
-          <li><a href="#empathize">Empathize</a></li>
-          <li><a href="#analyze">Analyze & Ideate</a></li>
-          <li><a href="#design">Design</a></li>
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#goals">Goals & Impact</a></li>
-          <li><a href="#references">References</a></li>
+          <li><a href="#sculpting" class="active">Sculpting</a></li>
+          <li><a href="#staging" class="active">Staging</a></li>
+          <li><a href="#post" class="active">Post-Processing</a></li>
         </ul>
       </nav>
     </aside>
@@ -1011,256 +1039,91 @@ footer > div > div {
       
       <section class="section" id="project">
 
-        <p>DermAlert is a personalized web-based repository that helps sufferers of skin sensitivities identify and avoid allergens in skincare product ingredients by offering tailored search results based on their unique sensitivities and patch test findings.</p>
+        <p>This 3D sculpt of an anglerfish showcases the fascinating structure and complex anatomy of, in my humble opinion, the deep sea's most interesting creature. Known for its bioluminescent lure and unique structural adaptations, the anglerfish provided the perfect opportunity for me to explore my skills in 3D sculpting, texturing, and material work.</p>
         
-        <p><a href="images/DermAlert_CaseStudy_Slides.pdf" target="_blank" style="color:#000; font-family:'Outfit-Regular'; font-style: italic">The case study slide deck can be viewed here.</a></p>
+        <blockquote class="research-quote">
+          The unique silhouette and detailed features of anglerfish presented an exciting opportunity to improve my skills in sculpting and texturing.
+        </blockquote>
         
         <figure>
-            <img src="images/dermalert.png" alt="Description 3">
+            <img src="images/anglerfish.png" alt="Description 3">
         </figure>
 
-        <div class="section-title" id="problem">Problem</div>
-
-        <blockquote class="research-quote">
-          Individuals with skin sensitivities often have problems effectively avoiding allergens and irritants in everyday skincare products, with many receiving insufficient support from their dermatologists following their patch tests. Current platforms do not adequately address the challenges patients face.
-        </blockquote>
+        <div class="section-title" id="sculpting">Sculpting</div>
         
-        <p>
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Problem 1:</span> The names of allergens on patch tests rarely match their names on ingredient lists. For example, wool alcohols ointment, which is the name found in standard North American patch tests, can be found in ingredient lists under any of these names (and more!):
-        </p>
-        <ul class="allergen-list">
-          <li>Lanolin alcohol</li>
-          <li>Lanae alcohol</li>
-          <li>Alcoholes lanae</li>
-          <li>Wool alcohol</li>
-          <li>Cetyl alcohol</li>
-          <li>Stearyl alcohol</li>
-          <li>Cetylstearyl alcohol</li>
-          <li>Cetearyl alcohol</li>
-          <li>EINECS-430-1</li>
-        </ul>
-        <p>
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Problem 2:</span> Current platforms require users to manually input ingredients to filter. During the user research stage, many users reported difficulties inputting their allergens into current filtering platforms. Moreover, 80% of respondents stated that a system that lets them upload their patch test results would be helpful. However, this feature is missing from all current platforms.
-        </p>
-        <p>
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Problem 3:</span> Other platforms don’t have a comprehensive inventory of products,  focusing only on cosmetics. Respondents also reported difficulty finding many products, especially non-cosmetic ones—including drugs like topical corticosteroids, suncreen, and insect repellent—on currently available filtering platforms. 
-        </p>
-        
-      </section>
-      <section class="section" id="empathize">
-        <div class="section-title">Empathize</div>
-        <p>
-          <span style="font-family: 'Outfit-Bold', sans-serif;">White Paper Research:</span> I started off looking at research articles on the topic of skin sensitivities, searching keywords such as patch test*, eczema, dermatitis, etc. The goal was to better understand the state of patch testing in NA and what systems/standards currently exist for patients with dermatitis and other skin conditions. My most relevant findings are summarized below:
-        </p>
-
-        <ul>
-          <li>Patients who received more support following their patch tests experienced better outcomes than those who received less support.⁹</li>
-          <li>Patch tests administered by dermatologists  are standardized into series, of which there are 33 available.⁴</li>
-          <li>A thorough follow-up review is recommended by experts.⁴</li>
-        </ul>
-
-        <blockquote class="research-quote">
-          “Proper patient education and instructions on allergen avoidance is essential after patch testing. Adequate time should be spent discussing specific management plans for patch test-positive patients.⁴”
-        </blockquote>
-
-        <p>
-          <span style="font-family: 'Outfit-Bold', sans-serif;">User Interviews:</span> I decided to conduct interviews and surveys (both of which consisted of similar questions) with five individuals suffering some form of allergy-based skin condition and had undergone a patch test.
-        </p>
-        <ul>
-          <li>On a scale of 0 (no difficulty) to 10, how difficult is it for you to find skincare products that don’t trigger your skin?</li>
-          <li>Do you feel like you received sufficient guidance/support following your patch test regarding how to interpret your results and avoid allergens?</li>
-          <li>Are you aware of any platforms you can use to filter out allergens in your skincare products?</li>
-          <li>If such a platform existed, what format would be easiest for you to use, and what format would you use the most?</li>
-          <li>If such a platform existed, what features do you feel would most optimize your experience?</li>
-        </ul>
-
-        <blockquote class="research-quote">
-          80% of interviewees felt they had received insufficient guidance regarding how to avoid their allergens. Moreover, 100% of respondents reported difficulty in finding skincare products that suited their allergens.
-        </blockquote>
-
-        <p>
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Competitive Analysis:</span> The competitive platforms claim to help users avoid allergens in skincare products and/or are resources provided to patients after patch tests.
-        </p>
-        
-        <figure>
-            <img src="images/dermalert-competitive.png" alt="Description 3">
-        </figure>
-
-        <ul>
-          <li>None of the competitors accounted for differing names on ingredient lists, requiring users to input multiple filter terms for the same allergen to generate an effective search.</li>
-          <li>No platforms had an option for users to upload their patch test results, despite this being a plus for most interviewees.</li>
-          <li>All the competitors focused on cosmetic skincare products, and did not include commonly used non-cosmetic products that can also trigger reactions in users.</li>
-        </ul>
-
-        <blockquote class="research-quote">
-          While some platforms exist that can filter skincare product searches by ingredient, they all lacked features deemed by respondents to be important for an optimal user experience.
-        </blockquote>
-
-      </section>
-      <section class="section" id="analyze">
-        <div class="section-title">Analyze & Ideate</div>
-        <p>
-          I laid out the ideas I had gathered in my research, looking for trends and themes that could help me organize and synthesize my findings and create actionable next steps.
-        </p>
-
-        <figure>
-            <img src="images/dermalert-analyze1.png" alt="Description 3">
-        </figure>
-
-        <p>To better understand the goals and behaviours of my target audience, I also created two user personas using demographic and descriptive data from my research stage, including user interviews.</p>
+        <p>Working off of an initial sketch developed from referring to a variety of sources, I began building up the basic structure of the anglerfish in ZBrush. I added details gradually, retopologizing the sculpt when necessary.</p>
 
         <div class="image-row">
         <figure>
-            <img src="images/dermalert-analyze2.png" alt="Description 3">
+          <img src="images/anglerfish-sculpt1.png" alt="Description 3">
+          <figcaption>Initial sketch of concept</figcaption>
         </figure>
         <figure>
-            <img src="images/dermalert-analyze3.png" alt="Description 3">
-        </figure>
-        </div>
-
-      </section>
-      <section class="section" id="design">
-        <div class="section-title">Design</div>
-        <p>
-          Using what I learned from the analysis stage, I tried working out the process users would take while navigating through the resource. Many of the features were taken from the analysis stage, while others were brought up as solutions to problems.
-        </p>
-
-        <figure>
-          <img src="images/dermalert-design1.png" alt="Description 4">
-        </figure>
-
-        <p>I created wireframes working off of my concepts from the ideation stage, where I played around with layout and functionality—experimenting with which features afforded users the greatest accessibility and ease of use. Below are some examples of my low-fidelity wireframes.</p>
-        <figure>
-          <img src="images/dermalert-design2.png" alt="Description 4">
-        </figure>
-
-        <p>
-          While the visual design stage is still in its infancy and subject to changes, I based many design decisions on user research and feedback. I consulted with a handful of my interviewees about the visuals and gathered some important findings, including:
-        </p>
-
-        <ul>
-          <li>Orange was the preferred colour choice of almost all surveyed, with users deeming blue too clinical, while green, red, and purple did not seem to fit the aesthetic of the brand.</li>
-          <li>Sans-serif for body text made the website more readable, though users liked keeping some serif text for emphasis (originally, everything was serif, though this was quickly changed after user feedback).</li>
-        </ul>
-      </section>
-
-      </section>
-      <section class="section" id="solution">
-        <div class="section-title">Solution</div>
-
-        <blockquote class="research-quote">
-          A free, community-based online repository of skincare products and their ingredient lists that allows users to filter out their specific allergens and triggers.
-        </blockquote>
-        <br/>
-
-        <p><span style="font-family: 'Outfit-Bold', sans-serif;">Problem 1:</span> The names of allergens on patch tests rarely match their names on ingredient lists.</p>
-        <div class="image-row">
-        <figure>
-            <img src="images/dermalert-solution1.png" alt="Description 3">
-            <figcaption>Ingredient information page</figcaption>
+          <img src="images/anglerfish-sculpt2.png" alt="Description 3">
+          <figcaption>Beginning to block out details</figcaption>
         </figure>
         <figure>
-            <img src="images/dermalert-solution2.png" alt="Description 3">
-            <figcaption>Search results with filters applied</figcaption>
+          <img src="images/anglerfish-sculpt3.png" alt="Description 3">
+          <figcaption>Fine details added later on</figcaption>
         </figure>
         </div>
         
-        <blockquote class="research-quote">
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Solution 1:</span> Search result filters will factor in ingredients that appear in different names on product lists.
-        </blockquote>
+        <div class="section-title" id="staging">Staging</div>
+        <p>Once I was happy with the sculpt, I imported the 3D model into Maya, where I lit and staged the scene. I used an intricate system of materials, lights, and backgrounds to bring the anglerfish to life. For the materials, I studied numerous visual references to create a skin material that was suitable for the anglerfish, whose colour varies considerably. I ultimately decided on a slightly warm colour, almost transluscent.</p>
 
-        <ul>
-          <li>DermAlert will automatically add cross-listed keywords to the filter algorithm, without having the responsibility fall on the user to research and type all the different names of an ingredient to filter them out (of which they will almost surely miss some).</li>
-          <li>Each ingredient/allergen will have a dedicated informational page with a list of alternative names so users will know what to look out for on ingredient lists when shopping for products.</li>
-        </ul>
-        <br/><br/>
-
-        <p><span style="font-family: 'Outfit-Bold', sans-serif;">Problem 2:</span> Current platforms require users to manually type in names of ingredients to filter out.</p>
         <div class="image-row">
         <figure>
-            <img src="images/dermalert-solution3.png" alt="Description 3">
-            <figcaption>Choose test series used by doctor</figcaption>
+          <img src="images/anglerfish-stage1.png" alt="Description 3">
+          <figcaption>Material experimentation for anglerfish skin</figcaption>
         </figure>
         <figure>
-            <img src="images/dermalert-solution4.png" alt="Description 3">
-            <figcaption>Select allergens based on test series</figcaption>
+          <img src="images/anglerfish-stage2.png" alt="Description 3">
+          <figcaption>Dramatic lighting and environmental details</figcaption>
         </figure>
         </div>
-        <blockquote class="research-quote">
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Solution 2:</span> Users can automatically sort out what ingredients to filter out by uploading their patch test results.
-        </blockquote>
 
-        <ul>
-          <li>DermAlert uses a streamlined process of easy-to-follow questions for users to input their patch test information.</li>
-          <li>Users will select multiple choice inputs rather than manually typing in their allergens, optimizing ease of use.</li>
-          <li>Users choose the test used by their dermatologist (of which there are 33 standardized series), and proceed to check off the ingredients marked as allergens on their patch tests.</li>
-        </ul>
-        <br/><br/>
+        <div class="section-title" id="post">Post-Processing</div>
 
-        <p><span style="font-family: 'Outfit-Bold', sans-serif;">Problem 3:</span> Other platforms don’t have a comprehensive inventory of products, especially non-cosmetic products.</p>
+        <p>On Photoshop, I edited the images I had exported from Maya to increase visual interest and add any further details I felt were needed. I decided to use a cooler, more bluish recolouring scheme so as to better match the creature's native environment, the deep, dark depths of the ocean floor. I also created a quick infographic-style layout in Illustrator to provide more context to viewers.</p>
+        
         <div class="image-row">
         <figure>
-            <img src="images/dermalert-solution5.png" alt="Description 3">
-            <figcaption>Create a product page</figcaption>
+          <img src="images/anglerfish-post1.png" alt="Description 3">
+          <figcaption>Recolouring image using a cooler palette</figcaption>
         </figure>
         <figure>
-            <img src="images/dermalert-solution6.png" alt="Description 3">
-            <figcaption>Non-cosmetic product search results</figcaption>
+          <img src="images/anglerfish-post2.png" alt="Description 3">
+          <figcaption>Additional context in infographic form</figcaption>
         </figure>
         </div>
-        <blockquote class="research-quote">
-          <span style="font-family: 'Outfit-Bold', sans-serif;">Solution 3:</span> DermAlert will utilize a community-based model, allowing users to submit their own pages.
-        </blockquote>
 
-        <ul>
-          <li>At launch, DermAlert will include products/ingredient lists from the most common cosmetic and non-cosmetic products, including topical medications, sunscreen, and insect repellent.</li>
-          <li>Users can and will be encouraged to request/create pages for products they cannot find to widen the scope of products available.</li>
-          <li>New pages will undergo a community verification process and/or dermatologist review to ensure accuracy.</li>
-        </ul>
-      </section>
-
-      <section class="section" id="goals">
-              <div class="section-title">Goals & Impact</div>
-              <p>The three goals of the DermAlert project are to:</p>
-              <ul>
-                <li><span style="font-family: 'Outfit-Bold', sans-serif;">Simplify the process</span> of selecting skincare products, reducing the trial-and-error approach that often leads to flareups in patients with skin sensitivities.</li>
-                <li><span style="font-family: 'Outfit-Bold', sans-serif;">Provide a reliable resource</span> that patients can refer to after receiving their patch test results, allowing them to avoid allergens with ease.</li>
-                <li><span style="font-family: 'Outfit-Bold', sans-serif;">Gather a sufficient user base</span> to maintain a comprehensive database of skincare products and their ingredients that is up-to-date and accessible to users.</li>
-              </ul>
-              <p>With DermAlert, I hope to empower individuals to make informed skincare choices, reducing reactions and improving skin health. Some long-term impacts of this resource may be:</p>
-              <ul>
-                <li>Increasing <span style="font-family: 'Outfit-Bold', sans-serif;">transparency</span> among patients regarding skincare products, providing users with clear information about product ingredients and potential allergens.</li>
-                <li>Improving <span style="font-family: 'Outfit-Bold', sans-serif;">patient outcomes</span> and adherence to skin health plans after patch tests.</li>
-                <li>Establishing a resource dermatologists feel <span style="font-family: 'Outfit-Bold', sans-serif;">confident</span> recommending to patients.</li>
-              </ul>
-      </section>
-
-      <section class="section" id="references">
-          <div class="section-title">References</div>
-
-          <ol>
-            <li>Best practices in science communication. ASCB. (2020, July 20).</li>
-            <li>Brown, J. L., & Ruiz, C. E. (2016). Enhancing patient education following patch testing for allergic contact dermatitis. International Journal of Dermatology, 55(7), 761-767.</li>
-            <li>Chia, W. R., & Wong, D. A. (2014). Patients' satisfaction and outcomes with patch testing for allergic contact dermatitis: A cohort study. Clinical Dermatology, 32(4), 500-507.</li>
-            <li>Garg V, Brod B, Gaspari AA. Patch testing: Uses, systems, risks/benefits, and its role in managing the patient with contact dermatitis. Clin Dermatol. 2021 Jul-Aug;39(4):580-590.</li>
-            <li>Heddle, R., & Swenor, P. M. (2015). Patients' perceptions of the usefulness and outcome of patch testing. Contact Dermatitis, 72(3), 169-175.</li>
-            <li>Johnson, B. M., & Thompson, R. S. (2017). The role of patch testing in managing contact dermatitis: A review of methods and techniques. Dermatitis, 28(6), 450-459.</li>
-            <li>Martin, D. M., & Hart, J. A. (2020). Impact on quality of life of an intervention providing additional information to patients with allergic contact dermatitis: A randomized clinical trial. Journal of Dermatological Treatment, 31(4), 356-362.</li>
-            <li>McDonagh, A. J., & Norris, P. D. (2012). Psychological aspects of allergic contact dermatitis: Patients' perceptions and quality of life. Journal of the American Academy of Dermatology, 66(5), 845-852.</li>
-            <li>Steuer MS, Botto NC. Patient Reported Improvement After Patch Testing and Allergen Avoidance Counseling: A Retrospective Analysis. Dermatol Ther (Heidelb). 2018 Sep;8(3):435-440.</li>
-
-          </ol>
-      </section>
+        <!--<section class="section" id="references">
+        <div class="section-title" id="references">References</div>
+        <ol>
+            <li>Agur, A. M. R., & Dalley, A. F., II. (2009). Grant's atlas of anatomy. 12th ed. Philadelphia, Wolters Kluwer Health/Lippincott Williams & Wilkins, p. 360.</li>
+            <li>Calvo, J. (n.d.). Kidney [Photograph]. Retrieved December 20, 2024 from, https://www.sciencephoto.com/media/1303159/view/kidney  </li>
+            <li>Calvo, J. (n.d.). Macro section of a normal human kidney [Photograph]. Retrieved December 20, 2024 from, https://www.sciencephoto.com/media/908887/view/macro-section-of-a-normal-human-kidney</li>
+            <li>Mahadevan, V. (2019). Anatomy of the kidney and ureter. Surgery (Oxford), 37(7), 359–364. https://doi.org/https://doi.org/10.1016/j.mpsur.2019.04.005</li>
+            <li>Moore, K. L., Agur, A. M. R., Dalley, A. F., II., & Moore, K. L. (2015). Essential clinical anatomy. Fifth edition. Philadelphia, Wolters Kluwer Health. p. 314.</li>
+            <li>Northwestern Medicine. (2020). Kidney Transplant Surgery | Inside the OR [Video]. YouTube. https://www.youtube.com/watch?v=zPXphpl7gco&ab_channel=NorthwesternMedicine</li>
+            <li>Rocco, F., Cozzi, L. A., & Cozzi, G. (2015). Study of the renal segmental arterial anatomy with contrast-enhanced multi-detector computed tomography. Surgical and Radiologic Anatomy, 37(5), 517–526. https://doi.org/10.1007/s00276-014-1382-7</li>
+            <li>Rohen, J. & Yokochi, C. (1983). Color Atlas of Anatomy. Igaku-Shoin, p. 306.</li>
+        </ol>
+        </section>-->
+      
 </main>
 </div>
 
 <div class="project-nav">
-  <a href="sperm3.html" class="project-nav-btn prev">
+  <a href="bimaristan3.html" class="project-nav-btn prev">
     &#8592; Previous Project
+  </a>
+  <a href="kidney3.html" class="project-nav-btn next">
+    Next Project &#8594;
   </a>
 </div>
 
-  <footer style="background:#111; border-top:1px solid #222; padding: 3em 0 2em 0; margin-top:4em;">
+<footer style="background:#111; border-top:1px solid #222; padding: 3em 0 2em 0; margin-top:4em;">
   <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.5em; padding:0 7vw;">
     <!-- Navigation -->
     <div>
