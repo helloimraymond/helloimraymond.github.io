@@ -93,6 +93,63 @@ footer > div > div {
     min-width: 0;
   }
 }
+
+.sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.6em;
+  margin-top: 1em;
+}
+
+.sketch-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #f8f8f8;
+  display: block;
+}
+
+/* Responsive: 3 columns on tablet, 2 on mobile */
+@media (max-width: 1100px) {
+  .sketch-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .sketch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reduce space above The Sketch Lab section */
+#sketch-lab {
+  margin-top: 1.5em !important; /* Reduce from default, adjust as needed */
+}
+
+#sketch-lab .container3 {
+  padding-top: 0 !important;
+}
+
+#sketch-lab .sub-title {
+  margin-top: 0 !important;
+}
+
+/* Only affect Sketch Lab image gallery margins at small sizes */
+@media (max-width: 900px) {
+  #sketch-lab .sketch-grid {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: auto !important;
+  }
+}
+@media (max-width: 700px) {
+  #sketch-lab .sketch-grid {
+    margin-left: 3vw !important;
+    margin-right: 3vw !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -282,7 +339,6 @@ footer > div > div {
 
   </div>
 </div>
-<br/><br/>
 <!---------contact------
 <div id="contact">
   <div class="container3">
@@ -298,6 +354,19 @@ footer > div > div {
     </div>
   </div>
 </div>-->
+  <div id="sketch-lab">
+  <div class="container3">
+    <h1 class="sub-title">The Sketch Lab<span>.</span></h1>
+    <div class="sketch-grid">
+      <div class="sketch-item"><img src="images/sketch1.png" alt="Sketch 1"></div>
+      <div class="sketch-item"><img src="images/sketch2.png" alt="Sketch 2"></div>
+      <div class="sketch-item"><img src="images/sketch3.png" alt="Sketch 3"></div>
+      <div class="sketch-item"><img src="images/sketch4.png" alt="Sketch 4"></div>
+      <div class="sketch-item"><img src="images/sketch5.png" alt="Sketch 5"></div>
+      <!-- Add more .sketch-item divs as needed -->
+    </div>
+  </div>
+</div>
   <footer style="background:#111; border-top:1px solid #222; padding: 3em 0 2em 0; margin-top:4em;">
   <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.5em; padding:0 7vw;">
     <!-- Navigation -->
