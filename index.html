@@ -101,6 +101,11 @@ footer > div > div {
   margin-top: 1em;
 }
 
+.sketch-item {
+  position: relative;
+  overflow: hidden;
+}
+
 .sketch-item img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -109,6 +114,29 @@ footer > div > div {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   background: #f8f8f8;
   display: block;
+}
+
+/* Overlay for Sketch Lab images */
+.sketch-item .sketch-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.72);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.22s;
+  font-family: 'Outfit-Bold', 'Outfit', sans-serif;
+  font-size: 1.08rem;
+  text-align: center;
+  padding: 0.5em;
+  pointer-events: none; /* Prevent interaction */
+}
+
+.sketch-item:hover .sketch-overlay,
+.sketch-item:focus-within .sketch-overlay {
+  opacity: 1;
 }
 
 /* Responsive: 3 columns on tablet, 2 on mobile */
@@ -358,11 +386,26 @@ footer > div > div {
   <div class="container3">
     <h1 class="sub-title">The Sketch Lab<span>.</span></h1>
     <div class="sketch-grid">
-      <div class="sketch-item"><img src="images/sketch1.png" alt="Sketch 1"></div>
-      <div class="sketch-item"><img src="images/sketch2.png" alt="Sketch 2"></div>
-      <div class="sketch-item"><img src="images/sketch3.png" alt="Sketch 3"></div>
-      <div class="sketch-item"><img src="images/sketch4.png" alt="Sketch 4"></div>
-      <div class="sketch-item"><img src="images/sketch5.png" alt="Sketch 5"></div>
+      <div class="sketch-item">
+        <img src="images/sketch1.png" alt="Sketch 1">
+        <div class="sketch-overlay">Crimson Currents</div>
+      </div>
+      <div class="sketch-item">
+        <img src="images/sketch2.png" alt="Sketch 2">
+        <div class="sketch-overlay">Watcher in White</div>
+      </div>
+      <div class="sketch-item">
+        <img src="images/sketch3.png" alt="Sketch 3">
+        <div class="sketch-overlay">Glacial Virome</div>
+      </div>
+      <div class="sketch-item">
+        <img src="images/sketch4.png" alt="Sketch 4">
+        <div class="sketch-overlay">Textural Tinkerings</div>
+      </div>
+      <div class="sketch-item">
+        <img src="images/sketch5.png" alt="Sketch 5">
+        <div class="sketch-overlay">Structure of PHD2</div>
+      </div>
       <!-- Add more .sketch-item divs as needed -->
     </div>
   </div>
