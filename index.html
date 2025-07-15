@@ -178,6 +178,24 @@ footer > div > div {
     margin-right: 3vw !important;
   }
 }
+
+/* Add to your CSS for Sketch Lab overlays */
+.sketch-overlay > div {
+  width: 100%;
+}
+
+.sketch-title {
+  font-family: 'Outfit-Bold', 'Outfit', sans-serif;
+  font-size: 1.38rem;
+  margin-bottom: 0.3em;
+}
+
+.sketch-tools {
+  font-family: 'Outfit-Regular', 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  opacity: 0.85;
+  margin-bottom: 0;
+}
   </style>
 </head>
 <body>
@@ -388,20 +406,49 @@ footer > div > div {
     <div class="sketch-grid">
       <div class="sketch-item">
         <img src="images/sketch1.png" alt="Sketch 1">
-        <div class="sketch-overlay">Crimson Currents</div>
+        <div class="sketch-overlay">
+          <div>
+            <div class="sketch-title">Crimson Currents</div>
+            <div class="sketch-tools">Autodesk Maya</div>
+          </div>
+        </div>
       </div>
       <div class="sketch-item">
         <img src="images/sketch2.png" alt="Sketch 2">
-        <div class="sketch-overlay">Watcher in White</div>
+        <div class="sketch-overlay">
+          <div>
+            <div class="sketch-title">Watcher in White</div>
+            <div class="sketch-tools">Autodesk Maya</div>
+          </div>
+        </div>
       </div>
       <div class="sketch-item">
         <img src="images/sketch3.png" alt="Sketch 3">
-        <div class="sketch-overlay">Glacial Virome</div>
+        <div class="sketch-overlay">
+          <div>
+            <div class="sketch-title">Glacial Virome</div>
+            <div class="sketch-tools">Autodesk Maya, Photoshop</div>
+          </div>
+        </div>
       </div>
       <div class="sketch-item">
         <img src="images/sketch4.png" alt="Sketch 4">
-        <div class="sketch-overlay">Textural Tinkerings</div>
+        <div class="sketch-overlay">
+          <div>
+            <div class="sketch-title">Textural Tinkerings</div>
+            <div class="sketch-tools">Autodesk Maya</div>
+          </div>
+        </div>
       </div>
+      <!--<div class="sketch-item">
+        <img src="images/sketch5.png" alt="Sketch 5">
+        <div class="sketch-overlay">
+          <div>
+            <div class="sketch-title">Sketch Title 5</div>
+            <div class="sketch-tools">Your Tools Here</div>
+          </div>
+        </div>
+      </div>-->
       <!-- Add more .sketch-item divs as needed -->
     </div>
   </div>
