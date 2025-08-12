@@ -202,6 +202,16 @@ footer > div > div {
   opacity: 0.85;
   margin-bottom: 0;
 }
+
+/* Ensure popup video matches popup image dimensions */
+#portfolio-popup .popup-main-image video#main-popup-video {
+  width: 100%;
+  max-height: 70vh; /* Match the image popup's max height */
+  object-fit: contain;
+  border-radius: 3px;
+  display: block;
+  background: #111;
+}
   </style>
 </head>
 <body>
@@ -236,6 +246,18 @@ footer > div > div {
   <div class="container3">
     <h1 class="sub-title">Explore My Work<span>.</span></h1>
     <div class="work-list">
+
+      <div class="work">
+        <img src="images/dermalert.png" class="fade-in">
+        <div class="layer-case">
+          <h3>DermAlert: Skincare Product Repository</h3>
+          <p>EXPERIENCE DESIGN, INTERACTIVE</p>
+          <div class="buttons">
+            <button class="gallery-btn" data-gallery="images/dermalert.png, images/dermalert_mockup3.png, images/dermalert-viz1.png, images/dermalert-viz2.png">GALLERY</button>
+            <a href="dermalert3.html" class="case-study-btn">CASE STUDY</a>
+          </div>
+        </div>
+      </div>
       
       <div class="work">
         <img src="images/bimaristan.png" class="fade-in">
@@ -263,18 +285,6 @@ footer > div > div {
 
       <!--
       <div class="work">
-        <img src="images/measles.png" class="fade-in">
-        <div class="layer-case">
-          <h3>Measles Virus: Animated Infographic</h3>
-          <p>3D MODELLING, MOLECULAR VIZ</p>
-          <div class="buttons">
-            <button class="gallery-btn" data-gallery="images/bimaristan.png, images/bimaristan-mockup.png">GALLERY</button>
-            <a href="bimaristan3.html" class="case-study-btn">CASE STUDY</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="work">
         <img src="images/tibetan-test.png" class="fade-in">
         <div class="layer-case">
           <h3>Molecules in Thin Air: EPAS1 & EGLN1</h3>
@@ -285,7 +295,36 @@ footer > div > div {
           </div>
         </div>
       </div>
+
+      
+      <div class="work">
+        <img src="images/measles.png" class="fade-in">
+        <div class="layer-case">
+          <h3>Measles Virus: Animated Infographic</h3>
+          <p>3D MODELLING, MOLECULAR VIZ</p>
+          <div class="buttons">
+            <button class="gallery-btn" data-gallery="images/bimaristan.png, images/bimaristan-mockup.png">GALLERY</button>
+            <a href="bimaristan3.html" class="case-study-btn">CASE STUDY</a>
+          </div>
+        </div>
+      </div>
     -->
+
+      <div class="work">
+        <video src="images/nkcell.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          class="fade-in"
+          style="width:100%; object-fit:cover; border-radius:3px; display:block;"
+          id="nkcell-video">
+        </video>
+        <div class="layer" data-popup="images/nkcell.mp4">
+          <h3>Natural Killer Cell Animation</h3>
+          <p>MEDICAL ANIMATION</p>
+        </div>
+      </div>
 
       <div class="work">
         <img src="images/kidney.png" class="fade-in">
@@ -295,18 +334,6 @@ footer > div > div {
           <div class="buttons">
             <button class="gallery-btn" data-gallery="images/kidney-final.png, images/kidney-final4.png">GALLERY</button>
             <a href="kidney3.html" class="case-study-btn">CASE STUDY</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="work">
-        <img src="images/dermalert.png" class="fade-in">
-        <div class="layer-case">
-          <h3>DermAlert: Skincare Product Repository</h3>
-          <p>EXPERIENCE DESIGN, INTERACTIVE</p>
-          <div class="buttons">
-            <button class="gallery-btn" data-gallery="images/dermalert.png, images/dermalert_mockup3.png, images/dermalert-viz1.png, images/dermalert-viz2.png">GALLERY</button>
-            <a href="dermalert3.html" class="case-study-btn">CASE STUDY</a>
           </div>
         </div>
       </div>
@@ -351,6 +378,14 @@ footer > div > div {
       </div>
 
       <div class="work">
+        <img src="images/popfoss.png" class="fade-in">
+        <div class="layer" data-gallery="images/popfoss-final.png, images/popfoss-final2.png">
+          <h3>Popliteal Fossa: Vector Illustration</h3>
+          <p>MEDICAL ILLUSTRATION</p>
+        </div>
+      </div>
+
+      <div class="work">
         <img src="images/nanobot.png" class="fade-in">
         <div class="layer" data-popup="images/nanobot-final.PNG">
           <h3>Cancer's Nano-Nemesis</h3>
@@ -359,10 +394,10 @@ footer > div > div {
       </div>
 
       <div class="work">
-        <img src="images/popfoss.png" class="fade-in">
-        <div class="layer" data-gallery="images/popfoss-final.png, images/popfoss-final2.png">
-          <h3>Popliteal Fossa: Vector Illustration</h3>
-          <p>MEDICAL ILLUSTRATION</p>
+        <img src="images/yearbook.png" class="fade-in">
+        <div class="layer" data-gallery="images/yearbook-final.png, images/yearbook-final2.png">
+          <h3>2024 Yearbook Cover</h3>
+          <p>EDITORIAL COVER</p>
         </div>
       </div>
 
@@ -373,14 +408,6 @@ footer > div > div {
           <p>MOLECULAR VIZ, 3D MODELLING</p>
         </div>
       </div>
-
-      <!--<div class="work">
-        <img src="images/yearbook.png" class="fade-in">
-        <div class="layer" data-gallery="images/yearbook-final.png, images/yearbook-final2.png">
-          <h3>2024 Yearbook Cover</h3>
-          <p>EDITORIAL COVER</p>
-        </div>
-      </div>-->
 
       <!--<div class="work">
         <img src="images/skull.png" class="fade-in">
@@ -577,80 +604,107 @@ footer > div > div {
 
   <script>
   function openPopup(layer) {
-    const popup = document.getElementById('portfolio-popup');
-    const mainImage = document.getElementById('main-popup-image');
-    const thumbnailsContainer = document.getElementById('popup-thumbnails');
+  const popup = document.getElementById('portfolio-popup');
+  const mainImage = document.getElementById('main-popup-image');
+  const thumbnailsContainer = document.getElementById('popup-thumbnails');
 
-    // Get attributes for gallery or single popup
-    const galleryImages = layer.getAttribute('data-gallery');
-    const popupImageSrc = layer.getAttribute('data-popup');
+  // Remove any previous video in the popup
+  const oldVideo = popup.querySelector('#main-popup-video');
+  if (oldVideo) oldVideo.remove();
 
-    // Clear existing thumbnails
+  // Get the parent .work element
+  const workItem = layer.closest('.work');
+  const video = workItem ? workItem.querySelector('video') : null;
+
+  // Get attributes for gallery or single popup
+  const galleryImages = layer.getAttribute('data-gallery');
+  const popupImageSrc = layer.getAttribute('data-popup');
+
+  thumbnailsContainer.innerHTML = '';
+
+  if (video) {
+    // If there's a video, show it in the popup
+    mainImage.style.display = 'none';
+    const popupVideo = document.createElement('video');
+    popupVideo.id = 'main-popup-video';
+    popupVideo.src = video.src;
+    popupVideo.autoplay = true;
+    popupVideo.loop = true;
+    popupVideo.muted = true;
+    popupVideo.playsInline = true;
+    popupVideo.style.width = '100%';
+    popupVideo.style.borderRadius = '3px';
+    popupVideo.style.display = 'block';
+    popupVideo.style.objectFit = 'cover';
+    popup.querySelector('.popup-main-image').appendChild(popupVideo);
+  } else if (galleryImages) {
+    // Handle gallery popup
+    mainImage.style.display = '';
+    const images = galleryImages.split(',').map(img => img.trim());
+    mainImage.src = images[0];
+    images.forEach(imageSrc => {
+      const thumbnail = document.createElement('img');
+      thumbnail.src = imageSrc;
+      thumbnail.alt = 'Thumbnail';
+      thumbnail.onclick = (e) => {
+        e.stopPropagation();
+        mainImage.src = imageSrc;
+      };
+      thumbnailsContainer.appendChild(thumbnail);
+    });
+  } else if (popupImageSrc) {
+    // Handle single-image popup
+    mainImage.style.display = '';
+    mainImage.src = popupImageSrc;
     thumbnailsContainer.innerHTML = '';
-
-    if (galleryImages) {
-      // Handle gallery popup
-      const images = galleryImages.split(',').map(img => img.trim());
-      mainImage.src = images[0]; // Set the first image as the main image
-
-      // Add thumbnails
-      images.forEach(imageSrc => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = imageSrc;
-        thumbnail.alt = 'Thumbnail';
-        thumbnail.onclick = (e) => {
-          e.stopPropagation(); // Prevent the popup from closing when clicking a thumbnail
-          mainImage.src = imageSrc; // Update the main image when a thumbnail is clicked
-        };
-        thumbnailsContainer.appendChild(thumbnail);
-      });
-    } else if (popupImageSrc) {
-      // Handle single-image popup
-      mainImage.src = popupImageSrc;
-
-      // Hide the thumbnails container for single-image popups
-      thumbnailsContainer.innerHTML = '';
-    }
-
-    // Show the popup with fade-in effect
-    popup.style.display = 'flex';
-    setTimeout(() => popup.classList.add('active'), 10); // Add a slight delay to trigger the transition
   }
 
-  // Attach click event listeners to all layers
-  document.querySelectorAll('.layer').forEach(layer => {
-    layer.addEventListener('click', () => openPopup(layer));
-  });
+  popup.style.display = 'flex';
+  setTimeout(() => popup.classList.add('active'), 10);
+}
 
-  // Close the popup when clicking the "x"
-  document.getElementById('close-portfolio-popup').addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent any unintended behavior
+// Attach click event listeners to all layers
+document.querySelectorAll('.layer').forEach(layer => {
+  layer.addEventListener('click', () => openPopup(layer));
+});
+
+// Close the popup when clicking the "x"
+document.getElementById('close-portfolio-popup').addEventListener('click', (e) => {
+  e.stopPropagation();
+  const popup = document.getElementById('portfolio-popup');
+  popup.classList.remove('active');
+  popup.classList.add('hidden');
+  setTimeout(() => {
+    popup.style.display = 'none';
+    popup.classList.remove('hidden');
+    // Remove video if present
+    const oldVideo = popup.querySelector('#main-popup-video');
+    if (oldVideo) oldVideo.remove();
+    document.getElementById('main-popup-image').style.display = '';
+  }, 300);
+});
+
+// Close the popup when clicking outside the content
+document.getElementById('portfolio-popup').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
     const popup = document.getElementById('portfolio-popup');
     popup.classList.remove('active');
-    popup.classList.add('hidden'); // Add fade-out effect
+    popup.classList.add('hidden');
     setTimeout(() => {
-      popup.style.display = 'none'; // Hide the popup after the fade-out
-      popup.classList.remove('hidden'); // Reset the hidden class
-    }, 300); // Match the duration of the CSS transition
-  });
+      popup.style.display = 'none';
+      popup.classList.remove('hidden');
+      // Remove video if present
+      const oldVideo = popup.querySelector('#main-popup-video');
+      if (oldVideo) oldVideo.remove();
+      document.getElementById('main-popup-image').style.display = '';
+    }, 300);
+  }
+});
 
-  // Close the popup when clicking outside the content
-  document.getElementById('portfolio-popup').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) {
-      const popup = document.getElementById('portfolio-popup');
-      popup.classList.remove('active');
-      popup.classList.add('hidden'); // Add fade-out effect
-      setTimeout(() => {
-        popup.style.display = 'none'; // Hide the popup after the fade-out
-        popup.classList.remove('hidden'); // Reset the hidden class
-      }, 300); // Match the duration of the CSS transition
-    }
-  });
-
-  // Prevent clicks inside the popup content from closing the popup
-  document.querySelector('.popup-main-image').addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
+// Prevent clicks inside the popup content from closing the popup
+document.querySelector('.popup-main-image').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
 </script>
 
 <script>
