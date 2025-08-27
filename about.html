@@ -98,6 +98,72 @@ footer > div > div {
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
+
+.about-hero-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2.5em;
+  align-items: flex-start;
+  width: 100%;
+  max-width: none;
+  padding-left: 0vw;
+  padding-right: 0;
+}
+
+.about-profile-pic {
+  flex: 0 0 auto;
+  margin-bottom: 0em !important; /* Reduce space below */
+  margin-top: 0em !important;  /* Reduce space above */
+}
+
+.about-hero-text {
+  flex: 1 1 auto;
+  max-width: none;
+  margin-right: 0;
+}
+
+.project-nav-btn {
+  display: inline-block;
+  padding: 0.7em 2em;
+  font-size: 1em;
+  border-radius: 6px;
+  background: #00C47C;
+  color: #fff;
+  border: none;
+  font-family: 'Outfit-Bold', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.project-nav-btn:hover,
+.project-nav-btn:focus {
+  background: #009e63;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .about-hero-flex {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-profile-pic {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0em;
+    margin-top: 0em;
+  }
+  .about-profile-pic img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .about-hero-text {
+    width: 100%;
+  }
+}
   </style>
 </head>
 <body>
@@ -123,35 +189,42 @@ footer > div > div {
   <div class="case-study about-section">
     <div class="about-hero-flex">
       <!-- Profile Picture -->
-      <div class="about-profile-pic fade-in">
+      <div class="about-profile-pic">
         <img src="images/profile-pic.png" alt="Raymond Zhang Profile Picture" />
       </div>
       <!-- About Text -->
       <div class="about-hero-text">
         <h4 id="about-me-text">About Me<span>.</span></h4>
         <p class="intro-no-fade">
-          I’m a medical and scientific illustrator with a multidisciplinary skillset, including graphic design, UI/UX design, and 3D modelling—along with a strong interest in science and a passion for communicating complex ideas through visual media.
+          I’m a medical and scientific illustrator with a multidisciplinary skillset, including illustration, 3D animation, and interactive design—along with a strong interest in science and a passion for communicating complex ideas through visual media.
         </p>
         <p class="intro-no-fade">
-          I am also a graduate student at the Biomedical Communications program at the University of Toronto, the only accredited medical illustration program in Canada and one of only five in North America.
+          During my four years of undergraduate studies in the health sciences at McMaster University, I explored various biomedical topics in my courses and thesis work, with a particular emphasis on immunology, biochemistry and cell biology. Visual aids played a crucial role in enhancing my understanding of complex scientific concepts, and this experience deepened my appreciation for the contributions of medical illustrators and science communicators. I am also grateful to have studied under professors and mentors who fostered creativity in my learning, encouraging the use of visual abstracts and scientific posters to convey intricate ideas.
         </p>
-        <ul class="about-details fade-in">
-          <li><strong>Location:</strong> Toronto, Canada</li>
-          <li><strong>Email:</strong> <a href="mailto:raymondx.zhang@mail.utoronto.ca">raymondx.zhang@mail.utoronto.ca</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/raymond-x-zhang" target="_blank">linkedin.com/in/raymond-x-zhang</a></li>
-          <li><strong>Resume:</strong> <a href="images/resume.pdf" target="_blank">Download PDF</a></li>
-        </ul>
-        <div class="about-skills fade-in">
+        <p class="intro-no-fade">
+          Upon graduating in 2024, my deep-rooted passion for the visual arts, combined with a strong interest in the biological sciences, pushed me to pursue an MSc in Biomedical Communications. I am excited to further explore how the incorporation of visual storytelling in science communication can create impactful solutions and contribute to meaningful advancements in the field.
+        </p>
+
+        <div class="about-skills">
           <h5>Skills</h5>
           <div class="skills-list">
-            <span>Medical Illustration</span>
-            <span>3D Modelling</span>
+            <span>2D/3D Illustration</span>
+            <span>3D Animation</span>
+            <span>2D Animation</span>
+            <span>Motion Graphics</span>
             <span>Graphic Design</span>
             <span>UI/UX</span>
             <span>Interactive Design</span>
             <!-- ... -->
           </div>
         </div>
+
+        <!--<div style="margin: 1em 0;">
+          <a href="images/resume.pdf" target="_blank" class="project-nav-btn">
+            View Resume
+          </a>
+        </div>-->
+        
       </div>
     </div>
   </div>

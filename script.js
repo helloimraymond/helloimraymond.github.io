@@ -45,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
         /*"MARHABA BIL-3ĀLAM!",*/
         "OLÁ MUNDO",
         /*"M'ACH RHAESHESER!"
-        "HALLO, WERELD",*/
-        "HALO, DUNIA",
+        "HALLO, WERELD",
+        "HALO, DUNIA",*/
+        "AHOJ SVĚTE",
         "KALTXÌ, MA EYWA"
     ];
     const typeElem = document.getElementById("typewriter-text");
