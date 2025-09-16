@@ -300,9 +300,10 @@ nav ul li a:hover::after{
 
 .layer p{
     font-family: Outfit-Light;
-    font-size: 16px;
-    letter-spacing: 3px;
+    font-size: 14px;
+    letter-spacing: 2px;
     color: #fff;
+    line-height: 25px;
 }
 
 .layer-case {
@@ -332,9 +333,10 @@ nav ul li a:hover::after{
 
 .layer-case p{
     font-family: Outfit-Light;
-    font-size: 16px;
-    letter-spacing: 3px;
+    font-size: 14px;
+    letter-spacing: 2px;
     color: #fff;
+    line-height: 25px;
 }
 
 /* Style for the buttons in the overlay */
