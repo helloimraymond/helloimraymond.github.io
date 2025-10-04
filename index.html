@@ -883,6 +883,68 @@ document.addEventListener("DOMContentLoaded", function() {
       e.target.classList.toggle('zoomed');
     }
   });
+
+  // Add click event for Render Lab images
+  document.querySelectorAll('#sketch-lab .sketch-item img').forEach(img => {
+    img.addEventListener('click', function(e) {
+      // Open the popup with the clicked image
+      openSketchLabPopup(img.src, img.alt || 'Render Lab Image');
+    });
+  });
+
+  // (Optional) If you want videos to pop up as well:
+  document.querySelectorAll('#sketch-lab .sketch-item video').forEach(video => {
+    video.addEventListener('click', function(e) {
+      openSketchLabPopup(video.currentSrc || video.src, 'Render Lab Video', true);
+    });
+  });
+
+  // Helper function for Render Lab popup
+  function openSketchLabPopup(src, alt, isVideo = false) {
+    const popup = document.getElementById('portfolio-popup');
+    const thumbnailsContainer = document.getElementById('popup-thumbnails');
+    const popupMainImageDiv = popup.querySelector('.popup-main-image');
+
+    // Remove all children (image and video) from popup-main-image
+    while (popupMainImageDiv.firstChild) {
+      popupMainImageDiv.removeChild(popupMainImageDiv.firstChild);
+    }
+
+    if (isVideo || src.match(/\.(mp4|webm|ogg)$/i)) {
+      // Show video
+      const popupVideo = document.createElement('video');
+      popupVideo.id = 'main-popup-video';
+      popupVideo.src = src;
+      popupVideo.autoplay = true;
+      popupVideo.loop = true;
+      popupVideo.muted = true;
+      popupVideo.playsInline = true;
+      popupVideo.style.width = '100%';
+      popupVideo.style.maxHeight = '70vh';
+      popupVideo.style.borderRadius = '3px';
+      popupVideo.style.display = 'block';
+      popupVideo.style.objectFit = 'contain';
+      popupVideo.load();
+      popupMainImageDiv.appendChild(popupVideo);
+    } else {
+      // Show image
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = alt;
+      img.style.width = '100%';
+      img.style.maxHeight = '70vh';
+      img.style.borderRadius = '3px';
+      img.style.display = 'block';
+      img.style.objectFit = 'contain';
+      popupMainImageDiv.appendChild(img);
+    }
+
+    // Hide thumbnails for single image/video popup
+    thumbnailsContainer.innerHTML = '';
+
+    popup.style.display = 'flex';
+    setTimeout(() => popup.classList.add('active'), 10);
+  }
 });
 </script>
 
