@@ -38,16 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Typewriter effect
     const phrases = [
         "HELLO WORLD",
-        "BONJOUR, MONDE",
-        "HOLA, MUNDO",
+        "BONJOUR, LE MONDE",
+        "HOLA MUNDO",
         /*'<span class="typewriter-chinese">世界, 你好</span>', */
         /*"世界, 你好",*/
         /*"MARHABA BIL-3ĀLAM!",*/
         "OLÁ MUNDO",
         /*"M'ACH RHAESHESER!"
         "HALLO, WERELD",
-        "HALO, DUNIA",*/
-        "AHOJ SVĚTE",
+        "HALO, DUNIA",
+        "AHOJ SVĚTE",*/
+        "MERHABA DÜNYA",
         "KALTXÌ, MA EYWA"
     ];
     const typeElem = document.getElementById("typewriter-text");
