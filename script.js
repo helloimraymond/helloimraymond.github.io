@@ -138,12 +138,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeElem) typeLoop();
 
     // Popup for bimaristan.png
+    let bimaristanZoomLevel = 1;
+    let bimaristanPanX = 0;
+    let bimaristanPanY = 0;
+    let bimaristanIsDragging = false;
+    let bimaristanStartX, bimaristanStartY;
+
     const img = document.getElementById('bimaristan-img');
     const popup = document.getElementById('bimaristan-popup');
     const closeBtn = document.getElementById('close-popup');
 
     if (img && popup && closeBtn) {
         img.addEventListener('click', function() {
+            const popupImg = popup.querySelector('img');
+            // Reset zoom and pan
+            bimaristanZoomLevel = 1;
+            bimaristanPanX = 0;
+            bimaristanPanY = 0;
+            popupImg.style.transform = `scale(${bimaristanZoomLevel}) translate(${bimaristanPanX}px, ${bimaristanPanY}px)`;
+            popupImg.style.cursor = 'zoom-in';
             popup.style.display = 'flex';
             // Force reflow for transition
             void popup.offsetWidth;
@@ -165,7 +178,59 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Zoom and pan for bimaristan popup
+    if (popup) {
+        const bimaristanPopupImg = popup.querySelector('img');
+        if (bimaristanPopupImg) {
+            bimaristanPopupImg.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomFactor = 0.1;
+                if (e.deltaY < 0) {
+                    bimaristanZoomLevel = Math.min(bimaristanZoomLevel + zoomFactor, 5);
+                } else {
+                    bimaristanZoomLevel = Math.max(bimaristanZoomLevel - zoomFactor, 1);
+                }
+                bimaristanPopupImg.style.transform = `scale(${bimaristanZoomLevel}) translate(${bimaristanPanX}px, ${bimaristanPanY}px)`;
+                bimaristanPopupImg.style.cursor = bimaristanZoomLevel > 1 ? 'grab' : 'zoom-in';
+            });
+
+            bimaristanPopupImg.addEventListener('mousedown', (e) => {
+                if (bimaristanZoomLevel > 1) {
+                    bimaristanIsDragging = true;
+                    bimaristanStartX = e.clientX - bimaristanPanX;
+                    bimaristanStartY = e.clientY - bimaristanPanY;
+                    bimaristanPopupImg.style.cursor = 'grabbing';
+                }
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (bimaristanIsDragging && bimaristanZoomLevel > 1) {
+                    bimaristanPanX = e.clientX - bimaristanStartX;
+                    bimaristanPanY = e.clientY - bimaristanStartY;
+                    bimaristanPopupImg.style.transform = `scale(${bimaristanZoomLevel}) translate(${bimaristanPanX}px, ${bimaristanPanY}px)`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                bimaristanIsDragging = false;
+                if (bimaristanPopupImg) {
+                    bimaristanPopupImg.style.cursor = bimaristanZoomLevel > 1 ? 'grab' : 'zoom-in';
+                }
+            });
+
+            bimaristanPopupImg.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        }
+    }
+
     // Popup for sperm-final.png
+    let spermZoomLevel = 1;
+    let spermPanX = 0;
+    let spermPanY = 0;
+    let spermIsDragging = false;
+    let spermStartX, spermStartY;
+
     const spermImg = document.getElementById('sperm-img');
     const spermPopup = document.getElementById('sperm-popup');
     const closeSpermBtn = document.getElementById('close-sperm-popup');
@@ -174,6 +239,12 @@ document.addEventListener("DOMContentLoaded", () => {
         spermImg.addEventListener('click', function() {
             const popupImg = spermPopup.querySelector('img');
             popupImg.src = spermImg.src; // Always use the hero image
+            // Reset zoom and pan
+            spermZoomLevel = 1;
+            spermPanX = 0;
+            spermPanY = 0;
+            popupImg.style.transform = `scale(${spermZoomLevel}) translate(${spermPanX}px, ${spermPanY}px)`;
+            popupImg.style.cursor = 'zoom-in';
             spermPopup.style.display = 'flex';
             void spermPopup.offsetWidth;
             spermPopup.classList.add('active');
@@ -194,6 +265,52 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Zoom and pan for sperm popup
+    if (spermPopup) {
+        const spermPopupImg = spermPopup.querySelector('img');
+        if (spermPopupImg) {
+            spermPopupImg.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomFactor = 0.1;
+                if (e.deltaY < 0) {
+                    spermZoomLevel = Math.min(spermZoomLevel + zoomFactor, 5);
+                } else {
+                    spermZoomLevel = Math.max(spermZoomLevel - zoomFactor, 1);
+                }
+                spermPopupImg.style.transform = `scale(${spermZoomLevel}) translate(${spermPanX}px, ${spermPanY}px)`;
+                spermPopupImg.style.cursor = spermZoomLevel > 1 ? 'grab' : 'zoom-in';
+            });
+
+            spermPopupImg.addEventListener('mousedown', (e) => {
+                if (spermZoomLevel > 1) {
+                    spermIsDragging = true;
+                    spermStartX = e.clientX - spermPanX;
+                    spermStartY = e.clientY - spermPanY;
+                    spermPopupImg.style.cursor = 'grabbing';
+                }
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (spermIsDragging && spermZoomLevel > 1) {
+                    spermPanX = e.clientX - spermStartX;
+                    spermPanY = e.clientY - spermStartY;
+                    spermPopupImg.style.transform = `scale(${spermZoomLevel}) translate(${spermPanX}px, ${spermPanY}px)`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                spermIsDragging = false;
+                if (spermPopupImg) {
+                    spermPopupImg.style.cursor = spermZoomLevel > 1 ? 'grab' : 'zoom-in';
+                }
+            });
+
+            spermPopupImg.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        }
+    }
+
     // Hide scroll-down arrow on scroll
     const scrollArrow = document.querySelector('.scroll-down-arrow');
     if (scrollArrow) {
@@ -205,11 +322,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Portfolio popup
+    let zoomLevel = 1;
+    let panX = 0;
+    let panY = 0;
+    let isDragging = false;
+    let startX, startY;
+
     document.querySelectorAll('.layer').forEach(layer => {
         layer.onclick = () => {
             const popup = document.getElementById('portfolio-popup');
             const mainImage = document.getElementById('main-popup-image');
             const thumbnailsContainer = document.getElementById('popup-thumbnails');
+
+            // Reset zoom and pan when opening popup
+            zoomLevel = 1;
+            panX = 0;
+            panY = 0;
+            mainImage.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
 
             // Get the images for the gallery
             const galleryImages = layer.getAttribute('data-gallery').split(',');
@@ -227,6 +356,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 thumbnail.alt = 'Thumbnail';
                 thumbnail.onclick = () => {
                     mainImage.src = imageSrc.trim(); // Update the main image when a thumbnail is clicked
+                    // Reset zoom and pan when changing image
+                    zoomLevel = 1;
+                    panX = 0;
+                    panY = 0;
+                    mainImage.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
+                    mainImage.style.cursor = 'zoom-in';
                 };
                 thumbnailsContainer.appendChild(thumbnail);
             });
@@ -236,6 +371,47 @@ document.addEventListener("DOMContentLoaded", () => {
             void popup.offsetWidth; // Force reflow
             popup.classList.add('active');
         };
+    });
+
+    // Prevent default drag behavior on the image
+    document.getElementById('main-popup-image').addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
+    document.getElementById('main-popup-image').addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const zoomFactor = 0.1;
+        if (e.deltaY < 0) {
+            zoomLevel = Math.min(zoomLevel + zoomFactor, 5); // Max zoom 5x
+        } else {
+            zoomLevel = Math.max(zoomLevel - zoomFactor, 1); // Min zoom 1x
+        }
+        const img = document.getElementById('main-popup-image');
+        img.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
+        img.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+    });
+
+    // Pan functionality with mouse drag
+    document.getElementById('main-popup-image').addEventListener('mousedown', (e) => {
+        if (zoomLevel > 1) {
+            isDragging = true;
+            startX = e.clientX - panX;
+            startY = e.clientY - panY;
+            document.getElementById('main-popup-image').style.cursor = 'grabbing';
+        }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging && zoomLevel > 1) {
+            panX = e.clientX - startX;
+            panY = e.clientY - startY;
+            document.getElementById('main-popup-image').style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        const img = document.getElementById('main-popup-image');
+        img.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
     });
 
     // Close the popup

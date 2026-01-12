@@ -568,6 +568,10 @@ nav ul li a:hover::after{
   border-radius: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   display: block;
+  cursor: zoom-in;
+  transform-origin: center center;
+  transition: none;
+}
   margin: 0 auto;
 }
 
@@ -578,15 +582,11 @@ nav ul li a:hover::after{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
 }
 
-/* Add zoom effect for popup images */
+/* Add zoom and pan effect for popup images */
 .popup-main-image img {
   cursor: zoom-in; /* Change cursor to indicate zoom functionality */
-  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
-}
-
-.popup-main-image img.zoomed {
-  cursor: zoom-out; /* Change cursor to indicate zoom-out functionality */
-  transform: scale(2); /* Zoom in by scaling the image */
+  transition: none; /* Remove transition for manual control */
+  transform-origin: center center; /* Set transform origin to center */
 }
 
 #close-portfolio-popup {
