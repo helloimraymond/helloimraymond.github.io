@@ -98,7 +98,7 @@ body{
     background-image: url(images/work_background.png);
     background-size: cover;
     background-position: center;
-    padding-bottom: 100px;
+    padding-bottom: 85px;
     padding-left: 4%; /* Aligns with .container3 and .container */
 }
 
@@ -193,6 +193,28 @@ nav ul li a:hover::after{
     font-family: Outfit-Bold;
 }
 
+.header-text .demo-btn {
+    margin-top: 28px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-family: "Outfit-Bold", sans-serif;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    display: inline-block;
+}
+
+.header-text .demo-btn:hover {
+    background-color: #ffffff;
+    color: #000;
+    border-color: #ffffff;
+}
+
 /*---------text react to screen size change----------*/
 @media(max-width:1020px){
     .header-text h1{
@@ -203,6 +225,13 @@ nav ul li a:hover::after{
 @media(max-width:900px){
     .header-text h1{
         font-size: 36px;
+    }
+}
+
+@media(max-width:768px){
+    .header-text .demo-btn{
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
