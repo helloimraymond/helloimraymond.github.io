@@ -266,7 +266,7 @@ footer > div > div {
           <span id="typewriter-text" class="loading-dots"></span>
         </p>
         <h1>I am <span>Raymond</span>; a biomedical communicator, <br>animator, and science storyteller.</h1>
-        <button class="demo-btn" onclick="window.open('https://vimeo.com/1130550943?share=copy&fl=sv&fe=ci', '_blank')">MEDICAL ANIMATION REEL</button>
+        <button class="demo-btn" id="medical-reel-btn" data-vimeo="1130550943">MEDICAL ANIMATION REEL</button>
       </div>
     </div>
 <!-----------portfolio---------->
@@ -1157,6 +1157,16 @@ footer > div > div {
 
   <script>
 document.addEventListener("DOMContentLoaded", function() {
+  // Handle Medical Animation Reel button click
+  const medicalReelBtn = document.getElementById('medical-reel-btn');
+  if (medicalReelBtn) {
+    medicalReelBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const vimeoId = this.getAttribute('data-vimeo');
+      openVimeoPopup(vimeoId);
+    });
+  }
+
   // Attach click event listeners to all .layer and .gallery-btn elements
   document.querySelectorAll('.layer, .gallery-btn').forEach(el => {
     el.addEventListener('click', function(e) {
@@ -1264,6 +1274,9 @@ document.addEventListener("DOMContentLoaded", function() {
       // Remove video if present
       const oldVideo = popup.querySelector('#main-popup-video');
       if (oldVideo) oldVideo.remove();
+      // Remove iframe if present (Vimeo)
+      const iframe = popup.querySelector('iframe');
+      if (iframe) iframe.remove();
       document.getElementById('main-popup-image').style.display = '';
     }, 300);
   };
@@ -1275,6 +1288,9 @@ document.addEventListener("DOMContentLoaded", function() {
         popup.style.display = 'none';
         const oldVideo = popup.querySelector('#main-popup-video');
         if (oldVideo) oldVideo.remove();
+        // Remove iframe if present (Vimeo)
+        const iframe = popup.querySelector('iframe');
+        if (iframe) iframe.remove();
         document.getElementById('main-popup-image').style.display = '';
       }, 300);
     }
@@ -1363,6 +1379,40 @@ document.addEventListener("DOMContentLoaded", function() {
     sketch20Img.addEventListener('click', function() {
       openSketchLabPopup('images/sketch20-extended.png', 'Extended Sketch');
     });
+  }
+
+  // Function to open Vimeo video in popup
+  function openVimeoPopup(vimeoId) {
+    const popup = document.getElementById('portfolio-popup');
+    const popupMainImageDiv = popup.querySelector('.popup-main-image');
+    const thumbnailsContainer = document.getElementById('popup-thumbnails');
+
+    // Remove all children from popup-main-image
+    while (popupMainImageDiv.firstChild) {
+      popupMainImageDiv.removeChild(popupMainImageDiv.firstChild);
+    }
+
+    // Create iframe for Vimeo
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://player.vimeo.com/video/${vimeoId}`;
+    iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+    iframe.style.width = '90vw';
+    iframe.style.height = '80vh';
+    iframe.style.maxWidth = '1200px';
+    iframe.style.borderRadius = '3px';
+    iframe.style.display = 'block';
+    iframe.style.border = 'none';
+    iframe.frameBorder = '0';
+    iframe.allowFullscreen = true;
+    
+    popupMainImageDiv.appendChild(iframe);
+
+    // Clear thumbnails
+    thumbnailsContainer.innerHTML = '';
+
+    // Show popup
+    popup.style.display = 'flex';
+    setTimeout(() => popup.classList.add('active'), 10);
   }
 });
 </script>
