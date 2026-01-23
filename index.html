@@ -391,7 +391,7 @@ footer > div > div {
           <h3>The JAK-STAT Pathway: Rheumatoid Arthritis Animation</h3>
           <p>2D ANIMATION &#40;ILLUSTRATOR, AFTER EFFECTS&#41;</p>
           <div class="buttons">
-            <button onclick="window.open('https://vimeo.com/1146718672?share=copy&fl=sv&fe=ci', '_blank')">VIEW HERE</button>
+            <button id="jak-stat-vimeo-btn" data-vimeo="1146718672">VIEW HERE</button>
             <a href="toodee.html" class="case-study-btn">CASE STUDY</a>
           </div>
         </div>
@@ -1161,6 +1161,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const medicalReelBtn = document.getElementById('medical-reel-btn');
   if (medicalReelBtn) {
     medicalReelBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const vimeoId = this.getAttribute('data-vimeo');
+      openVimeoPopup(vimeoId);
+    });
+  }
+
+  // Handle JAK-STAT Pathway button click
+  const jakStatBtn = document.getElementById('jak-stat-vimeo-btn');
+  if (jakStatBtn) {
+    jakStatBtn.addEventListener('click', function(e) {
       e.preventDefault();
       const vimeoId = this.getAttribute('data-vimeo');
       openVimeoPopup(vimeoId);
