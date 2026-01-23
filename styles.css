@@ -1305,7 +1305,7 @@ nav ul li a:hover::after{
   /* Ensure the container2 background image is responsive */
   .container2 {
     height: auto; /* Allow the container to grow as needed */
-    padding: 16px; /* Add padding for better spacing */
+    padding: 16px 16px 60px 16px; /* Add padding for better spacing, increased bottom padding */
     background-size: cover; /* Ensure the background image scales properly */
   }
 
