@@ -1454,6 +1454,7 @@ nav ul li a:hover::after{
   .container2 {
     align-items: flex-start; /* Move the header text closer to the top */
     padding-top: 0px; /* Add padding to position the text higher */
+    padding-bottom: 60px; /* Add space between button and bottom of background */
     height: auto; /* Allow the container to adjust its height dynamically */
   }
 
