@@ -1472,7 +1472,11 @@ nav ul li a:hover::after{
   .header-text h1 {
     font-size: 35px; /* Reduce the font size of the main header text */
     line-height: 1.2; /* Adjust line height for better spacing */
-    margin-bottom: 40px;
+    margin-bottom: 12px;
+  }
+
+  .header-text .demo-btn {
+    margin-top: 8px;
   }
 }
 
