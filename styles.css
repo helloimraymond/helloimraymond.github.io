@@ -1225,7 +1225,7 @@ nav ul li a:hover::after{
   }
   .container2 {
     align-items: flex-start !important; /* Allow header text to move down */
-    padding-bottom: 0 !important;      /* Remove forced spacing at the bottom */
+    padding-bottom: 60px !important;   /* Add space between button and background bottom */
     height: auto !important;           /* Allow container to grow as needed */
     min-height: 0 !important;
   }
@@ -1454,24 +1454,30 @@ nav ul li a:hover::after{
   .container2 {
     align-items: flex-start; /* Move the header text closer to the top */
     padding-top: 0px; /* Add padding to position the text higher */
+    padding-bottom: 12px; /* Add space between button and bottom of background */
     height: auto; /* Allow the container to adjust its height dynamically */
   }
 
   .header-text {
     margin-top: 0; /* Remove any extra margin above the header text */
+    margin-bottom: 5px; /* Remove any extra margin below the header text */
     padding: 0 16px; /* Add some horizontal padding for better spacing */
     text-align: center; /* Center the text for mobile screens */
   }
 
   #typewriter-text {
     margin-top: 16px; /* Add some space below the navbar */
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 16px; /* Reduce font size for smaller screens */
   }
 
   .header-text h1 {
     font-size: 35px; /* Reduce the font size of the main header text */
     line-height: 1.2; /* Adjust line height for better spacing */
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .header-text .demo-btn {
+    margin-top: 8px;
   }
 }
 
