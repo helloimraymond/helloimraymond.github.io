@@ -417,6 +417,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Close the popup
     document.getElementById('close-portfolio-popup').onclick = () => {
         const popup = document.getElementById('portfolio-popup');
+        
+        // Stop video playback immediately
+        const video = popup.querySelector('#main-popup-video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+        
+        // Stop iframe playback immediately by clearing src
+        const iframe = popup.querySelector('iframe');
+        if (iframe) {
+            const oldSrc = iframe.src;
+            iframe.src = '';
+            iframe.src = oldSrc; // Reset src to stop playback
+        }
+        
         popup.classList.remove('active');
     };
 

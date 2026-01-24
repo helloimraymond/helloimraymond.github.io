@@ -1279,14 +1279,30 @@ document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('close-portfolio-popup').onclick = function() {
     const popup = document.getElementById('portfolio-popup');
     popup.classList.remove('active');
+    
+    // Stop video playback immediately
+    const video = popup.querySelector('#main-popup-video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+    
+    // Stop iframe playback immediately by clearing src
+    const iframe = popup.querySelector('iframe');
+    if (iframe) {
+      const oldSrc = iframe.src;
+      iframe.src = '';
+      iframe.src = oldSrc; // Reset src to stop playback
+    }
+    
     setTimeout(() => {
       popup.style.display = 'none';
       // Remove video if present
       const oldVideo = popup.querySelector('#main-popup-video');
       if (oldVideo) oldVideo.remove();
       // Remove iframe if present (Vimeo)
-      const iframe = popup.querySelector('iframe');
-      if (iframe) iframe.remove();
+      const iframeToRemove = popup.querySelector('iframe');
+      if (iframeToRemove) iframeToRemove.remove();
       document.getElementById('main-popup-image').style.display = '';
     }, 300);
   };
@@ -1294,13 +1310,29 @@ document.addEventListener("DOMContentLoaded", function() {
     if (e.target === e.currentTarget) {
       const popup = document.getElementById('portfolio-popup');
       popup.classList.remove('active');
+      
+      // Stop video playback immediately
+      const video = popup.querySelector('#main-popup-video');
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+      
+      // Stop iframe playback immediately by clearing src
+      const iframe = popup.querySelector('iframe');
+      if (iframe) {
+        const oldSrc = iframe.src;
+        iframe.src = '';
+        iframe.src = oldSrc; // Reset src to stop playback
+      }
+      
       setTimeout(() => {
         popup.style.display = 'none';
         const oldVideo = popup.querySelector('#main-popup-video');
         if (oldVideo) oldVideo.remove();
         // Remove iframe if present (Vimeo)
-        const iframe = popup.querySelector('iframe');
-        if (iframe) iframe.remove();
+        const iframeToRemove = popup.querySelector('iframe');
+        if (iframeToRemove) iframeToRemove.remove();
         document.getElementById('main-popup-image').style.display = '';
       }, 300);
     }
