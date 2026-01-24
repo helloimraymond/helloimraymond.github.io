@@ -35,6 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Highlight active nav link based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+
     // Typewriter effect
     const phrases = [
         "HELLO WORLD",
