@@ -950,6 +950,11 @@ nav ul li a.active #contact_link{
   margin-bottom: 4px;
 }
 
+.skills-list .skills-list-entry {
+  background: #808080;
+  color:#fff
+}
+
 @media (max-width: 700px) {
   .about-hero-flex {
     flex-direction: column;
