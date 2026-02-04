@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2</title>
+
+    <link rel="stylesheet" href="LAB_style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="LAB_index.html">My Dev Diaries</a></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="LAB_index.html">Home</a></li>
+                <li><a href="LAB_about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h3><a href="LAB_index.html">Back to Home</a></h3>
+
+        <section class="lab-header">
+            <h1>Lab 4</h1>
+            <p class="lab-date">05/February/2026</p>
+        </section>
+
+        
+
+        <section class="lab-images">
+            <h2>Project Screenshots</h2>
+            
+            <figure >
+                <img src="LAB_images/lab4.png" alt="Red white blood cells, white blood cells, and platelets flowing through vessel"> 
+                <figcaption>Screenshot of Redshift rendering in Maya</figcaption>
+            </figure>
+        </section>
+
+        <section class="lab-reflection">
+            <h2>Reflection</h2>
+            <p>For my technological experiment, I downloaded Redshift and used it to render my first-ever Maya animation. While we currently use the Arnold renderer for our 3D animation class (and for last year’s 3D class), it is often slow and renders my machine unusable due to its laginess. I knew Redshift was generally a faster render engine than Arnold, so I decided to give it a go to see how its speed and quality stacked up compared to the default Maya engine. I am used to using Redshift in Cinema 4D, but never had the opportunity to transfer these skills to Maya. Additionally, I had never rendered an animation in Maya before this experiment, largely due to the turtle slowness of Arnold.</p>
+            <p>Initially, I planned to render the animation using Arnold, but after an hour passed with only five rendered frames, I decided to cut my losses and stopped the render. I then decided to install Redshift onto Maya, which proved to be a technological challenge in itself. For some reason, Redshift wasn’t appearing under the Maya plug-ins menu until I downloaded the second-latest version. Afterwards, I had a truly horrible time trying to batch render my animation, with Maya crashing every single frame…</p>
+            <p>Despite this, I soldiered on, and consulted the internet (i.e. Reddit) in search of answers. I learned that, for some odd reason, the newest versions of Redshift are incompatible with Maya’s intricacies and will cause crashes anytime one tries to render an animation. Reddit’s solution? Uninstall Redshift and revert back to version 2026.1.1.</p>
+            <p>And it worked! After one night’s rest, I managed to render a full, 6s animation in Maya using Redshift, which would have been unthinkable before. The quality of the SSS seemed to downgrade a bit with Redshift (my only complaint), but it more than made up for it in render time. My computer was also completely usable during the render process.</p>
+            <p>This process helped me better understand how render engines work, and how their strengths can be employed in different situations to maximize quality and/or productivity. Moving forward, I may start to render Maya scenes using Redshift instead of Arnold, especially on my home machine.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>My DevDiaries</h3>
+                <p>Documenting my journey in web development</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                <li><a href="LAB_index.html">Home</a></li>
+                <li><a href="LAB_about.html">About</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: your.email@example.com</p>
+                <p>Website: X</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 My DevDiaries. All rights reserved.</p>
+        </div>
+  </footer>
+</body>
+</html>
