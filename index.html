@@ -475,10 +475,10 @@ footer > div > div {
       </div>
 
       
-
       
       
-      <div class="work">
+      
+    <div class="work">
         <img src="images/dermalert.png" class="fade-in">
         <div class="layer-case">
           <h3>DermAlert: Skincare Product Repository</h3>
@@ -489,11 +489,6 @@ footer > div > div {
           </div>
         </div>
       </div>
-
-      
-
-      
-    
       
       
 
@@ -513,19 +508,26 @@ footer > div > div {
         </div>
       </div>
 
-      
-      
       <div class="work">
-        <img src="images/kidney.png" class="fade-in">
+      <video src="images/sjogrens.mp4"
+        autoplay
+        loop
+          muted
+          playsinline
+          class="fade-in"
+          style="width:100%; object-fit:cover; border-radius:3px; display:block;"
+          id="nkcell-video">
+        </video>
         <div class="layer-case">
-          <h3>Kidney Section: Show Me the Unseeable</h3>
-          <p>ILLUSTRATION &#40;PHOTOSHOP&#41;, 3D MODELLING &#40;ZBRUSH, C4D&#41;</p>
+          <h3>Sjögren's Disease: Explainer Video</h3>
+          <p>2D ANIMATION &#40;ILLUSTRATOR, AFTER EFFECTS&#41;</p>
           <div class="buttons">
-            <button class="gallery-btn" data-gallery="images/kidney-final.png, images/kidney-final4.png">GALLERY</button>
-            <a href="kidney3.html" class="case-study-btn">CASE STUDY</a>
+            <button id="sjogrens-vimeo-btn" data-vimeo="1165834015">VIEW HERE</button>
+            <a href="sjogrens.html" class="case-study-btn">CASE STUDY</a>
           </div>
         </div>
       </div>
+      
 
       <div class="work">
       <video src="images/wbc.mp4"
@@ -543,27 +545,26 @@ footer > div > div {
         </div>
       </div>
 
-      
-
-      
-
-      
-      
-      
-
-      
       <div class="work">
-        <img src="images/sperm.png" class="fade-in">
-        <div class="layer" data-popup="images/sperm-final.png">
-          <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
-          <p>DATAVIZ, INFOGRAPHIC DESIGN &#40;ILLUSTRATOR&#41;</p>
+        <img src="images/kidney.png" class="fade-in">
+        <div class="layer-case">
+          <h3>Kidney Section: Show Me the Unseeable</h3>
+          <p>ILLUSTRATION &#40;PHOTOSHOP&#41;, 3D MODELLING &#40;ZBRUSH, C4D&#41;</p>
+          <div class="buttons">
+            <button class="gallery-btn" data-gallery="images/kidney-final.png, images/kidney-final4.png">GALLERY</button>
+            <a href="kidney3.html" class="case-study-btn">CASE STUDY</a>
+          </div>
         </div>
-          <!--<div class="buttons">
-            <button class="gallery-btn" data-gallery="images/sperm-final.png">GALLERY</button>
-            <a href="sperm3.html" class="case-study-btn">CASE STUDY</a>
-          </div>-->
-        
       </div>
+
+      
+
+      
+      
+      
+
+      
+      
 
       <div class="work">
       <video src="images/villi.mp4"
@@ -581,7 +582,18 @@ footer > div > div {
         </div>
       </div>
 
-      
+      <div class="work">
+        <img src="images/sperm.png" class="fade-in">
+        <div class="layer" data-popup="images/sperm-final.png">
+          <h3>Seeds of Life: Mapping Sperm Count Across Countries</h3>
+          <p>DATAVIZ, INFOGRAPHIC DESIGN &#40;ILLUSTRATOR&#41;</p>
+        </div>
+          <!--<div class="buttons">
+            <button class="gallery-btn" data-gallery="images/sperm-final.png">GALLERY</button>
+            <a href="sperm3.html" class="case-study-btn">CASE STUDY</a>
+          </div>-->
+        
+      </div>
       
 
       
@@ -602,7 +614,21 @@ footer > div > div {
         </div>
       </div>-->
 
-      
+      <div class="work">
+        <img src="images/nanobot.png" class="fade-in">
+        <div class="layer" data-popup="images/nanobot-final.PNG">
+          <h3>Cancer's Nano-Nemesis</h3>
+          <p>3D MODELLING, LIGHTING & MATERIALS &#40;MAYA&#41;</p>
+        </div>
+      </div>
+
+      <div class="work">
+        <img src="images/popfoss.png" class="fade-in">
+        <div class="layer" data-gallery="images/popfoss-final.png, images/popfoss-final2.png">
+          <h3>Popliteal Fossa: Vector Illustration</h3>
+          <p>ILLUSTRATION &#40;ILLUSTRATOR&#41;</p>
+        </div>
+      </div>
 
       
       <div class="work">
@@ -640,23 +666,11 @@ footer > div > div {
       
       
 
-      <div class="work">
-        <img src="images/nanobot.png" class="fade-in">
-        <div class="layer" data-popup="images/nanobot-final.PNG">
-          <h3>Cancer's Nano-Nemesis</h3>
-          <p>3D MODELLING, LIGHTING & MATERIALS &#40;MAYA&#41;</p>
-        </div>
-      </div>
-
-      <div class="work">
-        <img src="images/popfoss.png" class="fade-in">
-        <div class="layer" data-gallery="images/popfoss-final.png, images/popfoss-final2.png">
-          <h3>Popliteal Fossa: Vector Illustration</h3>
-          <p>ILLUSTRATION &#40;ILLUSTRATOR&#41;</p>
-        </div>
-      </div>
       
-      <div class="work">
+
+      
+      
+      <!--<div class="work">
       <video src="images/metaballs.mp4"
         autoplay
         loop
@@ -670,7 +684,7 @@ footer > div > div {
           <h3>Metaball Madness</h3>
           <p>3D ANIMATION &#40;C4D&#41;, COMPOSITING &#40;AFTER EFFECTS&#41;</p>
         </div>
-      </div>
+      </div>-->
       
       
       <div class="work">
@@ -1188,6 +1202,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const jakStatBtn = document.getElementById('jak-stat-vimeo-btn');
   if (jakStatBtn) {
     jakStatBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const vimeoId = this.getAttribute('data-vimeo');
+      openVimeoPopup(vimeoId);
+    });
+  }
+
+  // Handle JAK-STAT Pathway button click
+  const sjogrensBtn = document.getElementById('sjogrens-vimeo-btn');
+  if (sjogrensBtn) {
+    sjogrensBtn.addEventListener('click', function(e) {
       e.preventDefault();
       const vimeoId = this.getAttribute('data-vimeo');
       openVimeoPopup(vimeoId);

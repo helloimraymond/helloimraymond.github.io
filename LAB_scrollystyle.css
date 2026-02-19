@@ -1,0 +1,178 @@
+/* Basic reset */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+
+body {
+ font-family: Arial, sans-serif;
+}
+
+
+/* Main 2-column layout */
+.scrolly-container {
+ display: flex;
+ min-height: 100vh;
+}
+
+
+/* Left side (visual stage) */
+.visual-column {
+ position: fixed;
+ left: 0;
+ top: 0;
+ width: 50%;
+ height: 100vh;
+ background: white;
+ padding: 24px;
+}
+
+
+
+/* Right side (story) */
+.text-column {
+ margin-left: 50%;
+ width: 50%;
+ padding: 32px;
+ background: #f3f3f3;
+}
+
+.visual-stack {
+ position: relative;
+ width: 100%;
+ height: 100%;
+}
+
+
+/* Each visual sits on top of each other */
+.visual {
+ position: absolute;
+ inset: 0;
+ opacity: 0;
+ transition: opacity 0.7s ease;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+
+/* The active one shows */
+.visual.active {
+ opacity: 1;
+}
+
+
+.visual img {
+ max-width: 90%;
+ max-height: 90%;
+ object-fit: contain;
+}
+
+.story-step {
+ min-height: 90vh;
+ padding: 50px 0;
+}
+
+
+.story-step h2 {
+ font-size: 58px;
+ margin-bottom: 16px;
+ font-family: 'Times New Roman', Times, serif;
+ margin-left: 20%;
+ margin-right: 20%;
+}
+
+
+.story-step p {
+ font-size: 38px;
+ margin-bottom: 16px;
+ font-family: 'Times New Roman', Times, serif;
+ margin-left: 20%;
+ margin-right: 20%;
+}
+
+
+.spacer {
+ height: 20vh;
+}
+
+/* Makes image container a positioning reference */
+.image-stage {
+ position: relative;
+ display: inline-block;
+}
+
+
+/* Ensure main image behaves predictably */
+.main-image {
+ display: block;
+ max-width: 90%;
+ max-height: 90%;
+ object-fit: contain;
+}
+
+
+/* Hotspot container sits on top of image */
+.hotspot {
+ position: absolute;
+
+
+ /* MOVE THESE VALUES TO POSITION HOTSPOT */
+ left: 50%;
+ top: 50%;
+
+
+ transform: translate(-50%, -50%);
+ cursor: pointer;
+ z-index: 5;
+}
+
+
+/* Size of hotspot icon */
+.hotspot-icon {
+ width: 36px;
+ height: 36px;
+ display: block;
+}
+
+/* Label styling */
+.hotspot-label {
+ position: absolute;
+ left: 120%; /* places it to the right of icon */
+ top: 50%;
+ transform: translateY(-50%);
+
+
+ width: 220px;
+ padding: 10px 12px;
+
+
+ background: rgba(255, 255, 255, 0.95);
+ border-radius: 12px;
+ box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+
+ font-size: 14px;
+ line-height: 1.4;
+
+
+ opacity: 0;
+ pointer-events: none; /* prevents flicker */
+ transition: opacity 0.25s ease;
+}
+
+
+/* THE MAGIC: reveal on hover */
+.hotspot:hover .hotspot-label {
+ opacity: 1;
+}
+
+
+
+
+
+
+
+
