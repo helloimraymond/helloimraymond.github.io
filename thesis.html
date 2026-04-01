@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JAK/STAT Animation Case Study</title>
+  <title>Thesis: Embryology in Motion</title>
   <link rel="shortcut icon" type="image/png" href="/images/rz.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
@@ -421,6 +421,8 @@
       gap: 4px;
       margin-top: 0em;    /* Decreased space above image rows */
       margin-bottom: 2em;   /* Good space below */
+      margin-left: 48px;
+      margin-right: 48px;
       justify-content: flex-start;
       flex-wrap: wrap;
       max-width: 700px;
@@ -435,7 +437,19 @@
       flex: 1 1 0;
       max-width: 50%; /* Two images per row */
     }
-    .image-row img {
+    /*.image-row img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 0px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0.5em;
+      padding-bottom: 0;
+    }*/
+    .image-row img,
+    .image-row video {
       width: 100%;
       max-width: 100%;
       height: auto;
@@ -484,6 +498,12 @@
         margin-right: 0 !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+      }
+      .image-row {
+        margin: 0 auto !important;
+        max-width: 90vw !important;
+        width: 100% !important;
+        gap: 0 !important;
       }
       /* Add left padding to boxed quotes */
   blockquote.research-quote {
@@ -971,7 +991,7 @@ footer > div > div {
         <a href="index.html"><img src="images/logo.png" class="logo"></a>
         <ul>
           <li><a href="index.html">WORK</a></li>
-          <li><a href="thesis.html">THESIS</a></li>
+          <li><a href="thesis.html" class="active">THESIS</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="contact.html"><span id="contact_link">CONTACT</span></a></li>
         </ul>
@@ -984,11 +1004,11 @@ footer > div > div {
     </div>
   </div>
   <section class="hero-section">
-    <img src="images/toodee-back.png" alt="Bimaristans Hero" class="hero-bg" />
+    <img src="images/thesis_back.png" alt="Bimaristans Hero" class="hero-bg" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Rheumatoid Arthritis & The JAK-STAT Pathway</h1>
-      <div class="hero-subtitle">A 2D animation about how the JAK-STAT pathway is involved in rheumatoid arthritis</div>
+      <h1 class="hero-title">Embryology in Motion: Cardiac Development</h1>
+      <div class="hero-subtitle">3D animation as a tool for teaching embryonic cardiac development to undergraduate and medical students</div>
     </div>
   </section>
   <div class="case-layout">
@@ -996,17 +1016,17 @@ footer > div > div {
       <h2>Project Info</h2>
       <div class="sidebar-meta">
         <button class="dropdown-btn" aria-expanded="false">Audience</button>
-        <div class="dropdown-content">General lay audience</div>
+        <div class="dropdown-content">Undergraduate and medical students</div>
         <button class="dropdown-btn" aria-expanded="false">Tools</button>
-        <div class="dropdown-content">Illustrator, After Effects, OpenToonz</div>
-        <button class="dropdown-btn" aria-expanded="false">Client</button>
-        <div class="dropdown-content">Peter Leynes (Klick Health)</div>
+        <div class="dropdown-content">Maya, After Effects</div>
+        <button class="dropdown-btn" aria-expanded="false">Committee</button>
+        <div class="dropdown-content">David Mazierski (Primary Supervisor), Marc Dryer (Secondary Supervisor), Dr. Danielle Bentley (Content Advisor)</div>
       </div>
       <nav>
         <ul>
-          <li><a href="#project">Project</a></li>
-          <!--<li><a href="#research">Research & Thumbnails</a></li>
-          <li><a href="#modelling">3D Modelling</a></li>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#objective">Objective</a></li>
+          <!--<li><a href="#modelling">3D Modelling</a></li>
           <li><a href="#rendering">Rendering</a></li>
           <li><a href="#layout">Layout & Graphic Design</a></li>
           <li><a href="#references">References</a></li>-->
@@ -1014,19 +1034,24 @@ footer > div > div {
       </nav>
     </aside>
     <main class="main-content">
+      <section class="section" id="introblock">
+        <blockquote class="research-quote">
+          This project gave me a chance to step away from the primarily procedural workflows I was (previously) more comfortable with, and into a more manual and hands-on approach. I used modelling, rigging, keyframe animation, and blendshapes to gain more control and precision, which was especially important to capture the intricacies of cardiac development. I also had the opportunity to develop my Maya FX skills (Bifrost), as well as shading, lighting, and rendering.
+        </blockquote>
+      </section>
       
-      <section class="section" id="project">
+      
+      <section class="section" id="problem">
+        <div class="section-title" id="problem">Problem</div>
 
-        <p>This 2D animation details how the JAK-STAT pathway is involved in rheumatoid arthritis. It uses a flat, stylized animation style with vector-based assets and comedically exaggerated effects to transform complex biology into an entertaining and memorable experience. This project was a collaborative effort between <a href="https://liathena101.wixsite.com/portfolio" target="_blank" style="color:#000; font-family:'Outfit-Regular'; font-style: italic">Athena Li</a>, <a href="https://royk.framer.media/" target="_blank" style="color:#000; font-family:'Outfit-Regular'; font-style: italic">Roy Kulananthan</a>, and myself.</p>
-        <figure>
+        <p>Students often encounter difficulties when studying fundamental concepts in embryology, especially cardiac development, due to the spatiotemporal complexity of visualizing anatomical structures evolving in time and in three dimensions. Currently available teaching resources are mainly two-dimensional static images, which often fail to adequately depict these embryological processes and their dynamic nature.</p>
+        <!--<figure>
             <div style="position: relative; width: 100%; max-width: 700px; margin: 1em 0; rgba(0,0,0,0.06); padding-bottom: 56.25%;">
                 <iframe src="https://player.vimeo.com/video/1146718672" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
-        </figure>
+        </figure>-->
 
-        <blockquote class="research-quote">
-          Full case study coming soon!
-        </blockquote>
+        
 
         <!--<div class="section-title" id="problem">Problem</div>
         
@@ -1043,6 +1068,72 @@ footer > div > div {
         </blockquote>-->
         
       </section>
+
+      <section class="section" id="objective">
+        <div class="section-title" id="objective">Objective</div>
+
+        <p>I aim to create a 3D animation depicting embryological heart development, beginning from the creation of the heart field until the formation of the functional heart. This animation will be incorporated into my content supervisor's course as a learning resource. This approach has the potential to significantly improve comprehension, retention, and overall engagement among students, enabling learners to understand cardiac development in a more intuitive manner and to apply this knowledge in higher-level coursework and clinical contexts.</p>
+
+        <blockquote class="research-quote">
+          This project is currently in the works, but please enjoy some in-progess excerpts below!
+        </blockquote>
+
+        <figure>
+            <div style="position: relative; width: 100%; max-width: 700px; margin: 1em 0; rgba(0,0,0,0.06); padding-bottom: 56.25%;">
+                <iframe src="https://player.vimeo.com/video/1173823422" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </figure>
+      </section>
+
+      <section class="section">
+      <blockquote class="research-quote">
+          To animate looping of the heart tube, I used a hybrid animation workflow involving first rigging and keyframing a base heart tube, then extracting poses at set intervals and refining them through modelling tools. These refined poses were then set as blendshapes to create a smoother, more controlled deformation. 
+        </blockquote>
+      </section>
+
+      <div class="image-row">
+        <figure>
+            <video src="images/thesis_gif2.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Heart folding animation (no background)</figcaption>
+        </figure>
+        <figure>
+            <video src="images/thesis_gif1.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Base heart tube skeleton rig/animation</figcaption>
+        </figure>
+        
+        </div>
+
+        <div class="image-row">
+          <figure>
+            <video src="images/thesis_gif4.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Heart folding rig/animation (lateral view)</figcaption>
+        </figure>
+          <figure>
+              <img src="images/thesis_1.png" alt="Description 3">
+              <figcaption>Labelled dilations of heart tube (concept)</figcaption>
+          </figure>
+        </div>
+
+        <div class="image-row">
+        <figure>
+            <video src="images/thesis_gif3.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>Fusion of endocardial heart tubes</figcaption>
+        </figure>
+        <figure>
+              <img src="images/thesis_2.png" alt="Description 3">
+              <figcaption>Early model/texture experiment</figcaption>
+          </figure>
+        
+      </div>
+
 
       <!--<section class="section" id="research">
         <div class="section-title" id="research">Research & Thumbnails</div>
@@ -1184,14 +1275,14 @@ footer > div > div {
 </main>
 </div>
 
-<div class="project-nav">
+<!--<div class="project-nav">
   <a href="bimaristan3.html" class="project-nav-btn prev">
     &#8592; Previous Project
   </a>
   <a href="anglerfish.html" class="project-nav-btn next">
     Next Project &#8594;
   </a>
-</div>
+</div>-->
 
 <footer style="background:#111; border-top:1px solid #222; padding: 3em 0 2em 0; margin-top:4em;">
   <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.5em; padding:0 7vw;">
