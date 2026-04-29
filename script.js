@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "HALO, DUNIA",
         "AHOJ SVĚTE",*/
         "MERHABA DÜNYA",
-        "SÄLEM ÄLEM",
+        "SÄLEM DÜNİE",
         "KALTXÌ, MA EYWA"
     ];
     const typeElem = document.getElementById("typewriter-text");
