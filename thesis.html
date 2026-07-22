@@ -1159,44 +1159,59 @@ footer > div > div {
         <p>For the structures surrounding the heart tube, such as the amnion and yolk sac, I used a system of booleans to make it seem like the membranes were embedded into the cut coronal section.</p>
 
         <section style="margin-top: 24px;">
-        <div class="image-row">
-          <figure>
-            <video src="images/thesis_gif1.mp4" autoplay muted loop preload="metadata" aria-label="Description">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption>Initial simple rigged/animated tube</figcaption>
-        </figure>
-          <figure>
-            <video src="images/thesis_gif101.mp4" autoplay muted loop preload="metadata" aria-label="Description">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption>Heart looping with surrounding structures</figcaption>
-        </figure>
-        </div>
+          <div class="image-row">
+            <figure>
+              <video src="images/thesis_gif1.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>Initial simple rigged/animated tube</figcaption>
+            </figure>
+            <figure>
+              <video src="images/thesis_gif101.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>Heart looping with surrounding structures</figcaption>
+            </figure>
+          </div>
         </section>
 
         <p>Early during the production stage, I created a quick proxy animation of the endocardial heart tubes merging, which involves the formation of “bridges” between the tubes. However, when I showed the playblast to my content supervisor, we encountered a slight roadblock. Both my content advisor and I had only ever seen this process depicted in static, 2D images that fail to show <i>how</i> the bridges form, so this step required a bit more research. Later, we learned that at this stage, the borders of the tubes are not yet as defined, and appear to merge in a motion akin to the blobs inside a lava lamp.</p>
-        
         <p>To achieve the blobby, semi-liquid effect of the endocardial heart tubes merging to form the primordial heart, I used a combination of blend shapes and booleans in Bifrost. Initially, I experimented with Maya’s nParticles and dynamics to push apart the blobs in a fluid motion. However, the procedural nature of particle systems proved too unpredictable for the purposes of this scene, which required a “blobby” yet controlled movement. Instead, I turned to blend shapes, which I modified and keyframed individually to control the motion of the blobs. I then familiarized myself with Bifrost, Maya’s node-based VFX tool, using its mesh-to-volume and volume-to-mesh nodes to create the amorphous heart tube effect.</p>
 
+        <section style="margin-top: 24px;">
+          <div class="image-row">
+            <figure>
+              <video src="images/thesis_gif3.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>Initial simple rigged/animated tube</figcaption>
+            </figure>
+            <figure>
+              <video src="images/thesis_gif102.mp4" autoplay muted loop preload="metadata" aria-label="Description">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>Heart looping with surrounding structures</figcaption>
+            </figure>
+          </div>
         </section>
-        <section>
-        <div class="image-row">
-          <figure>
-            <video src="images/thesis_gif3.mp4" autoplay muted loop preload="metadata" aria-label="Description">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption>Initial proxy of heart tube fusion</figcaption>
-        </figure>
-          <figure>
-            <video src="images/thesis_gif102.mp4" autoplay muted loop preload="metadata" aria-label="Description">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption>Later version of fusion with Bifrost</figcaption>
-        </figure>
-        </div>
 
+        <p>Up to this point, all the models used in the animation were created in Maya, as this allowed for a quicker workflow and easier integration into the animation tools. However, I decided that the mighty embryo, with its natural forms and organic curves, would benefit greatly from ZBrush’s superior sculpting tools.</p>
+        <p>In ZBrush, I started off with ZSpheres to quickly create a base skeleton. I enabled adaptive skin and started sculpting on the model, referencing different scientific sources. Once I was happy with the model, I brought it into Maya to animate and add materials and lighting.</p>
+
+        <section>
+          <div class="image-row">
+            <figure>
+                  <img src="images/thesis_emb1.png" alt="Description 3" style="margin-top: 18px;">
+                  <figcaption>Using ZSpheres to create a base</figcaption>
+            </figure>
+            <figure>
+                  <img src="images/thesis_emb2.png" alt="Description 3" style="margin-top: 18px;">
+                  <figcaption>In-progress embryo sculpt</figcaption>
+            </figure>
+          </div>
+        </section>
       </section>
+
 
       <section class="section" id="lookdev">
         <div class="section-title" id="lookdev">Lookdev & Rendering</div>
