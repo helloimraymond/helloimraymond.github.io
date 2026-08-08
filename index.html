@@ -319,9 +319,9 @@ footer > div > div {
         </div>
       </div>
 
-      <div class="work">
+      <!--<div class="work">-->
         <!--<img src="images/embryo.png" class="fade-in">-->
-        <video src="images/embryo.mp4"
+        <!--<video src="images/embryo.mp4"
         autoplay
         loop
           muted
@@ -338,10 +338,30 @@ footer > div > div {
             <a href="thesis.html" class="case-study-btn">CASE STUDY</a>
           </div>
         </div>
-      </div>
+      </div>-->
       
       
+      <div class="work">
+      <video src="images/embryo.mp4"
+        autoplay
+        loop
+          muted
+          playsinline
+          class="fade-in"
+          style="width:100%; object-fit:cover; border-radius:3px; display:block;"
+          id="toodee-video">
+        </video>
 
+        <div class="layer-case">
+          <h3>Embryology in Motion: Cardiac Development (WIP)</h3>
+          <p>3D ANIMATION &#40;MAYA, REDSHIFT&#41;, COMPOSITING &#40;AFTER EFFECTS&#41;</p>
+          <div class="buttons">
+            <button id="embryo-vimeo-btn" data-vimeo="1216148859">VIEW HERE</button>
+            <a href="thesis.html" class="case-study-btn">CASE STUDY</a>
+          </div>
+        </div>
+        
+      </div>
       
 
       <div class="work">
@@ -1264,6 +1284,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const sjogrensBtn = document.getElementById('sjogrens-vimeo-btn');
   if (sjogrensBtn) {
     sjogrensBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const vimeoId = this.getAttribute('data-vimeo');
+      openVimeoPopup(vimeoId);
+    });
+  }
+
+  // Handle embryo button click
+  const embryoBtn = document.getElementById('embryo-vimeo-btn');
+  if (embryoBtn) {
+    embryoBtn.addEventListener('click', function(e) {
       e.preventDefault();
       const vimeoId = this.getAttribute('data-vimeo');
       openVimeoPopup(vimeoId);
